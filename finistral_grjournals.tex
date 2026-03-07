@@ -282,7 +282,7 @@ This section explains how I adapt the 7-billion-parameter \textit{Mistral-7B-v0.
 
 \subsection{Base Model}
 
-\textit{Mistral-7B-v0.1} is a decoder-only Transformer that combines grouped-query attention and sliding-window positional encodings to halve inference cost compared with comparably sized GPT-style models \cite{mistral2023}. We load the backbone in 8-bit NF4 format (\texttt{load\_in\_8bit=True} in Transformers) so that a single 40\,GB A100 can accommodate both weights and optimiser states.
+\textit{Mistral-7B-v0.1} is a decoder-only Transformer that combines grouped-query attention and sliding-window positional encodings to halve inference cost compared with comparably sized GPT-style models \cite{mistral2023}. We utilise \textbf{Unsloth} \cite{unsloth2023}, an open-source framework that applies custom Triton kernels to accelerate LoRA fine-tuning by up to 2$\times$ while reducing VRAM consumption by approximately 70\%. We load the backbone in 8-bit NF4 format (\texttt{load\_in\_8bit=True} in Transformers) so that a single 40\,GB A100 can accommodate both weights and optimiser states.
 
 \subsection{LoRA Adaptation}
 
@@ -610,6 +610,9 @@ Jiang, A.Q., Sablayrolles, A., Mensch, A., Bamford, C., Chaplot, D.S., de las Ca
 
 \bibitem{shao2024deepseekmath}
 Shao, Z., Wang, P., Zhu, Q., Xu, R., Song, J., Zhang, M., et al., DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models, arXiv preprint, 2024, arXiv:2402.03300. \url{https://arxiv.org/abs/2402.03300}
+
+\bibitem{unsloth2023}
+Han, D., Han, M., Unsloth: Fine-tuning LLMs 2x Faster with 70\% Less Memory, GitHub repository, 2023. \url{https://github.com/unslothai/unsloth}
 
 \end{thebibliography}
 
