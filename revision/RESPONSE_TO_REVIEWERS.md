@@ -83,11 +83,11 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R1.5 — No statistical validation; multi-seed mean+std+significance
 
-**Acknowledged; the original was a single run.** **Action:** `ablation_and_seeds.py` retrains and re-evaluates across 5 seeds; we report mean ± std for accuracy and weighted-F1 on the decontaminated and external sets, with paired significance tests (McNemar / bootstrap CIs) for every comparison. No comparative claim is made without a significance test.
+**Acknowledged; the original was a single run with no statistical treatment.** **Action taken:** every comparison in the revised paper carries *per-example paired statistics*: a McNemar test (exact binomial for small discordant counts, continuity-corrected chi-square otherwise) and a paired-bootstrap 95% confidence interval on the accuracy difference (10,000 resamples), computed from the released per-example prediction files (`stats_report.py`). On evaluation-seed variance specifically: our corrected harness uses greedy decoding (`do_sample=False`, single beam), which is deterministic — across seeds the generations are bit-identical, so a seed-variance table for *evaluation* would be a table of zeros; the paired per-example tests are the statistically stronger instrument for the comparisons the reviewer asks about, since they use the full per-sentence agreement structure rather than a single scalar per run. **Honestly deferred:** re-*training* variance (5 independent fine-tuning runs) requires ~10 GPU-hours of retraining that we prioritized below the contamination remediation for this revision; the released `ablation_and_seeds.py` implements the full multi-seed retraining protocol so this study is reproducible, and we note it as a limitation.
 
 ## R1.6 — Missing ablation (rank, alpha, prompt, epochs, PEFT configs)
 
-**Acknowledged.** **Action:** we added an ablation over LoRA rank r ∈ {8,16,32,64}, alpha, target modules (q/v vs q/k/v/o vs +MLP), prompt template (`[INST]` vs Alpaca), and epochs {1,2,3,4}, all evaluated on the decontaminated set. Results are reported as ablation curves (replacing GUI screenshots).
+**Acknowledged.** **Delivered in this revision:** an evaluation-time *prompt-template ablation* — the released adapter evaluated under its own training template (`[INST]…[/INST]`) versus the Alpaca-style template the original notebooks mistakenly used — on all three leakage-free datasets, with McNemar significance. This directly quantifies the train/eval template-mismatch defect the corrected-claims table discloses (C10). **Honestly deferred:** the training-time grid (rank r ∈ {4,8,16,32,64} × alpha × dropout × target modules q/v-vs-all-linear × epochs) requires ~0.5–1 GPU-day of retraining; we prioritized the contamination remediation and corrected baseline comparison for this revision. The full grid is implemented and released in `ablation_and_seeds.py` (resumable, decontaminated-eval-only by construction), so the ablation is independently runnable, and we flag it as future work in the manuscript rather than claiming it as done.
 
 ## R1.7 — Insufficient error analysis
 
@@ -95,7 +95,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R1.8 — Limited benchmark; more financial datasets
 
-**Acknowledged, and essential given the contamination.** **Action:** we evaluate on datasets not present in `fingpt-sentiment-train`: FiQA-SA (held-out), Twitter Financial News Sentiment test, SemEval-2017 Task 5, and a small fresh hand-labeled set. These external results are now the primary evidence of generalization.
+**Acknowledged, and essential given the contamination.** **Action taken:** we evaluate on two external sets, each decontaminated *row-wise* against the FinGPT training inputs under the same normalization used for the FPB audit (both FiQA and TFNS are themselves constituent sources of the FinGPT corpus, so per-row removal is mandatory): **FiQA-SA** — all splits pooled and then decontaminated (n = 235; disclosed openly: the FiQA test split alone is 78% contaminated, leaving only 51 usable rows, so pooling the leakage-free rows across splits is the only way to obtain a usable FiQA evaluation) — and the **Twitter Financial News Sentiment** validation split (n = 2,373 after removing 15 leaked/duplicate rows). Dataset ids, label mappings, and dropped-row counts are released in `data_eval/PROVENANCE.md`. **Not delivered:** SemEval-2017 Task 5 (no maintained public loader; the original distribution requires registration) and the "fresh hand-labeled set" we had considered — we chose not to rush an under-documented annotation effort into this revision. The two decontaminated external sets are the primary generalization evidence.
 
 ## R1.9 — Language/grammar
 
@@ -103,7 +103,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R1.10 — Replace GUI screenshots with learning/PR/ROC/ablation curves
 
-**Acknowledged.** **Action:** `analysis_and_figures.py` generates training/validation learning curves, per-class PR and ROC curves, ablation curves, and per-baseline confusion matrices. The Gradio screenshots (image1/image2) are moved to an appendix or removed; image3/image4 bar charts are regenerated from corrected numbers.
+**Acknowledged.** **Delivered:** per-baseline confusion matrices, per-class precision/recall/F1 charts, one-vs-rest ROC and PR curves (from first-token class log-probabilities captured during the corrected evaluation), an error-category breakdown table, and comparison bar charts regenerated from the corrected leakage-free numbers (replacing the old contaminated-figure sources of Figs. 3–4), all via the released `analysis_and_figures.py` / `stats_report.py` / `make_comparison_charts.py`. **One honest substitution:** training/validation *learning curves* cannot be faithfully regenerated — the original run's `trainer_state.json` was not retained, and re-plotting would require retraining; the manuscript's validation-loss trajectory table (recorded at training time) stands in for them, and we say so rather than fabricating a curve. The Gradio screenshots are retained only as interface documentation with corrected, differentiated captions.
 
 ## R1.11 — Deeper discussion of *why* it outperforms
 
@@ -115,7 +115,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R1.13 — Release training + eval scripts
 
-**Acknowledged and done.** **Action:** we release `Finistral_Sentiment_analyst.py` (training), `eval_harness_fixed.py`, `leakage_analysis.py`, `ablation_and_seeds.py`, and `analysis_and_figures.py`, with environment pins, seeds, and the decontamination procedure, so all corrected results are reproducible end-to-end.
+**Acknowledged and done.** **Action:** the public repository (`github.com/ayansk11/FinistralAI_code`) releases `Finistral_Sentiment_analyst.py` (training, reconciled to the published adapter configuration), `eval_harness_fixed.py` (corrected multi-dataset harness), `leakage_analysis.py` / `measure_leakage_local.py` (contamination measurement), `prepare_external_datasets.py` (external-set construction with provenance), `stats_report.py` (McNemar/bootstrap statistics), `analysis_and_figures.py` and `make_comparison_charts.py` (figures), the frozen evaluation sets (`data_eval/`, with `PROVENANCE.md`), cluster run scripts with environment pins and seeds, and the original (flawed) evaluation notebooks retained for transparency — so both the defects we report and the corrected results are independently reproducible end-to-end.
 
 ---
 
@@ -139,7 +139,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R2.5 — Replicate across seeds + test on external datasets
 
-**Acknowledged.** **Action:** as in R1.5/R1.8, we report 5-seed mean ± std with significance tests, and we add external leakage-free datasets (FiQA-SA held-out, Twitter Financial News test, SemEval-2017 Task 5, fresh hand-labeled) as the primary generalization evidence.
+**Acknowledged.** **Action:** as detailed in R1.5 and R1.8 — evaluation is deterministic by construction (greedy decoding; identical across seeds), so replication rigor is provided by per-example McNemar tests and paired-bootstrap confidence intervals on every comparison; external generalization is evidenced on two row-wise-decontaminated sets, FiQA-SA (pooled, n = 235) and Twitter Financial News Sentiment (n = 2,373). Training-seed variance is honestly deferred (protocol released in `ablation_and_seeds.py`).
 
 ---
 
@@ -149,4 +149,4 @@ We are grateful to both reviewers. Their scrutiny surfaced a contamination probl
 
 ---
 
-Key repository files referenced: `/Users/ayansk11/Desktop/FinistralAI_code/finistral_grjournals.tex`, `/Users/ayansk11/Desktop/FinistralAI_code/Finistral_Sentiment_analyst.py`, `/Users/ayansk11/Desktop/FinistralAI_code/test_final.ipynb`, `/Users/ayansk11/Desktop/FinistralAI_code/test_final2.ipynb`, `/Users/ayansk11/Desktop/FinistralAI_code/inference_test.ipynb`, `/Users/ayansk11/Desktop/FinistralAI_code/generate_docx.py`. New scripts to be released: `eval_harness_fixed.py`, `leakage_analysis.py`, `ablation_and_seeds.py`, `analysis_and_figures.py`.
+All referenced code, data, and scripts are public at `https://github.com/ayansk11/FinistralAI_code` (training script, corrected evaluation harness, leakage/decontamination analysis, external-dataset preparation with provenance, statistics pipeline, and figure generators) and the adapter at `https://huggingface.co/Ayansk11/Finistral-7B_lora`.
