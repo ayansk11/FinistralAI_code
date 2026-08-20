@@ -52,4 +52,4 @@ PY
 echo ""
 echo ">>> venv: $VENV"
 echo ">>> Next: put your HF read token in ~/.hf_token (chmod 600), then submit:"
-echo "    sbatch --partition=gpu --qos=allocated-gpu revision/runbook/run_evals_bigred200.sh"
+echo "    sbatch --partition=gpu --qos=allocated revision/runbook/run_evals_bigred200.sh"

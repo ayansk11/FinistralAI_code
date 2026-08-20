@@ -33,7 +33,7 @@ case "${1:-}" in
     ;;
   submit)
     ssh "$HOST" "cd $REMOTE_DIR && mkdir -p logs/slurm && \
-      sbatch --partition=gpu --qos=allocated-gpu revision/runbook/run_evals_bigred200.sh"
+      sbatch --partition=gpu --qos=allocated revision/runbook/run_evals_bigred200.sh"
     ;;
   status)
     ssh "$HOST" "squeue -u ayshaikh -o '%.10i %.20j %.8T %.10P %.10M %.12R'; \

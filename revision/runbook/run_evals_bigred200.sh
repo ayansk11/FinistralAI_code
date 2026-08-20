@@ -5,7 +5,7 @@
 # Submit from the repo root on the cluster (partition/qos at submit time, per
 # the account's convention — Quartz rejects qos-as-directive):
 #
-#   BigRed200 A100:  sbatch --partition=gpu --qos=allocated-gpu \
+#   BigRed200 A100:  sbatch --partition=gpu --qos=allocated \
 #                      revision/runbook/run_evals_bigred200.sh
 #   Quartz H100:     sbatch --partition=hopper --qos=hopper \
 #                      --export=ALL,PY_MODULE=python/gpu/3.11.5,VENV=/N/scratch/ayshaikh/venv-finistral-qz \
