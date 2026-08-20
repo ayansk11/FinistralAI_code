@@ -201,7 +201,7 @@ Early attempts at financial sentiment analysis relied on domain-specific lexicon
 
 The advent of pre-trained language models (PLMs) led to a sharp performance jump. BERT \cite{devlin2019} introduced deep bidirectional pre-training for language understanding, and FinBERT \cite{araci2019} fine-tunes BERT on a large corpus of SEC filings, significantly outperforming earlier feature-engineering baselines on both opinion mining and aspect sentiment tasks. FinBERT, however, requires updating the full 110\,M parameters and thus incurs substantial GPU cost for domain shifts.
 
-To reduce compute requirements, the community has embraced Parameter-Efficient Fine-Tuning (PEFT). LoRA \cite{hu2022} freezes backbone weights and injects small rank-decomposition matrices, cutting trainable parameters by orders of magnitude while matching full fine-tuning quality. QLoRA \cite{dettmers2023} extends this with 4-bit quantisation, enabling fine-tuning of 65B-parameter models on a single 48\,GB GPU. Surveys \cite{peftsurvey2024} catalogue dozens of PEFT variants including adapters, prefix-tuning and highlight their importance for resource-constrained practitioners. Zhang et al.\ \cite{zhang2023instruct} demonstrate that instruction tuning general-purpose LLMs on financial sentiment data yields strong performance, particularly where numerical understanding and contextual comprehension are vital.
+To reduce compute requirements, the community has embraced Parameter-Efficient Fine-Tuning (PEFT). LoRA \cite{hu2022} freezes backbone weights and injects small rank-decomposition matrices, cutting trainable parameters by orders of magnitude while matching full fine-tuning quality. QLoRA \cite{dettmers2023} extends this with 4-bit quantisation, enabling fine-tuning of 65B-parameter models on a single 48\,GB GPU. Surveys \cite{peftsurvey2024} catalogue dozens of PEFT variants including adapters, prefix-tuning and highlight their importance for resource-constrained practitioners, and FinLoRA \cite{wang2025finlora} benchmarks LoRA variants specifically on financial datasets, confirming that low-rank adaptation is the dominant recipe for domain-adapting financial LLMs on academic budgets. Zhang et al.\ \cite{zhang2023instruct} demonstrate that instruction tuning general-purpose LLMs on financial sentiment data yields strong performance, particularly where numerical understanding and contextual comprehension are vital.
 
 Within finance, the open-source FinGPT project \cite{yang2023}\footnote{Models and datasets available at \url{https://huggingface.co/FinGPT}} provides data-centric pipelines and a zoo of LoRA adapters for Llama-, Falcon- and Bloom-based models. These checkpoints form strong baselines in the annual FinNLP shared tasks \cite{finnlp2023}, which benchmark sentiment, headline classification and market-impact prediction. Yet, published FinGPT adapters still lag behind specialised encoders like FinBERT on the Financial PhraseBank test split. More recent work (2024--2026) has broadened both evaluation and methodology: holistic financial benchmarks such as FinBen \cite{xie2024finben} stress-test LLMs across dozens of financial tasks, and reasoning-oriented financial LLMs such as Fin-R1 \cite{liu2025finr1} apply reinforcement learning to elicit step-by-step financial reasoning. These efforts make contamination-aware, multi-dataset evaluation --- the focus of our revised protocol --- increasingly central to credible financial-LLM research.
 
@@ -355,21 +355,21 @@ Training on two \textbf{A100 40\,GB GPUs} of Indiana University's \textbf{Big Re
 
 \subsection{Inference \& Deployment}
 
-At inference time we load the frozen backbone plus the 83.9\,MB adapter in half-precision (\texttt{torch.bfloat16}) on GPU. A Gradio GUI wraps the pipeline, supporting sentence queries. (Our original submission reported a 168\,MB ``4-bit GGML'' adapter and sub-100\,ms CPU latency; a genuine 4-bit export of a 6.82\,M-parameter adapter is substantially \emph{smaller} than its fp16 form, and 7B-scale CPU generation does not run in tens of milliseconds, so we withdraw those figures pending re-measurement: \rerun{re-measure GGML adapter size and CPU latency, or remove}.)
+At inference time we load the frozen backbone plus the 83.9\,MB adapter in half-precision (\texttt{torch.bfloat16}) on GPU. A Gradio GUI wraps the pipeline, supporting sentence queries. (Correction: our original submission described the released 168\,MB \texttt{ggml-adapter-model.bin} as a ``4-bit'' export. The file's size identifies its true precision: $41{,}943{,}040$ parameters $\times$ 4\,bytes $=167.8$\,MB, i.e.\ an \emph{fp32} GGML export, not 4-bit. The accompanying ``sub-100\,ms CPU latency'' claim is withdrawn: 7B-scale CPU generation does not run in tens of milliseconds, and we did not retain a benchmark supporting it.)
 
 The complete training recipe, adapters, and inference code with Gradio GUI are publicly available at \texttt{Ayansk11/Finistral-7B\_lora} on Hugging Face for reproducible research.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.75\textwidth]{figures/image1.jpeg}
-\caption{Finistral-7B-LoRA GUI}
+\caption{Finistral-7B-LoRA Gradio interface: single-sentence query view.}
 \label{fig:gui1}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.75\textwidth]{figures/image2.jpeg}
-\caption{Finistral-7B-LoRA GUI}
+\caption{Finistral-7B-LoRA Gradio interface: prediction output view.}
 \label{fig:gui2}
 \end{figure}
 
@@ -530,9 +530,9 @@ Validation loss reached its minimum (0.1009) at epoch 2 and then rose, a classic
 \toprule
 \textbf{Dimension} & \textbf{Finistral-7B-LoRA} & \textbf{Best FinGPT adapter} \\
 \midrule
-Trainable params  & 6.82\,M          & $\approx$ 7\,M \\
-Adapter size      & 83.9\,MB (fp16)  & 83--87\,MB \\
-Train time ($2\times$A100) & $\approx$ 120\,min & 80--120\,min \\
+Trainable params  & 41.94\,M ($r{=}16$, all-linear) & 2.4--6.3\,M ($r{=}8$) \\
+Adapter size      & 83.9\,MB (fp16)  & 5--14\,MB \\
+Train time ($2\times$A100) & $\approx$ 120\,min & (published adapters) \\
 Weighted F1 (decontam./external) & \rerun{} & \rerun{} \\
 \bottomrule
 \end{tabular}
@@ -560,7 +560,7 @@ The CPU / 4-bit-GGML latency figure (``78\,ms, M1 Pro'') from the original submi
 
 \subsection{Key Takeaways}
 
-A LoRA recipe over Mistral-7B trains a competitive financial-sentiment adapter with negligible compute ($\approx$\,6.82\,M trainable parameters, single node), and this efficiency is the work's robust, contamination-independent contribution.
+A LoRA recipe over Mistral-7B trains a competitive financial-sentiment adapter with negligible compute ($\approx$\,41.94\,M trainable parameters, $0.58\,\%$ of the backbone, single node), and this efficiency is the work's robust, contamination-independent contribution.
 
 Benchmark overlap must be measured, not assumed: 75.2\,\% of our evaluation set was present in training, and reporting on the contaminated split produced a misleading near-perfect score. Leakage-aware evaluation (decontaminated remainder + external datasets) is essential for any model trained on aggregated corpora such as FinGPT.
 
@@ -571,7 +571,7 @@ Training beyond the validation-loss trough yields no benefit and can harm genera
 
 \section{Conclusion}
 
-Finistral-7B-LoRA demonstrates that a financial-sentiment adapter over the compute-efficient Mistral-7B backbone can be trained with only $\approx$\,0.094\,\% trainable parameters ($\approx$\,6.82\,M), one node of GPU time, and an 84\,MB adapter file, entirely within academic compute budgets on Indiana University's Big Red 200 supercomputer. Equally important, this paper documents a cautionary result: the 99.56\,\% accuracy reported in our original submission was a data-contamination artifact, with 75.2\,\% of the Financial PhraseBank evaluation set --- and its labels --- present in the FinGPT training corpus, while the seemingly weak baselines were products of a broken evaluation harness. After decontaminating the test set, correcting the harness, and validating on external datasets, we present an honest, leakage-free assessment of the recipe (Table~\ref{tab:corrected-results}). We therefore offer two contributions of lasting value: an efficient, fully reproducible PEFT recipe for financial sentiment, and concrete evidence --- with released tooling --- that contamination auditing and harness hygiene are prerequisites for credible evaluation of LLMs trained on aggregated financial corpora.
+Finistral-7B-LoRA demonstrates that a financial-sentiment adapter over the compute-efficient Mistral-7B backbone can be trained with only $\approx$\,0.58\,\% trainable parameters ($\approx$\,41.94\,M), one node of GPU time, and an 84\,MB adapter file, entirely within academic compute budgets on Indiana University's Big Red 200 supercomputer. Equally important, this paper documents a cautionary result: the 99.56\,\% accuracy reported in our original submission was a data-contamination artifact, with 75.2\,\% of the Financial PhraseBank evaluation set --- and its labels --- present in the FinGPT training corpus, while the seemingly weak baselines were products of a broken evaluation harness. After decontaminating the test set, correcting the harness, and validating on external datasets, we present an honest, leakage-free assessment of the recipe (Table~\ref{tab:corrected-results}). We therefore offer two contributions of lasting value: an efficient, fully reproducible PEFT recipe for financial sentiment, and concrete evidence --- with released tooling --- that contamination auditing and harness hygiene are prerequisites for credible evaluation of LLMs trained on aggregated financial corpora.
 
 
 \section{Future Work}
@@ -618,7 +618,7 @@ The authors used AI-assisted tools to support manuscript preparation: a large-la
 %%% REFERENCES
 %%% ================================================================
 
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 
 \bibitem{loughran2011}
 Loughran, T., McDonald, B., When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks, The Journal of Finance, 2011, 66(1), 35--65, doi: 10.1111/j.1540-6261.2010.01625.x.
@@ -671,6 +671,9 @@ Xie, Q., Han, W., Chen, Z., et al., The FinBen: A Holistic Financial Benchmark f
 \bibitem{liu2025finr1}
 Liu, Z., Zhang, Z., Liu, Y., et al., Fin-R1: A Large Language Model for Financial Reasoning through Reinforcement Learning, arXiv preprint, 2025, arXiv:2503.16252. \url{https://arxiv.org/abs/2503.16252}
 
+\bibitem{wang2025finlora}
+Wang, D., Patel, J., Zha, D., Yang, S. Y., Liu, X.-Y., FinLoRA: Benchmarking LoRA Methods for Fine-Tuning LLMs on Financial Datasets, arXiv preprint, 2025, arXiv:2505.19819. \url{https://arxiv.org/abs/2505.19819}
+
 \end{thebibliography}
 
 %%% ---- Publisher Note & Open Access (per GR Journals template) ----
@@ -685,6 +688,6 @@ Liu, Z., Zhang, Z., Liu, Y., et al., Fin-R1: A Large Language Model for Financia
 \noindent To view a copy of this License, visit: \url{https://creativecommons.org/licenses/by-nc/4.0/}
 
 \vspace{4pt}
-\noindent\copyright\ The Authors 2025
+\noindent\copyright\ The Authors 2026
 
 \end{document}
