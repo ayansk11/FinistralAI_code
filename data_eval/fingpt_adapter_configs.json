@@ -1,0 +1,53 @@
+{
+  "fingpt_llama2": {
+    "repo": "FinGPT/fingpt-mt_llama2-7b_lora",
+    "r": 8,
+    "alpha": 32,
+    "dropout": 0.1,
+    "targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj"
+    ],
+    "adapter_files": {
+      "adapter_model.bin": 12613437
+    }
+  },
+  "fingpt_llama3": {
+    "repo": "FinGPT/fingpt-mt_llama3-8b_lora",
+    "r": 8,
+    "alpha": 32,
+    "dropout": 0.1,
+    "targets": [
+      "v_proj",
+      "q_proj"
+    ],
+    "adapter_files": {
+      "adapter_model.safetensors": 13648432
+    }
+  },
+  "fingpt_falcon": {
+    "repo": "FinGPT/fingpt-mt_falcon-7b_lora",
+    "r": 8,
+    "alpha": 32,
+    "dropout": 0.1,
+    "targets": [
+      "query_key_value"
+    ],
+    "adapter_files": {
+      "adapter_model.bin": 4729725
+    }
+  },
+  "fingpt_bloom": {
+    "repo": "FinGPT/fingpt-mt_bloom-7b1_lora",
+    "r": 8,
+    "alpha": 32,
+    "dropout": 0.1,
+    "targets": [
+      "query_key_value"
+    ],
+    "adapter_files": {
+      "adapter_model.bin": 7874749
+    }
+  }
+}

@@ -1,0 +1,209 @@
+[
+  {
+    "key": "Liu2023FinGPTDemocratizing",
+    "title": "FinGPT: Democratizing Internet-scale Data for Financial Large Language Models",
+    "authors": "Xiao-Yang Liu, Guoxuan Wang, Hongyang Yang, Daochen Zha",
+    "year": "2023",
+    "venue": "arXiv:2307.10485 (AI4Finance; NeurIPS 2023 Workshop)",
+    "id": "arXiv:2307.10485",
+    "relevance": "(a) Financial LLMs. THE primary source for the authors' own backbone \u2014 describes the FinGPT framework, the LoRA/QLoRA low-cost customization recipe, and the sentiment-for-trading use case. The authors train on FinGPT/fingpt-sentiment-train and compare against FinGPT LoRA baselines, so this MUST be cited. Verified via HF paper_search."
+  },
+  {
+    "key": "Yang2023FinGPTOpenSource",
+    "title": "FinGPT: Open-Source Financial Large Language Models",
+    "authors": "Hongyang Yang, Xiao-Yang Liu, Christina Dan Wang",
+    "year": "2023",
+    "venue": "arXiv:2306.06031 (FinNLP @ IJCAI 2023)",
+    "id": "arXiv:2306.06031",
+    "relevance": "(a) Financial LLMs / (c) instruction tuning. Companion FinGPT paper detailing the data-centric, lightweight LoRA approach the authors build on. Useful for accurately situating Finistral within the FinGPT lineage rather than overclaiming novelty (Reviewer 1 pt 4)."
+  },
+  {
+    "key": "Wang2023FinGPTBenchmark",
+    "title": "FinGPT: Instruction Tuning Benchmark for Open-Source Large Language Models in Financial Datasets",
+    "authors": "Neng Wang, Hongyang Yang, Christina Dan Wang",
+    "year": "2023",
+    "venue": "arXiv:2310.04793 (NeurIPS 2023 Instruction Workshop)",
+    "id": "arXiv:2310.04793",
+    "relevance": "(c) Financial instruction tuning. Defines the FinGPT instruction-tuning benchmark and the standard inference/evaluation procedure for the FinGPT LoRA adapters. Directly supports Reviewer 2 pt 3 (evaluating baselines per their original inference procedures) and Reviewer 1 pt 2 (baseline implementation details)."
+  },
+  {
+    "key": "Zhang2023InstructFinGPT",
+    "title": "Instruct-FinGPT: Financial Sentiment Analysis by Instruction Tuning of General-Purpose Large Language Models",
+    "authors": "Boyu Zhang, Hongyang Yang, Xiao-Yang Liu",
+    "year": "2023",
+    "venue": "arXiv:2306.12659 (FinLLM @ IJCAI 2023)",
+    "id": "arXiv:2306.12659",
+    "relevance": "(c) Financial instruction tuning + financial sentiment. Closest prior work to the paper's exact task: instruction-tuning a general LLM for financial sentiment. Essential comparison point and template for honest reporting of sentiment accuracy. Verified via HF paper_search."
+  },
+  {
+    "key": "Wu2023BloombergGPT",
+    "title": "BloombergGPT: A Large Language Model for Finance",
+    "authors": "Shijie Wu, Ozan Irsoy, Steven Lu, Vadim Dabravolski, Mark Dredze, Sebastian Gehrmann, Prabhanjan Kambadur, David Rosenberg, Gideon Mann",
+    "year": "2023",
+    "venue": "arXiv:2303.17564",
+    "id": "arXiv:2303.17564",
+    "relevance": "(a) Financial LLMs. The canonical first domain-specific FinLLM; standard required citation for any financial-LLM related-work section. Provides the closed-source contrast that motivates open FinLLMs like FinGPT/Finistral."
+  },
+  {
+    "key": "Xie2023PIXIU",
+    "title": "PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance",
+    "authors": "Qianqian Xie, Weiguang Han, Xiao Zhang, Yanzhao Lai, Min Peng, Alejandro Lopez-Lira, Jimin Huang",
+    "year": "2023",
+    "venue": "arXiv:2306.05443 (NeurIPS 2023 Datasets & Benchmarks)",
+    "id": "arXiv:2306.05443",
+    "relevance": "(a) Financial LLMs / (c) instruction tuning. Introduces FinMA and the FLARE benchmark \u2014 the standard multi-task financial evaluation suite. Directly supports Reviewer 1 pt 8 (broaden benchmark beyond a single FPB split) and gives a principled multi-dataset evaluation protocol."
+  },
+  {
+    "key": "Xie2024FinBen",
+    "title": "The FinBen: A Holistic Financial Benchmark for Large Language Models",
+    "authors": "Qianqian Xie, Weiguang Han, Zhengyu Chen, Ruoyu Xiang, Xiao Zhang, Yueru He, Mengxi Xiao, Dong Li, et al.",
+    "year": "2024",
+    "venue": "arXiv:2402.12659 (NeurIPS 2024 Datasets & Benchmarks)",
+    "id": "arXiv:2402.12659",
+    "relevance": "(a) Financial LLMs / benchmarking. 35-dataset, 23-task holistic FinLLM benchmark. The right citation to justify expanding evaluation to additional financial datasets (Reviewer 1 pt 8; Reviewer 2 pt 5 external datasets) instead of a single 2,264-sentence FPB split."
+  },
+  {
+    "key": "Bhatia2024FinTral",
+    "title": "FinTral: A Family of GPT-4 Level Multimodal Financial Large Language Models",
+    "authors": "Gagan Bhatia, El Moatez Billah Nagoudi, Hasan Cavusoglu, Muhammad Abdul-Mageed",
+    "year": "2024",
+    "venue": "arXiv:2402.10986 (ACL 2024 Findings)",
+    "id": "arXiv:2402.10986",
+    "relevance": "(a) Financial LLMs. Directly relevant: FinTral is also built on Mistral-7B for finance, with domain pretraining, instruction tuning and RLAIF, plus a hallucination benchmark. The most comparable recent FinLLM to Finistral and a strong novelty/positioning reference (Reviewer 1 pts 4, 11, 12)."
+  },
+  {
+    "key": "Xie2024OpenFinLLMs",
+    "title": "Open-FinLLMs: Open Multimodal Large Language Models for Financial Applications",
+    "authors": "Qianqian Xie, Dong Li, Mengxi Xiao, Zihao Jiang, Ruoyu Xiang, Xiao Zhang, Zhengyu Chen, Yueru He, et al.",
+    "year": "2024",
+    "venue": "arXiv:2408.11878",
+    "id": "arXiv:2408.11878",
+    "relevance": "(a) Financial LLMs / (c) instruction tuning. Recent open FinLLM family (FinLLaMA / FinLLaMA-instruct / FinLLaVA) with 573K-instruction tuning and broad evaluation vs BloombergGPT and GPT-4. Good 2024 anchor for the financial instruction-tuning landscape and fair-comparison practices."
+  },
+  {
+    "key": "Guo2025DeepSeekR1",
+    "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "authors": "DeepSeek-AI; Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, et al.",
+    "year": "2025",
+    "venue": "arXiv:2501.12948",
+    "id": "arXiv:2501.12948",
+    "relevance": "(b) Reasoning-enhanced LLMs. The foundational 2025 RL-for-reasoning paper (introduces the GRPO-based R1 recipe and distilled 1.5B-70B models). Required to situate Finistral against the reasoning-LLM wave Reviewer 1 explicitly asks for (pt 12)."
+  },
+  {
+    "key": "Liu2025FinR1",
+    "title": "Fin-R1: A Large Language Model for Financial Reasoning through Reinforcement Learning",
+    "authors": "Zhaowei Liu, Xin Guo, Fangqi Lou, Lingfeng Zeng, Jinyi Niu, Zixuan Wang, Jiajie Xu, Weige Cai, et al.",
+    "year": "2025",
+    "venue": "arXiv:2503.16252",
+    "id": "arXiv:2503.16252",
+    "relevance": "(a)+(b) Financial reasoning LLM. A 7B financial reasoning model distilled from DeepSeek-R1 with SFT+RL, SOTA on FinQA/ConvFinQA. The direct 'reasoning finance model' Reviewer 1 pt 12 names; pairs the FinGPT lineage with the new reasoning paradigm and motivates moving beyond pure sentiment classification."
+  },
+  {
+    "key": "Zhu2025DianJinR1",
+    "title": "DianJin-R1: Evaluating and Enhancing Financial Reasoning in Large Language Models",
+    "authors": "Jie Zhu, Qian Chen, Huaixia Dou, Junhui Li, Lifan Guo, Feng Chen, Chi Zhang",
+    "year": "2025",
+    "venue": "arXiv:2504.15716",
+    "id": "arXiv:2504.15716",
+    "relevance": "(b) Reasoning-enhanced finance LLM with GRPO. Fine-tunes Qwen2.5 with GRPO and dual reward signals for financial reasoning and compliance. Concrete, recent example of process-reward / GRPO methods applied to finance, supporting Reviewer 1 pt 12 coverage of reasoning + reward methods."
+  },
+  {
+    "key": "Liu2025UnderstandingR1Zero",
+    "title": "Understanding R1-Zero-Like Training: A Critical Perspective",
+    "authors": "Zichen Liu, Changyu Chen, Wenjun Li, Penghui Qi, Tianyu Pang, Chao Du, Wee Sun Lee, Min Lin",
+    "year": "2025",
+    "venue": "arXiv:2503.20783",
+    "id": "arXiv:2503.20783",
+    "relevance": "(b) Reasoning / GRPO methods. Analyzes GRPO optimization bias and proposes Dr. GRPO; the right citation when discussing process-reward / GRPO methodology rather than just citing R1. Strengthens the methodological depth Reviewer 1 pts 11-12 ask for."
+  },
+  {
+    "key": "Hu2021LoRA",
+    "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "authors": "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen",
+    "year": "2021",
+    "venue": "arXiv:2106.09685 (ICLR 2022)",
+    "id": "arXiv:2106.09685",
+    "relevance": "(d) PEFT foundation. The original LoRA paper \u2014 the method Finistral actually uses (r=16, q_proj/v_proj). Must be the primary PEFT citation; also grounds the corrected trainable-parameter accounting flagged in the mismatch list (~6.8M params)."
+  },
+  {
+    "key": "Dettmers2023QLoRA",
+    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "authors": "Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, Luke Zettlemoyer",
+    "year": "2023",
+    "venue": "arXiv:2305.14314 (NeurIPS 2023)",
+    "id": "arXiv:2305.14314",
+    "relevance": "(d) PEFT / quantization. Defines 4-bit NormalFloat (NF4) and double quantization. Critically clarifies the paper's quantization error: NF4 is a 4-bit type, mutually exclusive with load_in_8bit. Cite to fix the Sec 4.1 '8-bit NF4' mistake and to correctly describe the eval-time 8-bit BitsAndBytes config."
+  },
+  {
+    "key": "Zhang2023AdaLoRA",
+    "title": "AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning",
+    "authors": "Qingru Zhang, Minshuo Chen, Alexander Bukharin, Pengcheng He, Yu Cheng, Weizhu Chen, Tuo Zhao",
+    "year": "2023",
+    "venue": "arXiv:2303.10512 (ICLR 2023)",
+    "id": "arXiv:2303.10512",
+    "relevance": "(d) PEFT method. SVD-based adaptive rank allocation across weight matrices. Standard reference for the PEFT-variants discussion and a natural ablation axis (rank/budget) that Reviewer 1 pt 6 requests."
+  },
+  {
+    "key": "Liu2024DoRA",
+    "title": "DoRA: Weight-Decomposed Low-Rank Adaptation",
+    "authors": "Shih-Yang Liu, Chien-Yi Wang, Hongxu Yin, Pavlo Molchanov, Yu-Chiang Frank Wang, Kwang-Ting Cheng, Min-Hung Chen",
+    "year": "2024",
+    "venue": "arXiv:2402.09353 (ICML 2024)",
+    "id": "arXiv:2402.09353",
+    "relevance": "(d) Recent PEFT 2024. Weight-decomposed LoRA (magnitude + direction) that closes the LoRA-vs-full-FT gap. The headline modern-PEFT method Reviewer 1 pt 12 names explicitly; a strong candidate alternative/ablation against vanilla LoRA."
+  },
+  {
+    "key": "Hayou2024LoRAPlus",
+    "title": "LoRA+: Efficient Low Rank Adaptation of Large Models",
+    "authors": "Soufiane Hayou, Nikhil Ghosh, Bin Yu",
+    "year": "2024",
+    "venue": "arXiv:2402.12354 (ICML 2024)",
+    "id": "arXiv:2402.12354",
+    "relevance": "(d) Recent PEFT 2024. Shows separate learning rates for LoRA A/B matrices improve feature learning and speed. Named by Reviewer 1 pt 12; relevant to the training-config / ablation discussion (Reviewer 1 pt 6)."
+  },
+  {
+    "key": "Kopiczko2023VeRA",
+    "title": "VeRA: Vector-based Random Matrix Adaptation",
+    "authors": "Dawid Jan Kopiczko, Tijmen Blankevoort, Yuki Markus Asano",
+    "year": "2023",
+    "venue": "arXiv:2310.11454 (ICLR 2024)",
+    "id": "arXiv:2310.11454",
+    "relevance": "(d) Recent PEFT. Shared frozen random matrices + learned scaling vectors, 10x fewer trainable params than LoRA. Named by Reviewer 1 pt 12; rounds out the modern PEFT-variants survey the reviewer wants."
+  },
+  {
+    "key": "Oren2023ProvingContamination",
+    "title": "Proving Test Set Contamination in Black Box Language Models",
+    "authors": "Yonatan Oren, Nicole Meister, Niladri Chatterji, Faisal Ladhak, Tatsunori B. Hashimoto",
+    "year": "2023",
+    "venue": "arXiv:2310.17623 (ICLR 2024)",
+    "id": "arXiv:2310.17623",
+    "relevance": "(e) Benchmark contamination \u2014 supports honest reframing. Provides a rigorous statistical test for whether an evaluation set leaked into training. Directly underpins Reviewer 1 pt 3 and Reviewer 2 pt 1 (FinGPT-train vs FPB overlap) and justifies the required duplicate/near-duplicate leakage analysis behind the 99.56% claim."
+  },
+  {
+    "key": "Xu2024BenchmarkingLeakage",
+    "title": "Benchmarking Benchmark Leakage in Large Language Models",
+    "authors": "Ruijie Xu, Zengzhi Wang, Run-Ze Fan, Pengfei Liu",
+    "year": "2024",
+    "venue": "arXiv:2404.18824",
+    "id": "arXiv:2404.18824",
+    "relevance": "(e) Benchmark contamination. Perplexity/N-gram leakage-detection pipeline and the 'Benchmark Transparency Card' for documenting evaluation. Gives a concrete, citable methodology for the train/eval overlap audit reviewers demand (R1 pt 3, R2 pt 1) and for transparent reporting of the inflated baselines (R1 pt 2)."
+  },
+  {
+    "key": "Roberts2023ContaminationLensOfTime",
+    "title": "Data Contamination Through the Lens of Time",
+    "authors": "Manley Roberts, Himanshu Thakur, Christine Herlihy, Colin White, Samuel Dooley",
+    "year": "2023",
+    "venue": "arXiv:2310.10628",
+    "id": "arXiv:2310.10628",
+    "relevance": "(e) Benchmark contamination (optional third). Longitudinal evidence that public-benchmark overlap inflates reported LLM performance. Reinforces the central honest-reframing argument that an unaudited 99.56% on a public FPB split may reflect leakage/eval artifacts rather than genuine capability."
+  },
+  {
+    "key": "Malo2013FinancialPhraseBank",
+    "title": "Good Debt or Bad Debt: Detecting Semantic Orientations in Economic Texts",
+    "authors": "Pekka Malo, Ankur Sinha, Pyry Takala, Pekka Korhonen, Jyrki Wallenius",
+    "year": "2013",
+    "venue": "arXiv:1307.5336 (JASIST 2014)",
+    "id": "arXiv:1307.5336",
+    "relevance": "Dataset anchor. The original Financial PhraseBank paper \u2014 the exact evaluation set (sentences_allagree) used for the 99.56% claim. Must be cited for the eval data; the sentences_allagree subset's high annotator agreement is also relevant context for the contamination/leakage discussion."
+  }
+]

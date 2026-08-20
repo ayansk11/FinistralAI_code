@@ -22,3 +22,10 @@ Thumbs.db
 *.swp
 *.swo
 *~
+.firecrawl/
+
+# Claude Code session dirs
+.claude/
+.claude-flow/
+__pycache__/
+results_smoke/

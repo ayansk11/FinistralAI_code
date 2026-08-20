@@ -72,11 +72,15 @@ model = AutoModelForCausalLM.from_pretrained(
 model.gradient_checkpointing_enable()
 
 lora_cfg = LoraConfig(
-    
+
     r=16,
     lora_alpha=32,
     lora_dropout=0.05,
-    target_modules=["q_proj", "v_proj"],
+    # Matches the published adapter Ayansk11/Finistral-7B_lora adapter_config.json:
+    # all seven linear modules, 41,943,040 trainable params (~0.58% of 7.24B);
+    # fp16 safetensors = 83,946,192 bytes.
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                    "gate_proj", "up_proj", "down_proj"],
     bias="none",
     task_type="CAUSAL_LM"
 )
