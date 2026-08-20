@@ -39,10 +39,10 @@ We recognize that these corrections substantially lower our headline numbers. We
 | C3 | "Outperforms FinBERT by +3–6 accuracy points" | **Softened** | Either evaluated under an identical correct protocol, or stated explicitly as a literature-reported comparison with citation and matched split. |
 | C4 | "We utilise Unsloth … 2× faster, ~70% less VRAM" | **Removed** | Describe actual stack: `transformers` + `peft` + HF `Trainer` + gradient checkpointing + xFormers memory-efficient attention. `\cite{unsloth2023}` removed. |
 | C5 | "Backbone loaded in 8-bit NF4 (load_in_8bit=True)" during training | **Corrected** | "Training used bf16 full-precision weights with no quantization." The impossible "8-bit NF4" phrasing removed. |
-| C6 | "LoRA injected into every attention-projection and feed-forward linear layer" | **Corrected** | "LoRA applied to `q_proj` and `v_proj` only." |
-| C7 | "LoRA dropout = 0.10" (Table 4) | **Corrected** | 0.05 (matches code). |
-| C8 | "Trainable parameters ≈ 9M (0.2%)" | **Corrected** | "≈ 6.82M (≈ 0.094%)", from `print_trainable_parameters()`. |
-| C9 | "4-bit GGML adapter = 168 MB; fp16 adapter = 83.9 MB" | **Corrected / removed** | A real 4-bit variant is *smaller*; either remeasured (~20–25 MB) or the GGML/CPU-latency claims removed. |
+| C6 | "LoRA injected into every attention-projection and feed-forward linear layer" | **Re-verified — original targets confirmed, count corrected** | The published adapter's `adapter_config.json` (Ayansk11/Finistral-7B_lora) targets all seven linear modules (q/k/v/o/gate/up/down), so the original submission's *coverage* description was correct. (An intermediate revision draft "corrected" this to q/v-only based on a training-script variant that did not match the released artifact; the artifact is authoritative and the released training script has been reconciled to it.) |
+| C7 | "LoRA dropout = 0.10" (Table 4) | **Corrected** | 0.05 (matches the published `adapter_config.json` and code). |
+| C8 | "Trainable parameters ≈ 9M (0.2%)" | **Corrected** | 41,943,040 ≈ 41.94M (≈ 0.58% of 7.24B). Verified two independent ways from the released files: fp16 `adapter_model.safetensors` = 41.94M × 2 B = 83.9 MB; fp32 GGML export = 41.94M × 4 B = 167.8 MB. (The old 9M figure was arithmetically impossible: a 9M fp16 adapter would be ~18 MB, not 83.9 MB.) |
+| C9 | "4-bit GGML adapter = 168 MB; fp16 adapter = 83.9 MB" | **Corrected** | The 168 MB `ggml-adapter-model.bin` exists but is an **fp32** export (167.8 MB = 41.94M × 4 B), not 4-bit; the "4-bit" label and the sub-100 ms CPU-latency claim are withdrawn. |
 | C10 | "Sentences wrapped exactly as in the training script" (Instruction/Input/Answer) | **Corrected** | Training used `[INST]{input}\n{instruction} [/INST] {output}`; the train/eval template mismatch is disclosed and the eval re-run under the `[INST]` template. |
 | C11 | "Best val loss 0.1008" vs Table 6 "0.1009" | **Corrected** | Single value from training logs used consistently. |
 | C12 | "All baselines evaluated with identical truncation + greedy decoding" | **Corrected** | Harness was broken (right-padding, `max_length` collision, neutral-default parser); fixed and re-run; honest protocol described. |
@@ -79,7 +79,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R1.4 — Limited novelty (LoRA on existing backbone)
 
-**We accept that the original framing over-claimed novelty.** With the SOTA claim withdrawn, we no longer position the work as a methodological breakthrough. **Action:** we reframe the contribution as (a) a *fully reproducible, efficient* LoRA recipe (~6.8M trainable params, ~0.094%, bf16, single-GPU) and (b) a *contamination-and-evaluation case study* demonstrating how FinGPT-train/FPB overlap and harness defects produce simultaneously inflated and deflated numbers across the financial-LLM literature. We position this honestly as a cautionary, reproducibility-focused contribution rather than a novel architecture.
+**We accept that the original framing over-claimed novelty.** With the SOTA claim withdrawn, we no longer position the work as a methodological breakthrough. **Action:** we reframe the contribution as (a) a *fully reproducible, efficient* LoRA recipe (~41.94M trainable params, ~0.58%, bf16, single-node) and (b) a *contamination-and-evaluation case study* demonstrating how FinGPT-train/FPB overlap and harness defects produce simultaneously inflated and deflated numbers across the financial-LLM literature. We position this honestly as a cautionary, reproducibility-focused contribution rather than a novel architecture.
 
 ## R1.5 — No statistical validation; multi-seed mean+std+significance
 
