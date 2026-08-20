@@ -63,7 +63,11 @@ test -f data_eval/fpb_decontam.csv || { echo "data_eval/ missing — run deploy 
 mkdir -p logs/slurm
 
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
-python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())"
+# Cap at 3 min: a hung Lustre client I/O wait (wchan=cl_sync_io_wait) can block
+# a fresh Python import indefinitely and silently eat the whole job's wall
+# clock; fail fast and loud instead so a resubmit is obviously needed.
+timeout 180 python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())" \
+  || { echo "FATAL: torch import timed out/failed (possible stuck Lustre I/O on this node) -- resubmit."; exit 3; }
 
 MODELS="finistral finistral_alpaca mistral_base fingpt_llama2 fingpt_llama3 fingpt_falcon fingpt_bloom finbert"
 DATASETS="fpb_decontam fiqa tfns"
@@ -71,9 +75,15 @@ DATASETS="fpb_decontam fiqa tfns"
 for M in $MODELS; do
   for D in $DATASETS; do
     echo "########## $M / $D ##########"
-    python -u eval_harness_fixed.py --models "$M" --dataset "$D" \
+    # Per-combo cap (25 min): generous for real work (largest combo is ~2.4k
+    # rows) but bounds a stuck-I/O or stuck-download combo so the loop moves
+    # on instead of consuming the entire job's wall clock. A timed-out combo
+    # simply has no predictions CSV yet, so the resume guard retries it on
+    # the next submission.
+    timeout 1500 python -u eval_harness_fixed.py --models "$M" --dataset "$D" \
       --quant none --seeds 0 --capture_scores \
-      --batch_size 8 --max_new_tokens 8 --out_dir results_fixed
+      --batch_size 8 --max_new_tokens 8 --out_dir results_fixed \
+      || echo "WARNING: $M/$D timed out or failed (exit $?) -- will retry on next resubmit."
   done
 done
 
