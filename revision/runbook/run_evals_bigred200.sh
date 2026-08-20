@@ -71,7 +71,7 @@ DATASETS="fpb_decontam fiqa tfns"
 for M in $MODELS; do
   for D in $DATASETS; do
     echo "########## $M / $D ##########"
-    python eval_harness_fixed.py --models "$M" --dataset "$D" \
+    python -u eval_harness_fixed.py --models "$M" --dataset "$D" \
       --quant none --seeds 0 --capture_scores \
       --batch_size 8 --max_new_tokens 8 --out_dir results_fixed
   done
