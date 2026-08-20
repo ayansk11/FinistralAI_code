@@ -43,11 +43,20 @@ export HF_HOME=/N/scratch/ayshaikh/hf_cache
 export TMPDIR=/N/scratch/ayshaikh/tmp
 mkdir -p "$HF_HOME" "$TMPDIR"
 
-if [ -z "${HF_TOKEN:-}" ] && [ -f "$HOME/.hf_token" ]; then
-  HF_TOKEN="$(tr -d '[:space:]' < "$HOME/.hf_token")"
-  export HF_TOKEN
-fi
-: "${HF_TOKEN:?No HF token: put a read token in ~/.hf_token or pass --export=ALL,HF_TOKEN=hf_...}"
+# Token lookup order: env var, scratch, then home. The home NFS is over
+# quota (writes fail with EDQUOT), so /N/scratch/ayshaikh/.hf_token is the
+# canonical location.
+for f in "${HF_TOKEN_FILE:-}" /N/scratch/ayshaikh/.hf_token "$HOME/.hf_token"; do
+  if [ -z "${HF_TOKEN:-}" ] && [ -n "$f" ] && [ -s "$f" ]; then
+    HF_TOKEN="$(tr -d '[:space:]' < "$f")"
+    export HF_TOKEN
+  fi
+done
+case "${HF_TOKEN:-}" in
+  hf_????????????????*) : ;;  # plausible token
+  *) echo "No usable HF token: put a read token in /N/scratch/ayshaikh/.hf_token" >&2
+     exit 1 ;;
+esac
 
 cd "${SLURM_SUBMIT_DIR:-$PWD}"
 test -f data_eval/fpb_decontam.csv || { echo "data_eval/ missing — run deploy first"; exit 1; }
