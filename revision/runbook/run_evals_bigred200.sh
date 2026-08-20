@@ -34,7 +34,27 @@ set -uo pipefail
 # --- Environment (BigRed200 is Cray/SLES: cray-python; Quartz overrides via
 #     --export=ALL,PY_MODULE=python/gpu/3.11.5) ---
 module load "${PY_MODULE:-cray-python/3.11.7}"
-VENV="${VENV:-/N/scratch/ayshaikh/venv-finistral}"
+NETWORK_VENV="${VENV:-/N/scratch/ayshaikh/venv-finistral}"
+
+# Stage the venv to node-local storage before activating it. Diagnosed cause
+# of repeated job stalls: importing large .so files (e.g. libtorch_cuda.so,
+# 861MB) directly off the Lustre-backed /N/scratch triggers mmap()-based
+# reads, which go through Lustre's distributed lock manager and can hang
+# indefinitely under cross-node lock contention (observed wchan=cl_sync_io_wait,
+# 0% CPU, process uninterruptible) -- even though a plain read()-based `dd`
+# of the SAME file from the SAME node succeeds instantly, because dd doesn't
+# mmap. Copying once to node-local /tmp (typically RAM-backed tmpfs on these
+# nodes) sidesteps Lustre's DLM for every subsequent import. Falls back to
+# the network venv if local staging fails (e.g. insufficient /tmp space).
+LOCAL_VENV="/tmp/venv-finistral-${SLURM_JOB_ID:-$$}"
+if cp -r "$NETWORK_VENV" "$LOCAL_VENV" 2>/dev/null; then
+  echo "[venv] staged to node-local $LOCAL_VENV ($(du -sh "$LOCAL_VENV" 2>/dev/null | cut -f1))"
+  VENV="$LOCAL_VENV"
+  trap 'rm -rf "$LOCAL_VENV"' EXIT
+else
+  echo "[venv] local staging failed; falling back to network venv $NETWORK_VENV"
+  VENV="$NETWORK_VENV"
+fi
 # shellcheck disable=SC1090
 source "$VENV/bin/activate"
 
