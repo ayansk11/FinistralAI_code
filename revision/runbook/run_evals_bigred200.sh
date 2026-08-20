@@ -1,44 +1,60 @@
 #!/bin/bash
 # =============================================================================
-# JICTASA-2026-018 corrected evaluation sweep — IU Big Red 200 (Slurm)
+# JICTASA-2026-018 corrected evaluation sweep — IU BigRed200 (A100, Slurm).
 #
-# Usage (from the repo root on the cluster, after one-time setup below):
-#   sbatch revision/runbook/run_evals_bigred200.sh
+# Submit from the repo root on the cluster (partition/qos at submit time, per
+# the account's convention — Quartz rejects qos-as-directive):
 #
-# One-time setup:
-#   1. Accept the meta-llama/Llama-2-7b-hf and meta-llama/Meta-Llama-3-8B
-#      licenses on huggingface.co while logged in.
-#   2. export HF_TOKEN=hf_...   (a READ token; or put it in ~/.bashrc)
-#   3. python -m venv ~/finistral-env && source ~/finistral-env/bin/activate
-#      pip install torch --index-url https://download.pytorch.org/whl/cu121
-#      pip install transformers==4.44.2 peft==0.11.1 accelerate==0.33.0 \
-#          bitsandbytes==0.43.3 datasets==2.20.0 scikit-learn pandas tqdm \
-#          sentencepiece
+#   BigRed200 A100:  sbatch --partition=gpu --qos=allocated-gpu \
+#                      revision/runbook/run_evals_bigred200.sh
+#   Quartz H100:     sbatch --partition=hopper --qos=hopper \
+#                      --export=ALL,PY_MODULE=python/gpu/3.11.5,VENV=/N/scratch/ayshaikh/venv-finistral-qz \
+#                      revision/runbook/run_evals_bigred200.sh
 #
-# Runs are resumable: finished (model, dataset) combinations are skipped, so
-# resubmitting the job after a timeout continues where it left off.
+# One-time prep:
+#   1. bash revision/runbook/setup_venv_bigred200.sh       (login node, ~10 min)
+#   2. HF read token in ~/.hf_token (chmod 600) — gated meta-llama repos
+#      require the licenses accepted on huggingface.co first.
+#
+# Resumable: finished (model, dataset) pairs are skipped on resubmit.
+# Expected wall time on one A100: ~2-3 h for the full 8x3 sweep.
 # =============================================================================
-#SBATCH -J finistral-eval
-#SBATCH -p gpu
-#SBATCH --gpus-per-node=1
+#SBATCH --job-name=finistral-eval
+#SBATCH --account=r01510
 #SBATCH --nodes=1
+#SBATCH --gpus-per-node=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH -t 04:00:00
-#SBATCH -o finistral-eval-%j.out
+#SBATCH --time=04:00:00
+#SBATCH --output=logs/slurm/finistral-eval-%j.out
+#SBATCH --error=logs/slurm/finistral-eval-%j.err
 
-set -euo pipefail
+set -uo pipefail
 
-module load python 2>/dev/null || true
-module load cudatoolkit 2>/dev/null || true
-source ~/finistral-env/bin/activate
+# --- Environment (BigRed200 is Cray/SLES: cray-python; Quartz overrides via
+#     --export=ALL,PY_MODULE=python/gpu/3.11.5) ---
+module load "${PY_MODULE:-cray-python/3.11.7}"
+VENV="${VENV:-/N/scratch/ayshaikh/venv-finistral}"
+# shellcheck disable=SC1090
+source "$VENV/bin/activate"
 
-: "${HF_TOKEN:?Set HF_TOKEN to a HuggingFace read token (gated Llama repos)}"
+# All caches on scratch — never the home NFS (quota + EIO history there).
+export HF_HOME=/N/scratch/ayshaikh/hf_cache
+export TMPDIR=/N/scratch/ayshaikh/tmp
+mkdir -p "$HF_HOME" "$TMPDIR"
 
-cd "$SLURM_SUBMIT_DIR"
-test -f data_eval/fpb_decontam.csv || { echo "data_eval/ missing"; exit 1; }
+if [ -z "${HF_TOKEN:-}" ] && [ -f "$HOME/.hf_token" ]; then
+  HF_TOKEN="$(tr -d '[:space:]' < "$HOME/.hf_token")"
+  export HF_TOKEN
+fi
+: "${HF_TOKEN:?No HF token: put a read token in ~/.hf_token or pass --export=ALL,HF_TOKEN=hf_...}"
 
-nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
+cd "${SLURM_SUBMIT_DIR:-$PWD}"
+test -f data_eval/fpb_decontam.csv || { echo "data_eval/ missing — run deploy first"; exit 1; }
+mkdir -p logs/slurm
+
+nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
+python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())"
 
 MODELS="finistral finistral_alpaca mistral_base fingpt_llama2 fingpt_llama3 fingpt_falcon fingpt_bloom finbert"
 DATASETS="fpb_decontam fiqa tfns"
@@ -52,7 +68,7 @@ for M in $MODELS; do
   done
 done
 
-# Latency micro-benchmark (see the Colab notebook cell 6 for the same logic).
+# --- Latency micro-benchmark (fills the manuscript's deployment claim) ---
 python - <<'EOF'
 import json, time, statistics, csv, importlib.util
 import torch
@@ -92,5 +108,4 @@ print(res)
 EOF
 
 tar czf results_fixed.tar.gz results_fixed/
-echo "Done. Copy results_fixed.tar.gz back to the local repo root:"
-echo "  scp <user>@bigred200.uits.iu.edu:$PWD/results_fixed.tar.gz ."
+echo "Done. From the Mac:  bash revision/runbook/deploy_bigred200.sh fetch"
