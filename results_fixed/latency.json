@@ -1,0 +1,10 @@
+{
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "dtype": "bfloat16",
+  "batch_size": 1,
+  "max_new_tokens": 8,
+  "decoding": "greedy",
+  "n": 50,
+  "median_ms": 65.5,
+  "p95_ms": 67.4
+}
