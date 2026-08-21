@@ -40,6 +40,10 @@ ALPACA = "Finistral-7B-LoRA (Alpaca prompt)"   # the template-ablation row
 
 def load_all(results_dir: str) -> pd.DataFrame:
     paths = sorted(glob.glob(os.path.join(results_dir, "*_predictions.csv")))
+    # Exclude our own concatenated output -- it matches the glob and would
+    # double-count every row on a second run.
+    paths = [p for p in paths
+             if os.path.basename(p) != "all_predictions.csv"]
     if not paths:
         raise SystemExit(f"no *_predictions.csv under {results_dir}")
     frames = []
