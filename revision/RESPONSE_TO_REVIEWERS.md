@@ -34,8 +34,8 @@ We recognize that these corrections substantially lower our headline numbers. We
 
 | # | Original claim (as submitted) | Status | Revised wording / action |
 |---|---|---|---|
-| C1 | "99.56% accuracy, state-of-the-art on Financial PhraseBank" | **Withdrawn** | "On a decontaminated, disjoint test set, Finistral-7B-LoRA attains [corrected acc/F1, expected ~0.80–0.90 range]; the original 99.56% reflects 75.2% train/test overlap and is not a generalization result." |
-| C2 | "+78 weighted-F1 over FinGPT baselines / outperforms by large margins" | **Withdrawn** | "Under a corrected harness, baselines score near their published ~0.84–0.86 accuracy; differences are modest and reported with significance tests." |
+| C1 | "99.56% accuracy, state-of-the-art on Financial PhraseBank" | **Withdrawn** | Measured: 98.93% on the decontaminated FPB-560 — but statistically indistinguishable from the strongest FinGPT baseline (98.57%, McNemar p=0.77), so no superiority claim is made there; the honest generalization evidence is external: 87.66% acc / 0.883 wF1 on FiQA-SA and 78.93% acc / 0.796 wF1 on TFNS. The original 99.56% reflects 75.2% train/test overlap and is not a generalization result. |
+| C2 | "+78 weighted-F1 over FinGPT baselines / outperforms by large margins" | **Withdrawn** | Measured under the corrected harness: FinGPT baselines recover to 89.5–98.6% on FPB-560 and 62–86% externally. Finistral's residual margins are modest and dataset-dependent — significant over some baselines (e.g. +6.9pt over FinGPT-Llama2 on FiQA, p=0.012), tied with others (Falcon on FiQA p=0.42; Llama-3 on TFNS p=0.41) — each reported with McNemar tests and bootstrap CIs. |
 | C3 | "Outperforms FinBERT by +3–6 accuracy points" | **Softened** | Either evaluated under an identical correct protocol, or stated explicitly as a literature-reported comparison with citation and matched split. |
 | C4 | "We utilise Unsloth … 2× faster, ~70% less VRAM" | **Removed** | Describe actual stack: `transformers` + `peft` + HF `Trainer` + gradient checkpointing + xFormers memory-efficient attention. `\cite{unsloth2023}` removed. |
 | C5 | "Backbone loaded in 8-bit NF4 (load_in_8bit=True)" during training | **Corrected** | "Training used bf16 full-precision weights with no quantization." The impossible "8-bit NF4" phrasing removed. |
@@ -69,7 +69,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 - **A silently-dropped quantization config** — `bnb_8bit_*` kwargs are not valid `BitsAndBytesConfig` parameters and resolve to plain int8.
 - **A neutral-defaulting parser** that scores corrupted generations as `neu`.
 
-**Action:** we rebuilt the harness (`eval_harness_fixed.py`): `padding_side='left'`, `max_new_tokens=8`, each baseline run under its own published inference procedure, a single consistent `Mistral-7B-v0.1` backbone, and corrected quantization. We report the corrected baseline numbers (expected near the published ~0.84–0.86 accuracy / ~0.84–0.92 F1) with full per-model configuration in an appendix.
+**Action:** we rebuilt the harness (`eval_harness_fixed.py`): `padding_side='left'`, `max_new_tokens=8`, each baseline run under its own published inference procedure, a single consistent `Mistral-7B-v0.1` backbone, and corrected quantization. Measured recovery under the corrected harness: the same adapters that scored 13–23% now score 89.5–98.6% on FPB-560 and 62–86% on the external sets — i.e., at or above their published ~0.84–0.86 range on in-style data — with full per-model configuration documented in the released registry.
 
 ## R1.3 — Possible data leakage; duplicate/near-duplicate analysis
 
@@ -127,7 +127,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R2.2 — Why do FinGPT baselines do dramatically worse than published?
 
-**Because our harness was broken, not because the models are weak.** As detailed in R1.2, right-padding, the `max_length` collision, a mismatched shared prompt, dropped quantization, and a neutral-default parser drove scores below the majority-class floor — an outcome no functioning model produces on FPB-AllAgree. **Action:** under the corrected harness we expect the FinGPT baselines to recover to their published ~0.84–0.86 accuracy; we report the corrected numbers and the corresponding shrinkage of Finistral's apparent margin.
+**Because our harness was broken, not because the models are weak.** As detailed in R1.2, right-padding, the `max_length` collision, a mismatched shared prompt, dropped quantization, and a neutral-default parser drove scores below the majority-class floor — an outcome no functioning model produces on FPB-AllAgree. **Action:** measured under the corrected harness, the FinGPT baselines recover to 89.5–98.6% on the decontaminated FPB set (meeting or exceeding their published ~0.84–0.86), and Finistral's apparent margin shrinks accordingly — from the withdrawn "+78 F1" to statistical parity with the strongest baseline on FPB-560 (p=0.77) and modest, individually-tested margins externally (revised Table 8).
 
 ## R2.3 — Were baselines evaluated per their original inference procedures?
 
