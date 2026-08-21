@@ -34,27 +34,7 @@ set -uo pipefail
 # --- Environment (BigRed200 is Cray/SLES: cray-python; Quartz overrides via
 #     --export=ALL,PY_MODULE=python/gpu/3.11.5) ---
 module load "${PY_MODULE:-cray-python/3.11.7}"
-NETWORK_VENV="${VENV:-/N/scratch/ayshaikh/venv-finistral}"
-
-# Stage the venv to node-local storage before activating it. Diagnosed cause
-# of repeated job stalls: importing large .so files (e.g. libtorch_cuda.so,
-# 861MB) directly off the Lustre-backed /N/scratch triggers mmap()-based
-# reads, which go through Lustre's distributed lock manager and can hang
-# indefinitely under cross-node lock contention (observed wchan=cl_sync_io_wait,
-# 0% CPU, process uninterruptible) -- even though a plain read()-based `dd`
-# of the SAME file from the SAME node succeeds instantly, because dd doesn't
-# mmap. Copying once to node-local /tmp (typically RAM-backed tmpfs on these
-# nodes) sidesteps Lustre's DLM for every subsequent import. Falls back to
-# the network venv if local staging fails (e.g. insufficient /tmp space).
-LOCAL_VENV="/tmp/venv-finistral-${SLURM_JOB_ID:-$$}"
-if cp -r "$NETWORK_VENV" "$LOCAL_VENV" 2>/dev/null; then
-  echo "[venv] staged to node-local $LOCAL_VENV ($(du -sh "$LOCAL_VENV" 2>/dev/null | cut -f1))"
-  VENV="$LOCAL_VENV"
-  trap 'rm -rf "$LOCAL_VENV"' EXIT
-else
-  echo "[venv] local staging failed; falling back to network venv $NETWORK_VENV"
-  VENV="$NETWORK_VENV"
-fi
+VENV="${VENV:-/N/scratch/ayshaikh/venv-finistral}"
 # shellcheck disable=SC1090
 source "$VENV/bin/activate"
 
@@ -83,9 +63,33 @@ test -f data_eval/fpb_decontam.csv || { echo "data_eval/ missing — run deploy 
 mkdir -p logs/slurm
 
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
-# Cap at 3 min: a hung Lustre client I/O wait (wchan=cl_sync_io_wait) can block
-# a fresh Python import indefinitely and silently eat the whole job's wall
-# clock; fail fast and loud instead so a resubmit is obviously needed.
+
+# Stage ONLY the torch package to node-local /tmp before importing it.
+# Diagnosis: importing torch directly from the Lustre-backed venv can hang
+# indefinitely (observed wchan=cl_sync_io_wait, 0% CPU, uninterruptible) --
+# a plain read()-based `dd` of the SAME large .so file (861MB
+# libtorch_cuda.so) from the SAME node succeeds instantly, because dd
+# doesn't mmap; torch's import does. This isolates the fault to mmap()
+# going through Lustre's distributed lock manager under contention.
+# IMPORTANT: a full-venv `cp -r` (thousands of small site-packages files)
+# was tried first and is WORSE -- it hung for 20+ min before even the
+# python-free `nvidia-smi` line above could run, consistent with
+# Lustre's metadata server being the actual bottleneck for many-small-file
+# operations, not just large-file mmap. Staging only the torch/ directory
+# (a handful of large binaries, few files) avoids that trap. Both the
+# staging copy and the subsequent import are timeout-guarded so a bad
+# attempt fails fast (under 5 min total) instead of hanging silently.
+SITE_PACKAGES="$(python -c 'import site; print(site.getsitepackages()[0])')"
+STAGE_DIR="/tmp/pystage-${SLURM_JOB_ID:-$$}"
+if timeout 120 cp -r "$SITE_PACKAGES/torch" "$STAGE_DIR/torch" 2>/dev/null; then
+  echo "[torch] staged to node-local $STAGE_DIR ($(du -sh "$STAGE_DIR" 2>/dev/null | cut -f1))"
+  export PYTHONPATH="$STAGE_DIR:${PYTHONPATH:-}"
+  trap 'rm -rf "$STAGE_DIR"' EXIT
+else
+  echo "[torch] local staging timed out/failed; falling back to network venv torch"
+  rm -rf "$STAGE_DIR" 2>/dev/null
+fi
+
 timeout 180 python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())" \
   || { echo "FATAL: torch import timed out/failed (possible stuck Lustre I/O on this node) -- resubmit."; exit 3; }
 
