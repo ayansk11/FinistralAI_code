@@ -1,0 +1,2 @@
+NVIDIA H100 80GB HBM3, 81559 MiB
+FATAL: torch import timed out/failed (possible stuck Lustre I/O on this node) -- resubmit.

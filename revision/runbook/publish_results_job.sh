@@ -17,10 +17,11 @@
 #SBATCH --time=00:30:00
 #SBATCH --output=/N/scratch/ayshaikh/FinistralAI_code/logs/slurm/publish-%j.out
 
-set -uo pipefail
+set -euo pipefail
 
 RESULTS_SRC=/N/scratch/ayshaikh/FinistralAI_code/results_fixed
-WORK=/N/scratch/ayshaikh/FinistralAI_repo
+# git object writes on /N/scratch hit ESTALE (job 8025162); use node-local /tmp.
+WORK="/tmp/finpub-${SLURM_JOB_ID:-$$}"
 GITSSH="ssh -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/N/scratch/ayshaikh/.known_hosts"
 
 test -d "$RESULTS_SRC" || { echo "no results_fixed/ to publish"; exit 1; }
@@ -42,3 +43,5 @@ git -c user.name="Ayan Javeed Shaikh (BigRed200)" -c user.email="ayshaikh@iu.edu
     commit -m "Eval results from BigRed200 (results_fixed snapshot, job ${SLURM_JOB_ID:-manual})"
 GIT_SSH_COMMAND="$GITSSH" git push -u origin "$BRANCH"
 echo "PUBLISHED branch $BRANCH"
+cd /
+rm -rf "$WORK"
