@@ -1,32 +1,32 @@
 [
   {
-    "model_key": "finbert",
-    "pretty": "FinBERT (ProsusAI)",
+    "model_key": "fingpt_bloom",
+    "pretty": "FinGPT-Bloom-7B1-LoRA",
     "seed": 0,
-    "accuracy": 0.7252423093131057,
-    "weighted_f1": 0.732860903949989,
-    "macro_f1": 0.6679456053910293,
+    "accuracy": 0.8946428571428572,
+    "weighted_f1": 0.8934150008483577,
+    "macro_f1": 0.8517192334198449,
     "unparseable_rate": 0.0,
-    "n": 2373,
-    "dataset": "tfns",
+    "n": 560,
+    "dataset": "fpb_decontam",
     "per_class": {
       "negative": {
-        "precision": 0.4934086629001883,
-        "recall": 0.7616279069767442,
-        "f1": 0.5988571428571429,
-        "support": 344
+        "precision": 0.821917808219178,
+        "recall": 0.7792207792207793,
+        "f1": 0.8,
+        "support": 77
       },
       "neutral": {
-        "precision": 0.8535170413343002,
-        "recall": 0.7559409120102761,
-        "f1": 0.8017711171662125,
-        "support": 1557
+        "precision": 0.931129476584022,
+        "recall": 0.9575070821529745,
+        "f1": 0.9441340782122905,
+        "support": 353
       },
       "positive": {
-        "precision": 0.6090712742980562,
-        "recall": 0.597457627118644,
-        "f1": 0.6032085561497326,
-        "support": 472
+        "precision": 0.8306451612903226,
+        "recall": 0.7923076923076923,
+        "f1": 0.8110236220472441,
+        "support": 130
       }
     }
   }

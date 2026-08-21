@@ -1,4 +1,0 @@
-,pred_negative,pred_neutral,pred_positive,pred_UNPARSEABLE
-true_negative,76,0,1,0
-true_neutral,5,340,8,0
-true_positive,5,1,124,0

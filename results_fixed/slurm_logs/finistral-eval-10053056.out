@@ -1,0 +1,2 @@
+Tesla V100-PCIE-32GB, 32768 MiB
+FATAL: torch import timed out/failed (possible stuck Lustre I/O on this node) -- resubmit.
