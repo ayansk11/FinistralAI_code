@@ -195,6 +195,12 @@ def _to_label_string(value) -> str:
     # Direct exact matches first (fast path).
     if s in CLASS_TO_ID:
         return s
+    # The corrected harness's strict parser emits 'UNPARSEABLE' for outputs
+    # containing no class word (id -1, always counted as an error). Keep it
+    # as its own category: it is excluded from per-class panels but its rate
+    # is reported, matching eval_harness_fixed.py's treatment.
+    if s == "unparseable":
+        return "unparseable"
     # Short-code / substring search (mirrors the notebooks' extract_sentiment).
     if s.startswith("neg") or "negative" in s:
         return "negative"
@@ -229,7 +235,10 @@ def load_predictions(pred_csv: str) -> pd.DataFrame:
         df[cols["model"]].astype(str) if "model" in cols else "model"
     )
     out["true_id"] = out["true_label"].map(CLASS_TO_ID)
-    out["pred_id"] = out["pred_label"].map(CLASS_TO_ID)
+    # 'unparseable' predictions map to id -1 (outside the class space, always
+    # an error) so sklearn calls with labels=[0,1,2] handle them correctly.
+    out["pred_id"] = out["pred_label"].map(
+        lambda s: CLASS_TO_ID.get(s, -1)).astype(int)
 
     # ---- Soft scores: prefer explicit probabilities, else softmax log-probs --
     score_cols = [f"score_{c}" for c in CLASSES]

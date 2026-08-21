@@ -1,0 +1,551 @@
+model,sentence,true_label,pred_label,error_categories,primary_category
+Finistral-7B-LoRA,Italy may be willing to compromise on its holdout against a German plan for further integration of the EU’s banking… https://t.co/6z5rU3nonk,neutral,positive,conditional_hedge;sarcasm_irony,conditional_hedge
+Finistral-7B-LoRA,"WATCH: Unilever, Henkel and as well as some buyout funds could be in the market for some of Coty's brands in a deal… https://t.co/VZFaz5oTOn",neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,"Exxon and Papua New Guinea should return to LNG negotiating table, says Total CEO",neutral,positive,conditional_hedge;entity_confusion,conditional_hedge
+Finistral-7B-LoRA,OPEC and Russia postponed a meeting that could end a price war and reduce a supply glut that has driven oil futures… https://t.co/FfJ65bScoJ,neutral,negative,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,U.S. should stop preventing Iran from selling oil - Iran foreign minister #economy #MarketScreener… https://t.co/KXV6FrmF1S,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,"U.S. banks will likely be allowed to keep paying dividends, even as the coronavirus pandemic threatens to create a… https://t.co/AjsqnpfOdJ",positive,neutral,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,If you are throwing deep you definitely want to be targeting Blake Jarwin lol,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,If you make your dream a priority long enough... it comes true. https://t.co/mk5TSWxly6,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,"Joseph Stiglitz, a Nobel-Prize winning economist, says cryptocurrencies should be shut down. Here's why.… https://t.co/qpEnoXPS96",neutral,negative,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,"LISTEN NOW: Trade news is in focus today, as progress is made on the USMCA and China tariffs reportedly could be de… https://t.co/FWS9MkuY65",neutral,positive,conditional_hedge;entity_confusion,conditional_hedge
+Finistral-7B-LoRA,The man once dubbed 'Britain's Bill Gates' could be one step closer to a US jail,neutral,negative,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,Why Accelerated Approval Could Be Huge for This Ovarian Cancer Study,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,Why paying down your mortgage faster could be a good investment strategy https://t.co/mUrPzoRwaf,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,World’s Biggest Reservoir May Stop Power Output Amid Drought,neutral,negative,conditional_hedge;sarcasm_irony,conditional_hedge
+Finistral-7B-LoRA,"Robert Tombs: 'There may be some short-term disturbance. But Brexit is economically rational' 
+https://t.co/GznnjuD55S",neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,Trump Budget Would Ax Loan Program Sought to Revive Lordstown Plant,neutral,negative,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,"MedMen's CEO Resigned, and These Pot Stock CEOs Could Be Next",neutral,negative,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,5 Stocks With January Bounce-Back Potential,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,"Should You Avoid Sykes Enterprises, Incorporated (SYKE)?",neutral,negative,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,These Stocks Could Bounce High in January and Beyond,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,Marvell Technology (MRVL) Gains As Market Dips: What You Should Know - Nasdaq,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,BioTie North-American licensing partner Somaxon Pharmaceuticals started a phase II-III clinical study in patients suffering from pathological gambling and a pilot phase II study in nicotine addiction smoking cessation .,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,SKYCITY Entertainment : NOTICE OF ON-MARKET SHARE BUY BACK #SKYCITY #Stock #MarketScreener https://t.co/PYHdNhcr3k https://t.co/5J1DH6NFBI,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Chinese Gas Buyer CNOOC Declares Force Majeure on LNG Contracts,neutral,negative,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Investors shrugged off a WSJ report that said the US and China are working on a deal to delay the next round of Ame… https://t.co/D4CJFfE98t,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,New Cortec PE fund biggest winner from latest Texas CDRS pension commitments,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,CME : Volatility in New York gold prices impacting liquidity in London - LBMA #CME #Stock #MarketScreener… https://t.co/8ILGYoJHzS,negative,neutral,entity_confusion,entity_confusion
+Finistral-7B-LoRA,"Merger Monday roars back — LVMH buys Tiffany, Charles Schwab buys TD Ameritrade",neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,IFA Irish Farmers Association : EU COMMISSION INDICATE THAT CAP TRANSITIONAL RULES FACILITATE THE REOPENING OF GLAS… https://t.co/mcHUiy15CH,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,NYSE Closing Bell 🔔:     Telecom Argentina (NYSE: TEO) celebrates their 25th Anniversary Listing https://t.co/EemF9wG8iW,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Companies Like Juggernaut Exploration (CVE:JUGR) Can Be Considered Quite Risky,negative,neutral,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Hedge Funds Had Impeccable Timing Buying Myovant Sciences Ltd. (MYOV),neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Hedge Funds Love These 3 Peers Way More Than China Petroleum & Chemical Corp (SNP),neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Here's What We Like About DCC plc (LON:DCC)'s Upcoming Dividend,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,"JUST IN: Slack shares halted for pending news.
+
+https://t.co/jn8limUSe7",negative,neutral,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Yields head lower despite strong economic numbers,neutral,negative,mixed_sentiment,mixed_sentiment
+Finistral-7B-LoRA,Mandiri Warns of Risk to Loan Growth From Virus Outbreak,neutral,negative,mixed_sentiment,mixed_sentiment
+Finistral-7B-LoRA,Barclays Bonds Rise as Lender Cuts Dividends to Shore Up Capital,positive,negative,negation;mixed_sentiment,negation
+Finistral-7B-LoRA,RT @tomhend777 $MU needs to hold here -Broken for now. Needs big flush. Still not technically oversold so now big bounce yet,neutral,negative,negation;numeric_guidance;entity_confusion,negation
+Finistral-7B-LoRA,$TRIP maintains Neutral rating at JP Morgan- PT cut $61 from $66,neutral,negative,negation;numeric_guidance;entity_confusion,negation
+Finistral-7B-LoRA,@scottrade Why is $tsla not available for shorting at this time?  Same for $w?,negative,neutral,negation;numeric_guidance,negation
+Finistral-7B-LoRA,"No, The Fed Won't ""Save The Market"" - Here's Why  https://t.co/Ibq99qWSFz",negative,neutral,negation;sarcasm_irony,negation
+Finistral-7B-LoRA,"Two weeks later, no change, Fed ain't stopping the selling",neutral,negative,negation,negation
+Finistral-7B-LoRA,Fiat Chrysler Relies on Ram Growth as Europe Losses Mount,negative,neutral,negation;mixed_sentiment,negation
+Finistral-7B-LoRA,Activision Blizzard’s Revenue To See Double-Digit Decline In 2019?,neutral,negative,negation;numeric_guidance;sarcasm_irony,negation
+Finistral-7B-LoRA,Maruti Suzuki Says India Not Ready For EVs As Peers Take The Plunge,neutral,negative,negation,negation
+Finistral-7B-LoRA,"MMTC To Import 6,090 Tonne Onion To Boost Supply, Cut Prices",neutral,positive,negation;numeric_guidance,negation
+Finistral-7B-LoRA,"PG&E to cut power to 150,000 customer for fire risk",neutral,negative,negation;numeric_guidance,negation
+Finistral-7B-LoRA,T-Mobile moves not enough to address concerns - New York AG,neutral,negative,negation,negation
+Finistral-7B-LoRA,UAE says Emirates pilots did not monitor settings in 2016 crash,neutral,negative,negation;numeric_guidance,negation
+Finistral-7B-LoRA,"VF : to Draw Down $1 Billion From Credit Facility, Cuts CEO's Pay by 50% #VF #Stock #MarketScreener… https://t.co/ZWMiFpYcfy",neutral,negative,negation;numeric_guidance;entity_confusion,negation
+Finistral-7B-LoRA,Was Five Star Senior Living Inc.'s (NASDAQ:FVE) Earnings Decline Part Of A Broader Industry Downturn?,negative,neutral,negation;entity_confusion,negation
+Finistral-7B-LoRA,"Largest coal plant in the West shuts down, dealing financial losses to Native American tribes",negative,positive,negation,negation
+Finistral-7B-LoRA,"The U.S. cut its oil output forecast by more than 1 million barrels a day, days before OPEC and other producers mee… https://t.co/1ileJAr6cD",negative,positive,negation;numeric_guidance,negation
+Finistral-7B-LoRA,Russia Asks for Time as OPEC+ Technocrats Recommend Oil Cut,neutral,positive,negation,negation
+Finistral-7B-LoRA,$USO $XLE $OIL - No oil market fix from today's G-20 meeting https://t.co/la6aPsRBh6,neutral,negative,negation;numeric_guidance;entity_confusion,negation
+Finistral-7B-LoRA,December bump in oil prices not enough to salvage energy earnings #Samp;P500 #economy #MarketScreener… https://t.co/oi6a3rLykt,neutral,negative,negation,negation
+Finistral-7B-LoRA,Oil - Low Refinery Throughput Does Not Appear To Be A Structural Issue Just Yet. Follow this and any other stock on… https://t.co/kmQg86qyXL,neutral,positive,negation,negation
+Finistral-7B-LoRA,EUR/USD Failure of 1-2-3 Pattern Might be Bullish,positive,neutral,negation;numeric_guidance;conditional_hedge;entity_confusion,negation
+Finistral-7B-LoRA,"""Cash is trash? No, cash is king! Especially when the discounts come along on high-quality stocks.""... https://t.co/7D0mmjE7xl",neutral,positive,negation;sarcasm_irony,negation
+Finistral-7B-LoRA,"""CO2 emissions aren't reducing, they are in fact increasing,"" @GretaThunberg says at #COP25. ""We have achieved noth… https://t.co/EP3atEwq2M",neutral,negative,negation;sarcasm_irony,negation
+Finistral-7B-LoRA,"""I find this worship no different from the regular worship at a church so I am delighted.""
+
+A church in South Korea… https://t.co/MnibZjnsFJ",neutral,positive,negation;sarcasm_irony,negation
+Finistral-7B-LoRA,$PBF - PBF Energy: A Mexican Billionaire Can't Get Enough Of This New Jersey Refiner. https://t.co/ouNSD0zChc #markets #finance #trading,neutral,positive,negation;numeric_guidance,negation
+Finistral-7B-LoRA,Expense report fraud opening the door to bigger financial losses,neutral,negative,negation,negation
+Finistral-7B-LoRA,'I can't afford that': Woman in student loan limbo since 1997 decries a muddy system,neutral,negative,negation;numeric_guidance,negation
+Finistral-7B-LoRA,It doesn't pay to be a stock picker anymore. https://t.co/amkOz3dTxj https://t.co/6e50u9TPuU,neutral,negative,negation,negation
+Finistral-7B-LoRA,"No Insurance Policy? Lisa Page Sues FBI, DOJ For ""Unlawful"" Disclosure Of Strozk Texts https://t.co/0nqyroM0jD",neutral,negative,negation;sarcasm_irony;entity_confusion,negation
+Finistral-7B-LoRA,OPEC Considers Oil Output Cut; Tesla Shuts Stores: Virus Update,neutral,positive,negation,negation
+Finistral-7B-LoRA,Qatar Not in Talks Yet With U.A.E. Over Healing Rift,neutral,negative,negation,negation
+Finistral-7B-LoRA,"The JEDI suit isn't about Star Wars.
+
+Amazon is suing the Pentagon because it gave Microsoft a cloud computing cont… https://t.co/VAQytv4kJ3",neutral,negative,negation,negation
+Finistral-7B-LoRA,"The U.S. reopening its market to Brazilian fresh beef is a matter of when, not if https://t.co/Jr2lcHzJOr",neutral,positive,negation;conditional_hedge,negation
+Finistral-7B-LoRA,"Wall Street Has Plans for Newspapers, and They Aren't Pretty",neutral,negative,negation,negation
+Finistral-7B-LoRA,Will the yen see a decline in popularity as more countries enter zero-rate territory? Insights via @CMEGroup https://t.co/zPR2qSO8Pq,neutral,negative,negation,negation
+Finistral-7B-LoRA,$INFY: Infosys to acquire cloud solutions company Simplus; terms not disclosed https://t.co/yYMwyRYblI,neutral,positive,negation;numeric_guidance,negation
+Finistral-7B-LoRA,"Edgewell Personal Care, which owns Schick, said it is no longer pursuing the $1.4 billion deal to buy Harry's Razor… https://t.co/P3wTZL4p3t",neutral,negative,negation;numeric_guidance,negation
+Finistral-7B-LoRA,Britain seeking far-reaching tariff cuts in post Brexit U.S. trade deal,neutral,positive,negation,negation
+Finistral-7B-LoRA,China's mutant pigs could help save the nation from a pork apocalypse. That's if the U.S. doesn't create super swin… https://t.co/wcwdQAmpK4,neutral,positive,negation;conditional_hedge,negation
+Finistral-7B-LoRA,Greenhouse gas emissions in the U.S. are forecast to decline by a whopping 7.5% this year https://t.co/MjBXKkouHy,neutral,positive,negation;numeric_guidance,negation
+Finistral-7B-LoRA,New Zealand's resurgent housing market could get a rate-cut boost https://t.co/OMD3CqZ03T,neutral,positive,negation;conditional_hedge,negation
+Finistral-7B-LoRA,"Stocks Rally, Oil Drops at Start of Challenging Week #SP500 #index #MarketScreener https://t.co/zvaSvRqcdt https://t.co/Pw0UVqFuo3",neutral,positive,negation,negation
+Finistral-7B-LoRA,Canada rail workers’ strike tests weakened Trudeau https://t.co/158wnVBdda,neutral,negative,negation;sarcasm_irony,negation
+Finistral-7B-LoRA,"Trump budget would cut loan program used by Tesla, Ford https://t.co/7MnkFWUnrp",neutral,negative,negation;conditional_hedge,negation
+Finistral-7B-LoRA,Hong Kong ETF May Not Turn Around Anytime Soon,neutral,negative,negation;conditional_hedge,negation
+Finistral-7B-LoRA,How Much Have Harley-Davidson’s Shipments Fallen Since 2014?,neutral,negative,negation;numeric_guidance;sarcasm_irony,negation
+Finistral-7B-LoRA,Imagine Owning Apex Global Brands (NASDAQ:APEX) And Taking A 98% Loss Square On The Chin,neutral,negative,negation;numeric_guidance,negation
+Finistral-7B-LoRA,RBS Pays $1.7 Billion to Scrap U.K. Treasury's Dividend Rights,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,How Kraft-Heinz Merger Came Together in Speedy 10 Weeks,positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Sold out $TZA 45 $PUT (down $1), which were hedging my 45 $CALL. Letting the calls ride solo now.",positive,negative,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$SPY bull move ended waiting for next setup,negative,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$NIHD insiders got this one wrong. Looking for bottom. Rsi under 30,negative,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$KCG bot at 2.24,positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Current holdings via options - Long: $AAPL $V $GS $AET & Short: $VXX,positive,neutral,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$PRGN A bottom right here?,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,@saltwaternurse $INO can test 10 again in next few days. time to take some profits here. or hedge with puts.,negative,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,@technik I still have a smaller $GILD pos. Being very tender with cash due to volatility. So reluctant to keep many big positions.,positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,GKN to buy Fokker Technologies for 706 mln euros,positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Locked in some $FB puts for nice gain,negative,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,The non-recurring costs caused to Talentum 's Premedia business area by the restructuring will amount to 2.0 mln euro $ 2.7 mln and will be included in the company 's financial results for the second quarter of 2007 .,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Highlight: Edward Jones Sr. Equity Analyst Jennifer Roland on ExxonMobil reducing 2020 Capex by 30%: “Definitely a… https://t.co/dH0xlJujc1,positive,negative,numeric_guidance;sarcasm_irony,numeric_guidance
+Finistral-7B-LoRA,Analysts Expect Breakeven For China Online Education Group (NYSE:COE),neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Bank agencies announced they'll temporarily lower the community bank leverage ratio to 8%. The rule change - requir… https://t.co/m6N7S7zEwo,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Spain to guarantee up to 80% of SME bank loans to ease virus impact #economy #MarketScreener https://t.co/SAmTS65y1z https://t.co/JFT2FzyZVp,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$CVX - Chevron ramps output at key Venezuela oil project as U.S. weighs sanctions https://t.co/o4g9WuvJfo,positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$AUDC: AudioCodes enters into royalty buyout agreement with the Israel National Authority for Technology and... https://t.co/YVzJTV68bn,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$EQNR $SU - Siccar Point attracts bids as high as nearly $2B - Reuters https://t.co/CMSO3XjoN1,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$INTI - Inhibitor Therapeutics to start prostate cancer treatment trial https://t.co/hKmHpHCXGJ,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$ITRN - Margins suffer at Ituran Location in Q3 https://t.co/cCI94Csl3s,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$LJPC (halted pre) La Jolla Pharmaceutical (LJPC) to Reassess Continued Development of LJPC-401 Based on Recent Mix… https://t.co/8wDkULKz7f,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$MDGL - Madrigal launches 1.2M-share stock offering by current investor https://t.co/V3c2xhnDBB,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$REGN: Regeneron Pharma and Sanofi (SNY) restructure Kevzara and Paluent agreement https://t.co/PH1vNcbN28,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$XON: Intrexon to achieve $175 mln cash goal; appoints Helen Sabzevari as New President and CEO; will change name t… https://t.co/1Yt9sU0plb,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"3M is exploring a sale of its drug delivery systems unit, which could fetch about $1 billion https://t.co/ISlbwO3FCd",neutral,positive,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,Alibaba on track to raise $12.9 billion in Hong Kong listing - CNN,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Alibaba share sale for $13.B Hong Kong listing oversubscribed,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Auto Expo 2020: JBM To Invest Rs 500 Crore In Electric Bus Business,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Balance Point already near goal for new fundraise, just a year after $380m Fund III close",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Berenberg expects higher offer for LogMeIn,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Boeing announces additional order for 737 MAX planes,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Boeing gets 10 additional orders for 737 MAX 8 planes valued at $1.2 billion from SunExpress,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Brookfield Asset Management closes $20B infrastructure fund,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,CAE : completes upgrades of CT-156 and CT-155 FTDs for NFTC program at 15 Wing Moose Jaw #CAE #Stock… https://t.co/QtvyZaPnzE,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Cambridge Cognition : expands eCOA offering and wins contract with top 10 pharmaceutical c... #CambridgeCognition… https://t.co/KG7utY8LZm,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"CG Power Gets Shareholders Nod To Raise Rs 5,000 Crore",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Crunch talks lead to Emirates order for 30 Boeing Dreamliners,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Emirates orders 30 Boeing 787 Dreamliners,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Germany's Condor sets ambitious margin target to court buyers https://t.co/COG93noQDO https://t.co/uTis2d6Fix,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,GM and South Korea’s LG Chem set $2.3 billion electric-vehicle-battery venture in Ohio. The joint venture is expect… https://t.co/px1loY3FYe,neutral,positive,numeric_guidance;sarcasm_irony;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Hedge fund Two Sigma builds private equity power with $1.2bn debut Sightway Capital fund close,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Marubeni : 10 Year Extension of Production Sharing Contract for Ravva Oil and Gas Field in... #Marubeni #Stock… https://t.co/4lYEQ2SMIF,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Morgan Stanley pushes advisers to boost revenue in 2020 pay plan -sources,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Netflix : Says 26.4 Million Users Watched 'The Irishman' in First Week #Netflix #Stock #MarketScreener… https://t.co/sSRSMs74uw,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"New investment by Carlyle, others values American Express Global Business Travel at $5 billion--WSJ",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Next: Charles Amerischwab pays clients to trade on its platform, crushes E-Trade stock and then buys it 80% off.",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Nike's Vaporfly running sneakers to be allowed in 2020 Olympics https://t.co/zokAlame0K,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,NYC pension leader targets three utilities over emissions plans,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,REGO Restaurant Group Inks 20-store Development Deal for Quiznos Expansion into Latin America,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Respimat® re-usable inhaler wins 2020 Pharmapack Eco-Design Award,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Semafo to restart mining at its Boungou in Q4; provides 2020 outlook,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Struggling British luxury carmaker Aston Martin aims to rustle up a $650 million capital boost, led by Canadian bil... https://t.co/tpgeI6vmuo",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,The latest marker of Chinese interest in African fintech is a $120 million funding round for OPay,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Uber's arrival caused binge drinking to increase up to 21.8% and a possible decrease in drunk driving. Here's a lo… https://t.co/4h7tuhLp1B,neutral,positive,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,UPDATE 2-Crunch talks lead to Emirates order for 30 Boeing Dreamliners,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"VTEX, an e-commerce platform used by Walmart, raises $140M led by SoftBank's LatAm fund https://t.co/UJ2s2wUYPD via… https://t.co/sATiJD3uQM",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Press release: cyber attack - update January 31, 2020 #Picanol #Stock #MarketScreener https://t.co/AXwQmrRC3G https://t.co/e4KSKzdmA9",negative,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,10Y Yield LOD 1.7620%,negative,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,30-year Treasury yield plumbs key 2% support level https://t.co/g1AUTKwOCb,negative,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$ITHUF - iAnthus Defaults On Debt: What Comes Next?. https://t.co/3Tb0wenS3x #investing #economy #finance,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,8x8 -2.9% on $75M convertible note issue,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"A group of investors agreed to a tentative plan to reduce Puerto Rico's debt by about 40%, a key hurdle in its reco… https://t.co/KZK55OaEmp",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,B. Riley offers $50M of senior notes,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,B. Riley prices upsized $115M offering of notes,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,.@BruceKamich digs into Palo Alto $PANW charts ahead of earnings:   https://t.co/9bh2ztu5Yv,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,How Driller Helmerich & Payne Scored a Q1 2020 Earnings Beat,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$UNG $WMB $XLE - U.S. oil firms vented or flared record amount of gas in 2018 https://t.co/JxF5CcvNyo,positive,negative,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Crude Oil Price Forecast – Could Oil Markets Take A Hit,neutral,negative,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,Oil Price Fundamental Daily Forecast – Lack of Details Over Trade Deal Progress Capping Prices,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$UNG $DGAZ $UGAZ - Natural gas inventory draw in-line with estimates https://t.co/bdJKXSH7Ye,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Ecuador awards 20.2 mln barrel oil supply contract to Shell unit #economy #MarketScreener https://t.co/f9C9uAR7lG https://t.co/KrI5G5eZJO,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Target Hospitality Corp. Just Missed EPS By 34%: Here's What Analysts Think Will Happen Next,negative,neutral,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"Domtar EPS misses by $0.05,  revenue in-line",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Philip Morris profit and sales top estimates but tobacco company offers soft guidance,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Twin River Worldwide Holdings, Inc. Just Missed EPS By 44%: Here's What Analysts Think Will Happen Next",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,U.S. Dollar Index Futures (DX) Technical Analysis – Looking for Break into Retracement Zone at 97.630 to 97.472,negative,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,USD/JPY Forecast: USD to Consolidate Against JPY - DailyForex.com,positive,neutral,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,USD/JPY Weekly Price Forecast – Dollar Continues To Test Resistance,positive,neutral,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"$BA - Boeing plane skids off runway in Istanbul, killing one passenger https://t.co/IBHUB8yLOO",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"A couple claims a 500-pound, $280-million emerald was destroyed when their house burned down in California's worst-… https://t.co/jJFqUHN5qr",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"As Illinois Legalizes Marijuana, Cook County Prosecutor Vacates Over 1,000 Low-Level Cannabis Convictions",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"EY has put 100 jobs in its financial consulting unit at risk of redundancy
+https://t.co/d63wR7xMfR",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Foroohar: 2020 Election Poses Risk To Silicon Valley Tech Giants. Get more updates here: https://t.co/9UzZfKJoGd #business #finance #economy,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Japan Post Probe Finds 9,000 Cases of Missold Insurance: Yomiuri",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Marvel Comics 1 torches record with $1.26M sale at auction https://t.co/ZCIXTnGfPG via @FoxBusiness https://t.co/09Sj0PfU9H,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"More than 140,000 people died from measles last year, according to new estimates from the World Health Organization… https://t.co/hdvfswYuFA",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Mountain America’s Free Adoption Event Saves Over 160 Pets at the Humane Society of Utah  https://t.co/SAkC0zncke,neutral,positive,numeric_guidance;sarcasm_irony,numeric_guidance
+Finistral-7B-LoRA,NBC’s Today Co-anchors Savannah Guthrie and Hoda Kotb to Be Honored at 2020 Outstanding Mother Awards,neutral,positive,numeric_guidance;sarcasm_irony;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,New for subscribers:  This mutual fund returned over 400% last decade. Here are the stocks it's betting on now... https://t.co/8H17ZdXvNJ,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,New York Governor Cuomo notes hospitalizations down sharply @Street_Insider $SPY,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"On this day in 1994 Orange County, California filed for bankruptcy protection after interest rate swaps imploded in… https://t.co/NatWmeuiIg",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,RECAP 1/31 TRUMPSAYS: THE BEST IS YET TO COME! Live Breaking trading news https://t.co/yChRCoaR8v,neutral,positive,numeric_guidance;sarcasm_irony;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,The Big Picture: More to the good employment report than job growth $SPY $TNX-- https://t.co/w4dAzYCmAz… https://t.co/6a6tdtLR2k,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,The MTA's 2020 resolution: bring contactless payments to all subway stations and buses by the end of the year. https://t.co/5OJSrin71m,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,The US has added waiters and bartenders in 112 of the past 11 7 months https://t.co/b1LS0U7EUi,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Trade war. Possible recession. Presidential election.
+
+Here are the 3 stocks you need heading into 2020. 
+
+https://t.co/fdcXiqwKpw",neutral,negative,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,Wall Street's Finest Walk Into a $2 Trillion Mess on Saudi Aramco,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"🖥️ Google new quantum computer that can perform computations in 200 seconds that otherwise would take 10,000 years https://t.co/wxZxiFnotV",neutral,positive,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,Meritex Enters Dallas Market With Acquisition of Jetstar 114 Business Center,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,OneWater Marine raised $55.4 mln in the IPO,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"PPD's stock indicated in early going to open at $30, or 11% above $27 IPO price",neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Bayer seeks reversal of $86M Roundup cancer verdict,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,U.S. arrests three in alleged $722 million cryptocurrency fraud https://t.co/r7JbcAUepE https://t.co/I6DBZ4xKzB,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$AMTD $SCHW - Schwab to buy TD Ameritrade in $26B all-stock deal https://t.co/eycEc0Nye9,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$BYND - Susquehanna holds stake in Beyond Meat https://t.co/RIuPccbwsX,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"$CBS: CBS/Viacom (VIAB) expect to close merger on Wednesday, December 4th https://t.co/UuC8Oj9MAP",neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$GATX: GATX enters into stock purchase agreement for the sale of its American Steamship Company business to Rand... https://t.co/FgdxBcYBd9,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$LCII - LCI Industries lands Polyplastic https://t.co/t6omAq06sK,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$NVS - Novartis: Swiss Pharmaceutical Titan On Sale. https://t.co/FI5wU6MyeC #investing #markets #stocks,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$RMLRF $TRYUF - Ramelius Resources to scoop up Spectrum Metals https://t.co/5gqMvy0sSS,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$SRNE: Sorrento Therapeutics says rejects cash acquisition proposal for between $3.00-5.00/share https://t.co/ib0vORvPPF,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$TCO: Taubman Centers: Simon Property Group to acquire TCO for $52.50 per share in cash https://t.co/WbnGpQwuiR,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$TD $SCHW $AMTD - TD Bank to own 13% Schwab stake after Ameritrade deal https://t.co/oqmaKzAJTW,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"$TIF: Tiffany & Co confirms agreement to be acquired by LVMH (LVMUY) for $135/share in cash, or approximately $16.2… https://t.co/xhNzqZ8PVx",neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,AE Industrial Partners buys American Pacific from Jon M Huntsman family office,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Alkermes acquires Rodin Therapeutics for up to $950M,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Charles Schwab to buy TD Ameritrade in $26 billion all-stock deal https://t.co/1wEXNU4RV0,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Charles Schwab to buy TD Ameritrade in $26-billion blockbuster brokerage deal,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Chinese dairy giant Mengniu agrees to buy Kirin's Australian beverage unit Lion for $419 million https://t.co/O3gL3uOfY8,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Chubb to buy stake in China's Huatai Insurance for $1.53 billion #economy #MarketScreener https://t.co/sUAx6evkmj https://t.co/DVUL8EMQ0t,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Coty Acquires $600M Majority Stake In Kylie Jenner's Cosmetics Company,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"CVC Capital said to consider strategic options for Elsan, sale could reach €3bn",neutral,positive,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,Factbox: M&As in vogue for luxury retailers seeking growth,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Forescout expects deal to close in Q2,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Hologic to sell Cynosure aesthetics unit for net $138M,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,IFF Said to Near $26 Billion Deal for DuPont Nutrition Unit,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,LVMH nears deal to buy Tiffany for $16.3 billion https://t.co/SlI2ZpyYhH,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,M&A Monday: Charles Schwab to buy TD Ameritrade https://t.co/MF0tOYzLjI https://t.co/bwWCGuIzCY,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Medicines : Novartis to buy U.S. biotech The Medicines Co. for $9.7 billion #Medicines #Stock #MarketScreener… https://t.co/TA05wVBHcd,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"NOVARTIS : CHF0.50(REGD) Novartis To Acquire The Medicines Company For Usd 9.7 Bn, Adding ... #Novartis #Stock… https://t.co/TEgmm5XKnN",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Razor maker Edgewell calls off $1.7bn plans to buy rival Harry's https://t.co/m57n68T5WK,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Rexford Industrial acquires two industrial properties for $99.7M,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,SIX Group Offers to Buy Spanish Exchange BME for $3.1 Billion,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Swiss pharma company Novartis has reached a deal to purchase cholesterol drugmaker The Medicines Company for $9.7 b… https://t.co/AmTfZh6WEG,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$ECONX: October Wholesale Inventories M/M -0.7% vs +0.2% https://t.co/M9gpUZQoF7 consensus https://t.co/FnLMSxNhlq,positive,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Consumer credit $18.9BN, Exp. $16BN, Last $9.6BN",positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Global air passenger traffic has grown at 4% YoY in 2019 ytd while air freight volumes contracted 4% over the same period: BofA,positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Morgan Stanley Sees Lower Truck Capacity, Higher Rates In 2020",neutral,negative,numeric_guidance;mixed_sentiment,numeric_guidance
+Finistral-7B-LoRA,Nearly 148 Million Americans Plan to Shop Super Saturday,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Retail Loans To Double To Rs 96 Lakh-Crore In Five Years, Says Crisil",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$EWW $MXF $MXE - White House is pushing to get USMCA through Congress this year https://t.co/YoGu0kKCCp,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"95% Approval Rate in the Republican Party, a record! Thank you!",neutral,positive,numeric_guidance;sarcasm_irony,numeric_guidance
+Finistral-7B-LoRA,U.S. treasury secretary to seek additional $250 billion for small business #economy #MarketScreener… https://t.co/ph3JNP4W9h,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$TIF $LVMHF - Luxury sector shakeup sends investors scrambling https://t.co/IWVWNxN0hy,negative,neutral,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$BOXL loading up again !!! Last month K Laser Technology reported 30.2% Stake. https://t.co/Gd2jtkHBJE,positive,neutral,numeric_guidance;sarcasm_irony,numeric_guidance
+Finistral-7B-LoRA,"$TSM - Taiwan Semiconductor: Visibility May Be Limited In The Near-Term, But Long-Term Growth Outlook Is Favorable.… https://t.co/8CxDEK114Z",positive,neutral,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,“It’s my biggest holding.” Mark Cuban says he has nearly $1 billion in Amazon stock. https://t.co/5OLyDMTAdb,positive,neutral,numeric_guidance;sarcasm_irony,numeric_guidance
+Finistral-7B-LoRA,$ACRGF - Acreage Holdings: The Best Investment In The Cannabis Space. Subscribe to Seeking Alpha for more:… https://t.co/qmq8yM9GFa,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$CEI non stop ion after-hours. $GBR deserves some attention,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$ES equilibrium is 3107.50-3108  Long if either open is above 3108 and goes bid above the open. Look for some resis… https://t.co/ifVCk5Vh6r,neutral,positive,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,$GDP - Goodrich Petroleum Corp.: A Solid Play. https://t.co/spGL5EIBuG #stockmarket #economy #stocks,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"$GOOG $GOOGL - Alphabet: Flying Right To $1,700. Read more and get updates on any stock! https://t.co/cdftwzEnYJ #economy #finance #markets",neutral,positive,numeric_guidance;sarcasm_irony;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$GPRO strong action.,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"$HSIC 
+Brought to my attention by fellow AOT member @Radim7204 !
+Really liking how this one is setting up going int… https://t.co/jcQsKjL6Ok",neutral,positive,numeric_guidance;sarcasm_irony;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$KRUS fresh breakout and at resistance. https://t.co/alBaL6qf4i,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$LB: L Brands feeling mall-based pressure https://t.co/qdD9K6QOy9,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"$NVDA $UBER - Beware The Ides Of December, Current Events Should Boost Markets Now; Sell Uber And Tesla. Get more u… https://t.co/BcYnGhPTG3",neutral,positive,numeric_guidance;conditional_hedge;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"$OPGN took a big position for next week. Early this month. CVI Investments, Inc. purchased 200k shares. https://t.co/7y83Nbob1Z",neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"$PIXY with just 1.1M shares float, if volume comes in again , the bounce could be explosive. U know how this stock works. Great entry point.",neutral,positive,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,$PLUG - Plug Power Raises Some Much-Needed Cash - The Right Move At The Right Time. Read more:… https://t.co/8u9YMYHnLp,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$RF - Regions Financial On Target With Its Conservative Approach. Subscribe to Seeking Alpha for more:… https://t.co/0XIItIX3aB,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$SCANX: Stocks/ETFs that traded to new 52 week highs/lows this session - New highs (37) outpacing new lows (30) https://t.co/mozUwgcLn9,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$SPY $IWM $TNA - Small caps aim to retake some ground https://t.co/lRTT9N8kdA,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$SRAX what a call !!! https://t.co/MVNBcRTTjP,neutral,positive,numeric_guidance;sarcasm_irony,numeric_guidance
+Finistral-7B-LoRA,$UDIRF $UDIRY - An Acquisition Of Tele Columbus Makes Sense For United Internet AG. Follow this and any other stock… https://t.co/Ue7x1kVSlW,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$VZ - Verizon Communications: Featured Stock In November's Safest Dividend Yields Model Portfolio. Sign up for upda… https://t.co/Y7lMkLQQ7a,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$XYL - Xylem: Headwinds To Continue Over Several Quarters. Read more and sign up for updates:… https://t.co/uD2LB5E7NG,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,40% YTD Return On 18 Stocks: Andersen Capital Mgmt. (Radio),neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Best Stocks for 2020: Energy Transfer Is Poised for an Epic Rally,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Best Stocks for 2020: Housing Trend Will Boost PennyMac Financial,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Can $MSFT head higher?  https://t.co/V5l6NINYrr,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Congratulations to @ServiceNow on being added to the S&P 500 https://t.co/MzojJ6sPLS,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Did You Own The Decade's Best Stock? It's Up 3,743%",neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,FOMO time we project SP 500 target 4000 before end of Bull Market,neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Go $WKHS,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Howard Bancorp (NASDAQ:HBMD) Shareholders Have Enjoyed A 54% Share Price Gain,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Macy's has shrunk to the size of Beyond Meat. It's going to get worse, technician says $M $BYND (via @TradingNation) https://t.co/h86IfyLmqy",neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Should You Buy Netgear on This Short-Term Guidance Miss?,neutral,negative,numeric_guidance;conditional_hedge,numeric_guidance
+Finistral-7B-LoRA,"Trade Alert: The Independent Director Of Cerus Corporation (NASDAQ:CERS), Franklin Witney, Has Just Spent US$100k Buying Shares",neutral,positive,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Why value stocks surged more than growth stocks in 2019,neutral,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Cabot Microelectronics tanks on soft guidance,negative,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Gap ticks higher despite lowered full-year comps, which point to a bah humbug holiday quarter https://t.co/M4f8u4Zza2 $GPS",positive,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Tesla Tops $900 in Parabolic Surge, Spurring Analyst Downgrade",positive,negative,numeric_guidance;mixed_sentiment,numeric_guidance
+Finistral-7B-LoRA,"$SUMRX: Gapping up/down: ABB +4%, MCHP +3%, NVO +3%, HUM +2% and CMG +1.6% after earnings, RDS.A +2% and TOL +2%... https://t.co/P30bZdswdX",neutral,positive,numeric_guidance;mixed_sentiment;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,"$SUMRX: Gapping up/down: DOCU +10.5%, ULTA +9%, AOBC +7%, BIG +7%, CLDR +6.5% and CRWD +5% after earnings, TTD +5%.… https://t.co/a5vlQXPdji",neutral,positive,numeric_guidance;mixed_sentiment;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,Shell and BG Shareholders to Vote on Deal at End of January,neutral,positive,other,other
+Finistral-7B-LoRA,CompaniesHome Retail trims gains but is considered 'in play',positive,neutral,other,other
+Finistral-7B-LoRA,Shell share price: Standard Life announce position against BG acquisition,negative,positive,other,other
+Finistral-7B-LoRA,"Saudi Aramco, Shell plan to break up Motiva, divide up assets",negative,neutral,other,other
+Finistral-7B-LoRA,"Irish Said Chasing Standard Chartered, RBS as Brexit Vote Nears",positive,neutral,other,other
+Finistral-7B-LoRA,Morrisons finance chief to fill gap as CEO leaves early,negative,neutral,other,other
+Finistral-7B-LoRA,EasyJet attracts more passengers in June but still lags Ryanair,positive,neutral,other,other
+Finistral-7B-LoRA,Rolls-Royce to Ensure Compliance After Petrobras Bribery Report,neutral,negative,other,other
+Finistral-7B-LoRA,G4S sees profits rise but UK contract problems remain,positive,neutral,other,other
+Finistral-7B-LoRA,Is It Worth Investing In Tesco PLC And Prudential plc Now?,positive,neutral,other,other
+Finistral-7B-LoRA,Credit Suisse poaches Prudential's Thiam for Asian push,neutral,positive,other,other
+Finistral-7B-LoRA,"UPDATE 3-BP settles oil spill-related claims with Halliburton, Transocean",negative,positive,other,other
+Finistral-7B-LoRA,CompaniesLSE adds ex-SEC head Schapiro to board,neutral,positive,other,other
+Finistral-7B-LoRA,Salonen added that data shows producers ' pulp inventories in North America are declining . ',negative,positive,other,other
+Finistral-7B-LoRA,A huge issue for us is the button placement .,neutral,negative,other,other
+Finistral-7B-LoRA,"It is necessary to strengthen the company 's operations , however .",neutral,positive,other,other
+Finistral-7B-LoRA,`` They want my credit card info and my personal details .,neutral,negative,other,other
+Finistral-7B-LoRA,AM Best Revises Outlooks to Stable for Sublimity Insurance Company https://t.co/WPcVIMko76 https://t.co/glnxmA3iIv,neutral,positive,other,other
+Finistral-7B-LoRA,Analyst: Amazon Blocking FedEx Ground Good News For UPS,neutral,positive,other,other
+Finistral-7B-LoRA,Here are the best analyst calls of the week on Wall Street including Disney and a satellite play https://t.co/u9r1QPQli5,neutral,positive,other,other
+Finistral-7B-LoRA,Mitek bull calls pullback 'an overreaction',neutral,positive,other,other
+Finistral-7B-LoRA,T. Boone Pickens' BP Capital Adds 3 Energy Stocks to Portfolio,neutral,positive,other,other
+Finistral-7B-LoRA,Buyback Backlash Begins: Fed Will Limit Buybacks & Dividends For Companies Using Its Credit Facility https://t.co/qvANL8EAGI,neutral,negative,other,other
+Finistral-7B-LoRA,"In the battle of central-bank stimulus bazookas, the Fed is winning out https://t.co/dw2zb5Zi3b",neutral,positive,other,other
+Finistral-7B-LoRA,Two crisis-veteran Federal Reserve officials said the central bank has plenty of room for more moves following a fl… https://t.co/8tGk3P7TPq,neutral,positive,other,other
+Finistral-7B-LoRA,U.S. Fed preparing to buy new small business payroll loans: Wall Street Journal https://t.co/bKlfm9QFgB https://t.co/ZnUbuWVFFu,neutral,positive,other,other
+Finistral-7B-LoRA,Bank of America sees demand surge for paycheck protection loans https://t.co/6feALqK8zN,negative,positive,other,other
+Finistral-7B-LoRA,ACI Worlwide to deliver Universal Payments tech via Azure,neutral,positive,other,other
+Finistral-7B-LoRA,Advent to build up hair care brand following Olaplex buyout,neutral,positive,other,other
+Finistral-7B-LoRA,Alibaba to pioneer paperless listing in break with Hong Kong norm - Reuters UK,neutral,positive,other,other
+Finistral-7B-LoRA,Amazon blocks third-party sellers from using FedEx shipping,neutral,negative,other,other
+Finistral-7B-LoRA,Ant Financial Considers Applying for Virtual Banking License in Singapore,neutral,positive,other,other
+Finistral-7B-LoRA,Apple starts construction of new campus in Texas,neutral,positive,other,other
+Finistral-7B-LoRA,"Apple's redesigned maps service has rolled out across the United States, giving users more accurate navigation and... https://t.co/RxC4CXqb71",neutral,positive,other,other
+Finistral-7B-LoRA,Arrow Electronics Forges New Global IoT Solutions Collaboration with Microshare Inc.,neutral,positive,other,other
+Finistral-7B-LoRA,"As department stories struggle, Nordstrom makes a play in New York City",neutral,positive,other,other
+Finistral-7B-LoRA,Bass Oil : Bunian-5 Testing Complete - Now Set to Commence Production #BassOil #Stock #MarketScreener… https://t.co/DmbhYHiI9T,neutral,positive,other,other
+Finistral-7B-LoRA,"BHP, Woodside agree on tolling price for Scarborough gas",neutral,positive,other,other
+Finistral-7B-LoRA,Boeing Maintains Supremacy Over Airbus at United Airlines Despite A321XLR Order,neutral,positive,other,other
+Finistral-7B-LoRA,Canadian regulator dismisses Catalyst request for cease trade order on Hudson's take private deal,neutral,positive,other,other
+Finistral-7B-LoRA,Chipotle highlights fast drive-thru lanes,neutral,positive,other,other
+Finistral-7B-LoRA,"Cree, STM double silicon carbide wafer agreement",neutral,positive,other,other
+Finistral-7B-LoRA,Ecolab Launches Innovative Eco-Flex™ Non-Iodine Teat Dip,neutral,positive,other,other
+Finistral-7B-LoRA,"Elections boost YouGov's profile, but the company makes most of its money tracking brands and market trends https://t.co/8fp3XHBmHG",neutral,positive,other,other
+Finistral-7B-LoRA,FedEx discontinues pension for new hires,neutral,negative,other,other
+Finistral-7B-LoRA,Fidelity granted charter for virtual currency platform from New York state,neutral,positive,other,other
+Finistral-7B-LoRA,Flynas exercises options for A321XLR jets,neutral,positive,other,other
+Finistral-7B-LoRA,Ford and McDonalds are teaming up to create car parts out of coffee beans https://t.co/HZOpOUPKJh,neutral,positive,other,other
+Finistral-7B-LoRA,Free Shipping Is the Key to Amazon's Success,neutral,positive,other,other
+Finistral-7B-LoRA,Galp Energia : secures new renewable power purchase agreement in Spain #GalpEnergia #Stock #MarketScreener… https://t.co/3b9FxGED3y,neutral,positive,other,other
+Finistral-7B-LoRA,Goldman Sachs is planning on giving some of its most valuable software to Wall Street for free. https://t.co/dn4iEluF1j,neutral,positive,other,other
+Finistral-7B-LoRA,"Goldman's Marcus aims to lure home buyers, sellers to its personal loan platform",neutral,positive,other,other
+Finistral-7B-LoRA,Grazitti Interactive Expands Its Presence in North America,neutral,positive,other,other
+Finistral-7B-LoRA,Honda pushes back Wuhan restart timeline,neutral,negative,other,other
+Finistral-7B-LoRA,Horizon Gold : Management Agreement Extended #HorizonGold #Stock #MarketScreener https://t.co/hJVXxzyv43 https://t.co/fkLqS0DRZp,neutral,positive,other,other
+Finistral-7B-LoRA,"John Hussman Buys Amazon, Facebook",neutral,positive,other,other
+Finistral-7B-LoRA,JPMorgan expands private credit group,neutral,positive,other,other
+Finistral-7B-LoRA,Kabbage Drums Up Gig Economy Business (Podcast),neutral,positive,other,other
+Finistral-7B-LoRA,Kelley Blue Book publisher on Tesla CyberTruck: 'People are going to think about this truck' https://t.co/m1VhRuLX5R https://t.co/cTHboEEJBp,neutral,positive,other,other
+Finistral-7B-LoRA,Mallinckrodt loses bid to overturn adverse INOmax patent ruling,neutral,negative,other,other
+Finistral-7B-LoRA,"MJardin Receives Cultivation, Processing License For Warman Facility",neutral,positive,other,other
+Finistral-7B-LoRA,MTU Aero Engines : Maintenance signs exclusive CFM56-7B contract with Malaysia Airlines Berhad #MTU #Stock… https://t.co/38qwmBg0CB,neutral,positive,other,other
+Finistral-7B-LoRA,Myovant conference call tomorrow on late-stage study of relugolix in prostate cancer,neutral,positive,other,other
+Finistral-7B-LoRA,New Media closes Gannett combination,neutral,positive,other,other
+Finistral-7B-LoRA,"Notable Insider Buys Last Week: Anthem, Discover Financial",neutral,positive,other,other
+Finistral-7B-LoRA,Oakdale Resources : Guangdong achieves sustained progress in utilization of FDI #OakdaleResources #Stock… https://t.co/Y1ktrolyvu,neutral,positive,other,other
+Finistral-7B-LoRA,Ontario and Quebec on board with Merck HIV meds,neutral,positive,other,other
+Finistral-7B-LoRA,"ProAmpac Awarded ISO Certifications in Cincinnati and Suffolk, Va. Facilities",neutral,positive,other,other
+Finistral-7B-LoRA,Procter & Gamble looks to get well in healthcare,neutral,positive,other,other
+Finistral-7B-LoRA,PSA trade unions give the nod to merger with Fiat,neutral,positive,other,other
+Finistral-7B-LoRA,Qualcomm CEO Says 5G 'Is a Big Deal For Us',neutral,positive,other,other
+Finistral-7B-LoRA,Rocket Lab passes key milestone in quest to recover and reuse rockets like SpaceX https://t.co/3lZ0V5SJjV,neutral,positive,other,other
+Finistral-7B-LoRA,Samenvatting: Daisy wint AI Company of the Year bij de Canadese FinTech & AI Awards,neutral,positive,other,other
+Finistral-7B-LoRA,SHAREHOLDER UPDATE: Airtrona International Executes LOI With Canadian Based Medical Device Company.,neutral,positive,other,other
+Finistral-7B-LoRA,Shutterstock launches unlimited Music plan,neutral,positive,other,other
+Finistral-7B-LoRA,"So WeWork is hoping to transform into IWG which has double the revenue, 5x the members, 10x the city exposure, more… https://t.co/4Mkvur6vxJ",neutral,positive,other,other
+Finistral-7B-LoRA,Standard Cognition Partners with Mars Wrigley to Help Retailers Optimize Impulse Item Sales in Autonomous Checkout… https://t.co/vWZz4yXeU3,neutral,positive,other,other
+Finistral-7B-LoRA,"Sysco : Lends a Hand to the Houston Food Bank Through Financial Support, Product Donations... #Sysco #Stock… https://t.co/SMmj7Q7fUe",neutral,positive,other,other
+Finistral-7B-LoRA,Tesla will top biggest battery record,neutral,positive,other,other
+Finistral-7B-LoRA,TikTok takes on Facebook in US advertising push https://t.co/xvVfQHl8Uj,neutral,positive,other,other
+Finistral-7B-LoRA,Total : Details Plans to Develop Waha Concessions in Libya #Total #Stock #MarketScreener https://t.co/tpVWTyuD5K https://t.co/wf7QAN9arD,neutral,positive,other,other
+Finistral-7B-LoRA,Total Halts Production at Normandy Refinery After Fire,neutral,negative,other,other
+Finistral-7B-LoRA,Two of three SandRidge royalty trusts lose NYSE listing,neutral,negative,other,other
+Finistral-7B-LoRA,"U.S. Congress seeks answers on patient privacy in Google, Ascension cloud deal",neutral,negative,other,other
+Finistral-7B-LoRA,UPDATE 1-Italian airline Alitalia's rescue in doubt as Atlantia backtracks,neutral,negative,other,other
+Finistral-7B-LoRA,UPDATE 1-LivaNova to scrap mitral heart valve device as part of restructuring,neutral,negative,other,other
+Finistral-7B-LoRA,UPDATE 2-Thousands of CN Rail workers hold first strike in a decade,neutral,negative,other,other
+Finistral-7B-LoRA,Volkswagen talks up next-gen EV wagon,neutral,positive,other,other
+Finistral-7B-LoRA,Walgreens Boots Alliance and McKesson team up in Germany,neutral,positive,other,other
+Finistral-7B-LoRA,Walmart looks to get past dog days of in-house grocery delivery,neutral,positive,other,other
+Finistral-7B-LoRA,Warren Buffett's Berkshire bets on a heavily shorted stock https://t.co/KGSTAcOHTL,neutral,positive,other,other
+Finistral-7B-LoRA,What Top Shareholders Said in Run Up to Credit Suisse CEO Ouster,neutral,negative,other,other
+Finistral-7B-LoRA,"A fire broke out overnight at Exxon's Baton Rouge oil refinery in Louisiana, halting production at the fifth-bigges… https://t.co/fo5UTOUNMB",neutral,negative,other,other
+Finistral-7B-LoRA,Chefs' Warehouse floats new debt,neutral,negative,other,other
+Finistral-7B-LoRA,"The bond market is looking 'overbought' even in the context of coronavirus fears, analysts say https://t.co/ALSVRYK0bD",neutral,negative,other,other
+Finistral-7B-LoRA,Oil traders and sellers are looking at floating storage as they grapple with the effects of coronavirus https://t.co/dSRKUccfEB,neutral,negative,other,other
+Finistral-7B-LoRA,Caution Abounds Even as Emerging Markets Ready Year-Ending Rally,negative,neutral,other,other
+Finistral-7B-LoRA,Coronavirus pandemic has driven a very 'ample' market correction: former European Central Bank chief… https://t.co/dSD0FhQt36,negative,neutral,other,other
+Finistral-7B-LoRA,New #IMFBlog by @GitaGopinath shows #COVID19 is already impacting the US economy with unprecedented speed and sever… https://t.co/1M3rfTmYSi,negative,neutral,other,other
+Finistral-7B-LoRA,"Turkish banks refuse to lend to Istanbul, hey here's an idea: let's open it up to the European idiots who will buy… https://t.co/oimo5fD1IB",negative,neutral,other,other
+Finistral-7B-LoRA,Videoconferences Zoom Toward Market-Boom Reckoning. https://t.co/kbPZdZj8DF #stocks #trading #economy,negative,positive,other,other
+Finistral-7B-LoRA,.@JimCramer breaks down what this blowout jobs number is saying about the economy at large: https://t.co/c9cby6UgZD https://t.co/l12THHHGDJ,neutral,positive,other,other
+Finistral-7B-LoRA,3 Companies That Are Raising Their Dividends,neutral,positive,other,other
+Finistral-7B-LoRA,3 Lagging Long Ideas That We Still Love. https://t.co/4Lq29yLh6D #stocks #trading #markets,neutral,positive,other,other
+Finistral-7B-LoRA,"Accident Deaths Plunge Drastically In Few States, Union Territories Post New Motor Act: Government",neutral,positive,other,other
+Finistral-7B-LoRA,Almost 1 in 5 Millennials Think They'll Be Paying Student Loans in Their 50s,neutral,negative,other,other
+Finistral-7B-LoRA,Another coal-fired power plant closes its doors,neutral,positive,other,other
+Finistral-7B-LoRA,"Basking in the glow of a luxury-goods deal, Burberry boosts London stocks https://t.co/MTuHyI5ysO",neutral,positive,other,other
+Finistral-7B-LoRA,"Brazil's Afro-Brazilians are beginning to get their due, says @macmargolis (via @bopinion) https://t.co/tezavhCp6r",neutral,positive,other,other
+Finistral-7B-LoRA,Brief calm in Hong Kong is over,neutral,negative,other,other
+Finistral-7B-LoRA,"Car Rams Israelis, Palestinians Die in Post-Trump Plan Violence",neutral,negative,other,other
+Finistral-7B-LoRA,CH Robinson's Growth Is Fueled By Tech Investment,neutral,positive,other,other
+Finistral-7B-LoRA,China Scrutinizes U.S. Bid to Control Chinese Chipmaker,neutral,negative,other,other
+Finistral-7B-LoRA,"Coronavirus continues to spread, retailers are feeling the impact",neutral,negative,other,other
+Finistral-7B-LoRA,Coronavirus Threat Looms Over Fragile African Health Systems,neutral,negative,other,other
+Finistral-7B-LoRA,Does the stock market even need a U.S.-China trade deal with the jobs report this hot? https://t.co/WZnyfq6jp8,neutral,positive,other,other
+Finistral-7B-LoRA,Explains the recent put buying or part of the reason?,neutral,negative,other,other
+Finistral-7B-LoRA,"French Private Equity Has a Problem With Equality, Firms Warned",neutral,negative,other,other
+Finistral-7B-LoRA,Fresh tensions over USMCA enforcement?,neutral,negative,other,other
+Finistral-7B-LoRA,"Guyana defends Exxon deal, attacks critics",neutral,positive,other,other
+Finistral-7B-LoRA,"Heavy coffee drinkers live longer, study says. ☕: https://t.co/90JAiq6Dpo https://t.co/dZAiT3pjsb",neutral,positive,other,other
+Finistral-7B-LoRA,"Helping to build new airports was a natural next step in creating a better flying experience for customers, says De… https://t.co/n67VG7MVhr",neutral,positive,other,other
+Finistral-7B-LoRA,Hong Kong Protesters Clash With Police as Lam Visits Beijing,neutral,negative,other,other
+Finistral-7B-LoRA,"Hong Kong Protesters Get A Win, Setting Stage For Foggy China Relations",neutral,positive,other,other
+Finistral-7B-LoRA,I think Billions jumped the shark a season ago.,neutral,negative,other,other
+Finistral-7B-LoRA,In case you need another reason to delete your Facebook: https://t.co/SGVxYSwjo0,neutral,negative,other,other
+Finistral-7B-LoRA,"Iran to Seek Advanced Arms as UN Embargo Expires, Pentagon Says",neutral,negative,other,other
+Finistral-7B-LoRA,Is this the end of the road for Uber in London? https://t.co/D8QDe2OkRd,neutral,negative,other,other
+Finistral-7B-LoRA,"John B. Sanfilippo & Son, Inc. Mourns the Passing of Former Chairman and CEO, Jasper B. Sanfilippo, Sr.",neutral,negative,other,other
+Finistral-7B-LoRA,Launch of new generic drugs in U.S. still lags - WSJ,neutral,negative,other,other
+Finistral-7B-LoRA,Major League Baseball Is Ushering in a New Era of Sports Streaming,neutral,positive,other,other
+Finistral-7B-LoRA,Ministers risk NHS pension tax breach in bid to avert pre-poll crisis https://t.co/hw8VhL3IgU,neutral,negative,other,other
+Finistral-7B-LoRA,Myanmar Asks Tour Firms to Suspend Services for Chinese Visitors,neutral,negative,other,other
+Finistral-7B-LoRA,Nevada casinos record big Super Bowl win,neutral,positive,other,other
+Finistral-7B-LoRA,New Dungeons & Dragons game announced,neutral,positive,other,other
+Finistral-7B-LoRA,New Special Effects Lighting at Aviva Stadium Takes Entertainment Experience to the Next Level,neutral,positive,other,other
+Finistral-7B-LoRA,"New York Knicks fire head coach David Fizdale, report says https://t.co/SjxbaVIfmR",neutral,negative,other,other
+Finistral-7B-LoRA,One of the largest coal-fired power plants in the Western US has just closed for good,neutral,positive,other,other
+Finistral-7B-LoRA,One of the world's rarest butterflies is thriving in an unlikely place: a military artillery range https://t.co/D262xE8iFP,neutral,positive,other,other
+Finistral-7B-LoRA,Partnering with Costco is the latest major expansion for Beyond Meat https://t.co/TEcFCWg7Ej,neutral,positive,other,other
+Finistral-7B-LoRA,Record Demand For Fixed Income ETFs,neutral,positive,other,other
+Finistral-7B-LoRA,Resumen: ProAmpac y nkd LIFE son reconocidos en los premios mundiales de la innovación en bebidas,neutral,positive,other,other
+Finistral-7B-LoRA,"Romania's health-care system is one of the worst in Europe, so much so that a team of people took matters into thei... https://t.co/dkQoUmUia4",neutral,negative,other,other
+Finistral-7B-LoRA,Saudi Arabia arrested at least 8 intellectuals last week as it extended a crackdown on political dissent https://t.co/Da4AfKxDMn,neutral,negative,other,other
+Finistral-7B-LoRA,Tension in Hong Kong simmers on,neutral,negative,other,other
+Finistral-7B-LoRA,The companies all deserve credit for conscientiously reconsidering the consequences of their design choices https://t.co/U8xZNmVfZQ,neutral,positive,other,other
+Finistral-7B-LoRA,The consequences of ultra-low US unemployment https://t.co/sfRBlPKbuY,neutral,positive,other,other
+Finistral-7B-LoRA,The Markets Speak: The Lesson Has Been Harsh. https://t.co/89QRsOfn53 #business #stocks #stockmarket,neutral,negative,other,other
+Finistral-7B-LoRA,There are 'a lot of predators' in the fashion industry: Kathy Ireland,neutral,negative,other,other
+Finistral-7B-LoRA,Tiger Woods and U.S. Team Score Another Presidents Cup Win,neutral,positive,other,other
+Finistral-7B-LoRA,Time to drive pensions sharks out of the water for good https://t.co/0B8FXfEjvI,neutral,positive,other,other
+Finistral-7B-LoRA,Two More Bankers Arrested in Germany Over Tax Scandal Investigation,neutral,negative,other,other
+Finistral-7B-LoRA,Venture capitalists are embracing direct listings and curbing fees for bankers https://t.co/Xm3d9qsGhl,neutral,positive,other,other
+Finistral-7B-LoRA,Virus Hits Hong Kong Insurers Already Reeling From Protests,neutral,negative,other,other
+Finistral-7B-LoRA,"When companies buy their own shares, executives are quick to cash out https://t.co/19bF83Xoi7 via @BW",neutral,negative,other,other
+Finistral-7B-LoRA,why macro funds are shutting down left and right https://t.co/gVYowOBmqe,neutral,negative,other,other
+Finistral-7B-LoRA,Why the Coronavirus Is Making It Cheaper to Fuel Planes,neutral,positive,other,other
+Finistral-7B-LoRA,Why This Is a Huge Win Against Prostate Cancer,neutral,positive,other,other
+Finistral-7B-LoRA,A year in which the IPO market sobered up https://t.co/bgpuGK5XpJ,neutral,negative,other,other
+Finistral-7B-LoRA,Fortinet Makes an Acquisition for One of the Fastest-Growing Segments of Cybersecurity,neutral,positive,other,other
+Finistral-7B-LoRA,"Inszone Insurance Acquires James Swiniuch Agency, Inc",neutral,positive,other,other
+Finistral-7B-LoRA,Alphabet Seeks Quiet End to Investor Suits Over Sex Harassment,neutral,positive,other,other
+Finistral-7B-LoRA,"Amazon seeks to depose Trump, Esper in lawsuit over cloud computing contract",neutral,negative,other,other
+Finistral-7B-LoRA,"California to stop buying GM, Toyota and Fiat Chrysler vehicles over emissions fight",neutral,negative,other,other
+Finistral-7B-LoRA,CN meets U.S. federal requirement to operate Positive Train Control on all required tracks ahead of schedule  https://t.co/79kRLNp5Ip,neutral,positive,other,other
+Finistral-7B-LoRA,Department of Justice Blames China for Equifax Data Breach: What You Need to Know,neutral,negative,other,other
+Finistral-7B-LoRA,DOJ moves to scrap decades-old movie distribution rules,neutral,positive,other,other
+Finistral-7B-LoRA,DOJ seeks to reverse the ruling against Qualcomm,neutral,positive,other,other
+Finistral-7B-LoRA,NEW: Teva and other generic drugmakers have held talks with the U.S. about resolving a long-running probe of allege… https://t.co/CmycwwREYa,neutral,positive,other,other
+Finistral-7B-LoRA,Roche's Small Spark Deal Holds a Big Regulatory Warning,neutral,negative,other,other
+Finistral-7B-LoRA,BlackRock slashes stake in Peabody Energy,neutral,negative,other,other
+Finistral-7B-LoRA,CBS and Viacom to close merger on Dec. 4,neutral,positive,other,other
+Finistral-7B-LoRA,Duravant To Acquire WECO,neutral,positive,other,other
+Finistral-7B-LoRA,Edgewell Personal Care is ditching its bid to acquire shaving-supply maker Harry's -- reminding big consumer compan… https://t.co/WIlJz1fbNc,neutral,negative,other,other
+Finistral-7B-LoRA,EVI Industries to acquire Commercial Laundry Equipment Company,neutral,positive,other,other
+Finistral-7B-LoRA,Exclusive: Daimler seeks majority control of its main China joint venture - sources,neutral,positive,other,other
+Finistral-7B-LoRA,Formula Systems acquires Unique Software Industries,neutral,positive,other,other
+Finistral-7B-LoRA,France's LVMH close to buying Tiffany after sweetening offer: sources https://t.co/5HyHxPhyqL https://t.co/eofnMyZ54Q,neutral,positive,other,other
+Finistral-7B-LoRA,Harsco (HSC) to Buy Stericycle's Environmental Solutions,neutral,positive,other,other
+Finistral-7B-LoRA,HP reiterates its rejection of Xerox's offer to buy the company https://t.co/9qYk413PZE https://t.co/WLdlx9gnjf,neutral,negative,other,other
+Finistral-7B-LoRA,IBP scoops up Premier Building Supply,neutral,positive,other,other
+Finistral-7B-LoRA,"Mairs and Power Sells UPS, Abbott Labs",neutral,negative,other,other
+Finistral-7B-LoRA,Mall Operator Simon Property Buying a Major Competitor,neutral,positive,other,other
+Finistral-7B-LoRA,Mediawan Acquires the Black Dynamite Label to Expand Its Premium Documentary Offer,neutral,positive,other,other
+Finistral-7B-LoRA,MGM officially in pursuit of Osaka casino,neutral,positive,other,other
+Finistral-7B-LoRA,"PayPal has struck a deal to acquire Honey, a shopping platform that offers online shoppers discounts and rewards, f… https://t.co/D9FqQbl3Tb",neutral,positive,other,other
+Finistral-7B-LoRA,Shell to buy operating stakes in three oil blocks offshore Colombia,neutral,positive,other,other
+Finistral-7B-LoRA,"Simon's Taubman Deal Shows Mall REITs Undervalued, Analyst Says",neutral,positive,other,other
+Finistral-7B-LoRA,"U.S. Fed approves merger between BB&T, SunTrust Banks",neutral,positive,other,other
+Finistral-7B-LoRA,UPDATE 1-PSA trade unions give the nod to merger with Fiat,neutral,positive,other,other
+Finistral-7B-LoRA,"WhiteWater Express Acquires Quick N Clean Location, Launching Dedicated Expansion Into Austin",neutral,positive,other,other
+Finistral-7B-LoRA,US Proved Oil & Gas Reserves Hit New Record High,negative,positive,other,other
+Finistral-7B-LoRA,"Austria is planning the first steps to restart its economy as soon as next week, the first European country to do so https://t.co/wpN1WMrcW5",positive,neutral,other,other
+Finistral-7B-LoRA,"Before the coronavirus struck, U.S. job openings stood at nearly 7 million https://t.co/gEijFZ3crn",neutral,positive,other,other
+Finistral-7B-LoRA,China and U.S. 'very close' to phase one trade deal - Global Times https://t.co/t4idLxj9Bz https://t.co/oLkqruR3gU,neutral,positive,other,other
+Finistral-7B-LoRA,India Plans Incentives to Bring In Foreign Manufacturers From Tesla to Glaxo,neutral,positive,other,other
+Finistral-7B-LoRA,Kenya trade deal seen helping apparel industry,neutral,positive,other,other
+Finistral-7B-LoRA,Mexico's economy minister tries to dispel concerns over labor reform #economy #MarketScreener… https://t.co/dZ3UhEBzkv,neutral,positive,other,other
+Finistral-7B-LoRA,Personal Consumption Driving U.S. Market: BBH's Clemons (Radio),neutral,positive,other,other
+Finistral-7B-LoRA,The U.S. and China are reportedly taking steps to delay the next round of American tariffs set for Sunday as they s… https://t.co/HWzU8RAkIt,neutral,positive,other,other
+Finistral-7B-LoRA,U.S. consumer credit increased at faster pace in February https://t.co/VvjV1lEi7x,neutral,positive,other,other
+Finistral-7B-LoRA,Richmond Fed Business Survey Shockingly Rises... Here's Why  https://t.co/c4DsjNAHPS,neutral,positive,other,other
+Finistral-7B-LoRA,"Stock Market Update: Asia closes mixed, Asia trades lower",negative,neutral,other,other
+Finistral-7B-LoRA,"Trade, U.S. Elections Are Top Market Risks, Says Goldman Sachs's Moe",negative,neutral,other,other
+Finistral-7B-LoRA,Stock Market Update: Stock market drifts in record territory,positive,neutral,other,other
+Finistral-7B-LoRA,"Stock-index futures extend gains after jobless claims, productivity data",positive,neutral,other,other
+Finistral-7B-LoRA,"As Stocks Soar, Credit Markets Are Starting To CCCrack https://t.co/hitGrlXQTA",neutral,negative,other,other
+Finistral-7B-LoRA,At Least One Republican Still Knows Right From Wrong,neutral,positive,other,other
+Finistral-7B-LoRA,Buttigieg officially wins largest delegate count at Iowa,neutral,positive,other,other
+Finistral-7B-LoRA,Corbyn effect? British utility debt boosted by nationalisation bet,neutral,positive,other,other
+Finistral-7B-LoRA,Gloves Off In the Dem Primary,neutral,negative,other,other
+Finistral-7B-LoRA,"Hong Kong, China, And U.K. Election Hopes Fan Modest Risk-Taking. Read more and sign up for updates:… https://t.co/NezVnEBTQu",neutral,positive,other,other
+Finistral-7B-LoRA,House Democrats roll out articles of impeachment against Trump https://t.co/HRjKKXqIUZ,neutral,negative,other,other
+Finistral-7B-LoRA,"Irish PM Varadkar Set to Lose Power, Betting Odds Signal",neutral,negative,other,other
+Finistral-7B-LoRA,"Joe Leahy: The elections in Hong Kong are unlikely to put a stop to the months of often violent demonstrations
+https://t.co/qkkbaHCyhm",neutral,negative,other,other
+Finistral-7B-LoRA,Pete Buttigieg sees surge in support from business execs after his strong showing in Iowa https://t.co/ZFfMXbQuBV,neutral,positive,other,other
+Finistral-7B-LoRA,Trump calls meeting with Powell 'very good' and 'cordial',neutral,positive,other,other
+Finistral-7B-LoRA,Trump Fed nominee Shelton hits bipartisan skepticism in Senate hearing #economy #MarketScreener… https://t.co/4n59nUtFe3,neutral,negative,other,other
+Finistral-7B-LoRA,Asia Pacific Foundation of Canada Welcomes Former New Brunswick Premier Brian Gallant to Board of Directors  https://t.co/OMcgWrDq05,neutral,positive,other,other
+Finistral-7B-LoRA,Credit Suisse CEO Thiam Exits in Shock Reversal After Scandal,neutral,negative,other,other
+Finistral-7B-LoRA,Fiesta Restaurant Group adds hedge fund exec to board,neutral,positive,other,other
+Finistral-7B-LoRA,First Reserve names two new managing directors in latest promotions,neutral,positive,other,other
+Finistral-7B-LoRA,Jefferies poaches more staff from CLSA to boost Asia expansion https://t.co/x2dQ6I9HM2,neutral,positive,other,other
+Finistral-7B-LoRA,"Sunniva President, Board Director Resign Weeks After CFO Departure",neutral,negative,other,other
+Finistral-7B-LoRA,Tesla Loses Its Third General Counsel in the Course of a Year,neutral,negative,other,other
+Finistral-7B-LoRA,3 Lord Abbett Funds to Snap Up Now,neutral,positive,other,other
+Finistral-7B-LoRA,3 Surprising Stocks Hitting New Lows Last Week,neutral,negative,other,other
+Finistral-7B-LoRA,Big day for Cronos Group after Altria filing,neutral,positive,other,other
+Finistral-7B-LoRA,J&J Brand Most Valuable Among Pharmaceutical Companies,neutral,positive,other,other
+Finistral-7B-LoRA,Options Trader Bets on Monster Micron Move,neutral,positive,other,other
+Finistral-7B-LoRA,Stock Market News: Netflix Climbs on Subscriber Data; Johnson & Johnson Looks Healthy,neutral,positive,other,other
+Finistral-7B-LoRA,"Central banks don’t have as much monetary policy power as they used to, former BOE policy maker Ian McCafferty says https://t.co/LjFUOi4x2A",neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Zambia’s kwacha staged a comeback on Tuesday after the central bank raised the amount of funds that commercial lend… https://t.co/oS097rGn8S,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Aivo’s Conversational AI Bot Now Available on Genesys AppFoundry,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Encantos Partners With Award-Winning Chef Aliya LeeKong to Develop New Food-Inspired Preschool Brand ISSA’S EDIBLE ADVENTURES™,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Google Stadia review: The game streaming service works — but it’s missing key features,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Heard on the Street: Dubai shows up Boeing’s wide-body woes https://t.co/Jla8Ap1CJm,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,PG&E’s Bid to Save Bankruptcy Plan Can Skip State Approval,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,The Euro Is A Structural Short As BoJo’s Landslide Victory Ensures The U.K.’s Exit From the E.U.,negative,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,‘This is the most prosperous economy the world has ever seen’ says Jamie Dimon — and it’s going to continue https://t.co/Y6gkuTBby5,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,America isn’t ready for longer lifespans,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,"As relations between the U.S. and China continue to deteriorate, one immediate risk is a “military accident or oper… https://t.co/N2fewJJeQc",neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Australians Love Rooftop Panels. That’s a Problem for Big Solar,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,China’s Drug Patent Grab Makes Coronavirus Scary for Pharma,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Death of a Hero Doctor Sparks Crisis of Confidence in Xi’s China,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,"Dennis Gartman, who’s closing down his daily newsletter, had some parting advice for investors: sell https://t.co/GwcaDQjWJJ",neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,"Despite the Talk of Coal’s Demise, It Still Powers the World",neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Ex-JPMorgan Banker’s Career Gamble Pays Off in Muni-Bond Blitz,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,"Highlight: “When growth is scarce, investors seem very willing to pay up for growth stock"" @PNCBank's… https://t.co/rO4fBOkBG9",neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Highlight: “When you don’t have organic growth because of overall economic activity on a global basis kind of being… https://t.co/E9BPwBKx5E,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Inovalon’s stock renaissance returns CEO to the billionaire club https://t.co/0ebuLqVjDs,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,New England Patriots acknowledge team video crew filmed opposing team’s sideline during game https://t.co/Hrrt5qmCsT,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Real estate secondaries: Deals where ‘both parties walk away happy’,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Stocks Are Writing Checks the Economic Data Can’t Cash,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,"The New England Patriots admitted that a crew last Sunday ""unknowingly violated a league policy by filming the fiel… https://t.co/3VK3izjuim",neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Waiting for your Equifax settlement cash? Don’t hold your breath https://t.co/60naM4i2NO,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Why some critics are questioning KKR’s ‘responsible investing’ posture https://t.co/XcwjDUvvDQ,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Wuhan Doctor’s Death A Massive Headwind For China Coronavirus Sentiment,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,"JetBlue founder was a ""death knell"" for this Canada carrier, a lawsuit says https://t.co/14JYSa5ahV",neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Yum! Tries to Reboot Slumping Pizza Hut,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Merkel Demands an End to CDU’s ‘Unforgivable’ Far-Right Deal,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Erik Prince’s FSG Quits Mozambique Oil and Gas Logistics Venture,neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,This Dividend Hero’s Too Cheap To Miss Right Now,neutral,positive,sarcasm_irony,sarcasm_irony

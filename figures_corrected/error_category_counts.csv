@@ -1,0 +1,8 @@
+category,n_misclassified
+other,231
+numeric_guidance,187
+negation,48
+sarcasm_irony,32
+conditional_hedge,21
+entity_confusion,14
+mixed_sentiment,2

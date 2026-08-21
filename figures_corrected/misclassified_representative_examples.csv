@@ -1,0 +1,33 @@
+model,sentence,true_label,pred_label,error_categories,primary_category
+Finistral-7B-LoRA,Italy may be willing to compromise on its holdout against a German plan for further integration of the EU’s banking… https://t.co/6z5rU3nonk,neutral,positive,conditional_hedge;sarcasm_irony,conditional_hedge
+Finistral-7B-LoRA,"WATCH: Unilever, Henkel and as well as some buyout funds could be in the market for some of Coty's brands in a deal… https://t.co/VZFaz5oTOn",neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,"Exxon and Papua New Guinea should return to LNG negotiating table, says Total CEO",neutral,positive,conditional_hedge;entity_confusion,conditional_hedge
+Finistral-7B-LoRA,OPEC and Russia postponed a meeting that could end a price war and reduce a supply glut that has driven oil futures… https://t.co/FfJ65bScoJ,neutral,negative,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,U.S. should stop preventing Iran from selling oil - Iran foreign minister #economy #MarketScreener… https://t.co/KXV6FrmF1S,neutral,positive,conditional_hedge,conditional_hedge
+Finistral-7B-LoRA,BioTie North-American licensing partner Somaxon Pharmaceuticals started a phase II-III clinical study in patients suffering from pathological gambling and a pilot phase II study in nicotine addiction smoking cessation .,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,SKYCITY Entertainment : NOTICE OF ON-MARKET SHARE BUY BACK #SKYCITY #Stock #MarketScreener https://t.co/PYHdNhcr3k https://t.co/5J1DH6NFBI,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Chinese Gas Buyer CNOOC Declares Force Majeure on LNG Contracts,neutral,negative,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Investors shrugged off a WSJ report that said the US and China are working on a deal to delay the next round of Ame… https://t.co/D4CJFfE98t,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,New Cortec PE fund biggest winner from latest Texas CDRS pension commitments,neutral,positive,entity_confusion,entity_confusion
+Finistral-7B-LoRA,Yields head lower despite strong economic numbers,neutral,negative,mixed_sentiment,mixed_sentiment
+Finistral-7B-LoRA,Mandiri Warns of Risk to Loan Growth From Virus Outbreak,neutral,negative,mixed_sentiment,mixed_sentiment
+Finistral-7B-LoRA,Barclays Bonds Rise as Lender Cuts Dividends to Shore Up Capital,positive,negative,negation;mixed_sentiment,negation
+Finistral-7B-LoRA,RT @tomhend777 $MU needs to hold here -Broken for now. Needs big flush. Still not technically oversold so now big bounce yet,neutral,negative,negation;numeric_guidance;entity_confusion,negation
+Finistral-7B-LoRA,$TRIP maintains Neutral rating at JP Morgan- PT cut $61 from $66,neutral,negative,negation;numeric_guidance;entity_confusion,negation
+Finistral-7B-LoRA,@scottrade Why is $tsla not available for shorting at this time?  Same for $w?,negative,neutral,negation;numeric_guidance,negation
+Finistral-7B-LoRA,"No, The Fed Won't ""Save The Market"" - Here's Why  https://t.co/Ibq99qWSFz",negative,neutral,negation;sarcasm_irony,negation
+Finistral-7B-LoRA,RBS Pays $1.7 Billion to Scrap U.K. Treasury's Dividend Rights,neutral,negative,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,How Kraft-Heinz Merger Came Together in Speedy 10 Weeks,positive,neutral,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,"Sold out $TZA 45 $PUT (down $1), which were hedging my 45 $CALL. Letting the calls ride solo now.",positive,negative,numeric_guidance;entity_confusion,numeric_guidance
+Finistral-7B-LoRA,$SPY bull move ended waiting for next setup,negative,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,$NIHD insiders got this one wrong. Looking for bottom. Rsi under 30,negative,positive,numeric_guidance,numeric_guidance
+Finistral-7B-LoRA,Shell and BG Shareholders to Vote on Deal at End of January,neutral,positive,other,other
+Finistral-7B-LoRA,CompaniesHome Retail trims gains but is considered 'in play',positive,neutral,other,other
+Finistral-7B-LoRA,Shell share price: Standard Life announce position against BG acquisition,negative,positive,other,other
+Finistral-7B-LoRA,"Saudi Aramco, Shell plan to break up Motiva, divide up assets",negative,neutral,other,other
+Finistral-7B-LoRA,"Irish Said Chasing Standard Chartered, RBS as Brexit Vote Nears",positive,neutral,other,other
+Finistral-7B-LoRA,"Central banks don’t have as much monetary policy power as they used to, former BOE policy maker Ian McCafferty says https://t.co/LjFUOi4x2A",neutral,negative,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Zambia’s kwacha staged a comeback on Tuesday after the central bank raised the amount of funds that commercial lend… https://t.co/oS097rGn8S,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Aivo’s Conversational AI Bot Now Available on Genesys AppFoundry,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Encantos Partners With Award-Winning Chef Aliya LeeKong to Develop New Food-Inspired Preschool Brand ISSA’S EDIBLE ADVENTURES™,neutral,positive,sarcasm_irony,sarcasm_irony
+Finistral-7B-LoRA,Google Stadia review: The game streaming service works — but it’s missing key features,neutral,negative,sarcasm_irony,sarcasm_irony

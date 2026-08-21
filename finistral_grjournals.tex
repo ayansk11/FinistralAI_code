@@ -446,7 +446,7 @@ FinGPT-mt-Llama2-7B-LoRA          & 0.9857 & 0.9857 & 0.8085 & 0.8301 & 0.7644 &
 FinGPT-Llama-3-8B-LoRA            & 0.9339 & 0.9410 & 0.6213 & 0.7219 & \textbf{0.7804} & \textbf{0.8211} \\
 FinGPT-Falcon-7B-LoRA             & 0.9696 & 0.9697 & 0.8553 & 0.8594 & 0.7307 & 0.7377 \\
 FinGPT-Bloom-7B1-LoRA             & 0.8946 & 0.8934 & \rerun{} & \rerun{} & \rerun{} & \rerun{} \\
-FinBERT (ProsusAI)                & \rerun{} & \rerun{} & \rerun{} & \rerun{} & \rerun{} & \rerun{} \\
+FinBERT (ProsusAI)                & 0.9643 & 0.9648 & 0.5149 & 0.6147 & 0.7252 & 0.7329 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -493,7 +493,7 @@ Decontaminated remainder (unseen)      & 560 (24.8\,\%) \\
 
 \subsection{Quantitative Gains}
 
-The large apparent margins reported in our original submission ($+69$ F1 over zero-shot Mistral-7B; $+78$--$96$ F1 over the FinGPT LoRA baselines; $+3$--$6$ accuracy points over FinBERT) do not survive scrutiny and are withdrawn. As Section~\ref{sec:contamination} establishes, the Finistral side of every such comparison was inflated by 75.2\,\% train/test overlap, while the FinGPT baselines were deflated below their majority-class floor by harness defects. The near-perfect per-class F1 on the contaminated split (Negative 98.7\,\%, Neutral 99.4\,\%, Positive 99.3\,\%) and the reduction of errors to ``10 of 2{,}264'' are likewise consequences of memorisation, not generalisation, and the confusion matrix in Figure~\ref{fig:confusion} should be read as a diagnostic of contamination rather than of model quality. The honest performance picture is given by the decontaminated and external evaluations in Table~\ref{tab:corrected-results}; \rerun{summarise corrected per-class F1 and any residual, significance-tested advantage}.
+The large apparent margins reported in our original submission ($+69$ F1 over zero-shot Mistral-7B; $+78$--$96$ F1 over the FinGPT LoRA baselines; $+3$--$6$ accuracy points over FinBERT) do not survive scrutiny and are withdrawn. As Section~\ref{sec:contamination} establishes, the Finistral side of every such comparison was inflated by 75.2\,\% train/test overlap, while the FinGPT baselines were deflated below their majority-class floor by harness defects. The near-perfect per-class F1 on the contaminated split (Negative 98.7\,\%, Neutral 99.4\,\%, Positive 99.3\,\%) and the reduction of errors to ``10 of 2{,}264'' are likewise consequences of memorisation, not generalisation, and the confusion matrix in Figure~\ref{fig:confusion} should be read as a diagnostic of contamination rather than of model quality. The honest performance picture is given by the decontaminated and external evaluations in Table~\ref{tab:corrected-results}. On the decontaminated FPB remainder, Finistral attains 98.93\,\% accuracy with per-class F1 of 0.974 (negative), 0.993 (neutral), and 0.989 (positive) --- but this is \emph{not} a statistically significant advantage over the strongest baseline (FinGPT-mt-Llama2, 98.57\,\%; McNemar $p = 0.77$), and both models plausibly benefit from FPB's narrow stylistic distribution even after sentence-level decontamination. The external sets are more informative. On FiQA-SA, Finistral leads at 87.66\,\% accuracy / 0.8833 weighted F1, significantly above FinGPT-mt-Llama2 ($p = 0.012$), FinGPT-Llama-3 ($p < 10^{-10}$), and FinBERT ($p < 10^{-16}$), though not above FinGPT-Falcon (85.53\,\%, $p = 0.42$). On TFNS, Finistral (78.93\,\%) is statistically tied with the strongest baseline, FinGPT-Llama-3 (78.04\,\%, $p = 0.41$), and significantly above the remaining adapters and FinBERT ($p < 10^{-8}$). The zero-shot Mistral-7B backbone fails almost entirely under strict parsing (99\,\% unparseable outputs), confirming that the task competence resides in the fine-tuning, not the backbone. In sum: the corrected evaluation supports a claim of \emph{competitive, sometimes leading} performance among FinGPT-class adapters, with FinBERT clearly surpassed off-distribution --- not the categorical superiority the original submission asserted.
 
 \begin{figure}[htbp]
 \centering
@@ -533,12 +533,22 @@ Validation loss reached its minimum (0.1009) at epoch 2 and then rose, a classic
 Trainable params  & 41.94\,M ($r{=}16$, all-linear) & 2.4--6.3\,M ($r{=}8$) \\
 Adapter size      & 83.9\,MB (fp16)  & 5--14\,MB \\
 Train time ($2\times$A100) & $\approx$ 120\,min & (published adapters) \\
-Weighted F1 (decontam./external) & \rerun{} & \rerun{} \\
+Weighted F1 (FPB-560 / FiQA / TFNS) & 0.989 / 0.883 / 0.796 & 0.986 / 0.859 / 0.821$^{\dagger}$ \\
 \bottomrule
 \end{tabular}
+\par\smallskip
+{\footnotesize $^{\dagger}$Best FinGPT adapter \emph{per dataset}: FinGPT-mt-Llama2 on FPB-560, FinGPT-Falcon on FiQA-SA, FinGPT-Llama-3 on TFNS.}
 \end{table}
 
 The original version of this table juxtaposed Finistral's contaminated 0.996 F1 against a FinGPT baseline's harness-broken 0.211 F1; both numbers were invalid for comparison and have been replaced with corrected, leakage-free figures. The efficiency columns (parameter count, adapter size, train time) are unaffected by contamination and remain the genuine, defensible advantage of the recipe.
+
+\subsection{Prompt-Template Ablation}
+
+Because the original evaluation applied a single Alpaca-style prompt to every model --- mismatched to Finistral's own \texttt{[INST]} training template (corrected claim C10) --- we quantify the template effect directly: the identical released adapter evaluated under both templates on all three leakage-free datasets. The effect is material but \emph{dataset-dependent}: on FPB-560 the training-matched template is slightly but not significantly better ($98.93\,\%$ vs $98.04\,\%$; McNemar $p = 0.18$); on FiQA-SA it is decisively better ($87.66\,\%$ vs $77.45\,\%$, $+10.2$ points, $p = 1.9\times10^{-4}$); yet on TFNS the \emph{mismatched} Alpaca template wins ($87.86\,\%$ vs $78.93\,\%$, $p < 10^{-32}$), plausibly because TFNS's informal tweet register sits closer to the generic instruction framing than to the financial-news style dominant in the fine-tuning corpus. Two conclusions follow, and we state both: evaluation protocols must \emph{control and disclose} the prompt template, since a 9--10-point swing dwarfs most model-to-model differences in Table~\ref{tab:corrected-results}; and a training-matched template is a sensible default but not a universally optimal one. We report Finistral's headline numbers under its training template throughout, which on TFNS is the \emph{conservative} choice.
+
+\subsection{Error Analysis}
+
+Across the three leakage-free evaluations, Finistral misclassifies 535 sentences (6 on FPB-560, 29 on FiQA-SA, 500 on TFNS); we tag each with rule-based failure-mode categories (released with the per-example predictions). The distribution: numeric/guidance constructions 187, negation 48, sarcasm or irony 32, conditional or hedged statements 21, entity confusion 14, mixed sentiment 2, and 231 uncategorised. Three recurring patterns dominate. \emph{Cost framings of positive events}: ``RBS Pays \$1.7 Billion to Scrap U.K. Treasury's Dividend Rights'' (gold neutral, predicted negative) --- a large outflow number pulls the prediction negative even when the event is strategically neutral. \emph{Negated or self-correcting market language}: ``Barclays Bonds Rise as Lender Cuts Dividends to Shore Up Capital'' (gold positive, predicted negative) --- the model anchors on ``cuts dividends'' and misses that the sentence reports the market's positive reaction. \emph{Hedged speculation}: ``Italy may be willing to compromise\ldots'' (gold neutral, predicted positive) --- modal constructions are read as realised outcomes. TFNS contributes most errors both because it is the largest set and because its informal, elliptical tweet register (tickers, retweet fragments, truncated URLs) is furthest from the fine-tuning corpus's newswire style --- consistent with the per-class pattern that Finistral over-predicts the polar classes on TFNS (negative recall 0.93 but precision 0.68; positive recall 0.96 but precision 0.59), trading neutral precision for polar recall.
 
 \subsection{Deployment Footprint}
 

@@ -1,32 +1,32 @@
 [
   {
-    "model_key": "finistral",
-    "pretty": "Finistral-7B-LoRA",
+    "model_key": "finbert",
+    "pretty": "FinBERT (ProsusAI)",
     "seed": 0,
-    "accuracy": 0.9892857142857143,
-    "weighted_f1": 0.9893302136120651,
-    "macro_f1": 0.9852731542116072,
+    "accuracy": 0.7252423093131057,
+    "weighted_f1": 0.732860903949989,
+    "macro_f1": 0.6679456053910293,
     "unparseable_rate": 0.0,
-    "n": 560,
-    "dataset": "fpb_decontam",
+    "n": 2373,
+    "dataset": "tfns",
     "per_class": {
       "negative": {
-        "precision": 0.9620253164556962,
-        "recall": 0.987012987012987,
-        "f1": 0.9743589743589743,
-        "support": 77
+        "precision": 0.4934086629001883,
+        "recall": 0.7616279069767442,
+        "f1": 0.5988571428571429,
+        "support": 344
       },
       "neutral": {
-        "precision": 1.0,
-        "recall": 0.9858356940509915,
-        "f1": 0.992867332382311,
-        "support": 353
+        "precision": 0.8535170413343002,
+        "recall": 0.7559409120102761,
+        "f1": 0.8017711171662125,
+        "support": 1557
       },
       "positive": {
-        "precision": 0.9774436090225563,
-        "recall": 1.0,
-        "f1": 0.9885931558935361,
-        "support": 130
+        "precision": 0.6090712742980562,
+        "recall": 0.597457627118644,
+        "f1": 0.6032085561497326,
+        "support": 472
       }
     }
   }
