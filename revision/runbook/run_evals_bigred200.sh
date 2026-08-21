@@ -34,7 +34,26 @@ set -uo pipefail
 # --- Environment (BigRed200 is Cray/SLES: cray-python; Quartz overrides via
 #     --export=ALL,PY_MODULE=python/gpu/3.11.5) ---
 module load "${PY_MODULE:-cray-python/3.11.7}"
-VENV="${VENV:-/N/scratch/ayshaikh/venv-finistral}"
+
+# VENV_TARBALL mode: untar a login-node-built venv to node-local /tmp.
+# Rationale: imports of many small files from /N/scratch hang (Lustre
+# metadata/mmap pathology), but single-LARGE-file reads from scratch work
+# (model weights stream fine). A tarball is one large file; untarring to
+# local /tmp makes every subsequent import node-local. The venv must be
+# unpacked at the SAME path it was built at (/tmp/finvenv) so its internal
+# paths resolve. Both steps timeout-guarded to keep fail-fast behavior.
+if [ -n "${VENV_TARBALL:-}" ]; then
+  rm -rf /tmp/finvenv
+  if timeout 600 tar -xzf "$VENV_TARBALL" -C /tmp; then
+    VENV=/tmp/finvenv
+    trap 'rm -rf /tmp/finvenv' EXIT
+    echo "[venv] unpacked $VENV_TARBALL -> /tmp/finvenv"
+  else
+    echo "FATAL: venv tarball unpack timed out/failed"; exit 3
+  fi
+else
+  VENV="${VENV:-/N/scratch/ayshaikh/venv-finistral}"
+fi
 # shellcheck disable=SC1090
 source "$VENV/bin/activate"
 
