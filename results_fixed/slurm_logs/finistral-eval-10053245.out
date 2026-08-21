@@ -1,0 +1,610 @@
+[venv] unpacked /N/scratch/ayshaikh/finvenv.tar.gz -> /tmp/finvenv
+NVIDIA H100 80GB HBM3, 81559 MiB
+torch 2.4.1+cu121 cuda True
+########## finistral / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing finistral_fpb_decontam_seed0_predictions.csv (n=560)
+
+=== Model: Finistral-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## finistral / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing finistral_fiqa_seed0_predictions.csv (n=235)
+
+=== Model: Finistral-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## finistral / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing finistral_tfns_seed0_predictions.csv (n=2373)
+
+=== Model: Finistral-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## finistral_alpaca / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing finistral_alpaca_fpb_decontam_seed0_predictions.csv (n=560)
+
+=== Model: Finistral-7B-LoRA (Alpaca prompt) -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## finistral_alpaca / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing finistral_alpaca_fiqa_seed0_predictions.csv (n=235)
+
+=== Model: Finistral-7B-LoRA (Alpaca prompt) -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## finistral_alpaca / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing finistral_alpaca_tfns_seed0_predictions.csv (n=2373)
+
+=== Model: Finistral-7B-LoRA (Alpaca prompt) -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## mistral_base / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing mistral_base_fpb_decontam_seed0_predictions.csv (n=560)
+
+=== Model: Mistral-7B-v0.1-Base -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## mistral_base / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing mistral_base_fiqa_seed0_predictions.csv (n=235)
+
+=== Model: Mistral-7B-v0.1-Base -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## mistral_base / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing mistral_base_tfns_seed0_predictions.csv (n=2373)
+
+=== Model: Mistral-7B-v0.1-Base -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_llama2 / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_llama2_fpb_decontam_seed0_predictions.csv (n=560)
+
+=== Model: FinGPT-mt-Llama2-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_llama2 / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_llama2_fiqa_seed0_predictions.csv (n=235)
+
+=== Model: FinGPT-mt-Llama2-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_llama2 / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_llama2_tfns_seed0_predictions.csv (n=2373)
+
+=== Model: FinGPT-mt-Llama2-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_llama3 / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_llama3_fpb_decontam_seed0_predictions.csv (n=560)
+
+=== Model: FinGPT-Llama-3-8B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_llama3 / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_llama3_fiqa_seed0_predictions.csv (n=235)
+
+=== Model: FinGPT-Llama-3-8B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_llama3 / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_llama3_tfns_seed0_predictions.csv (n=2373)
+
+=== Model: FinGPT-Llama-3-8B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_falcon / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_falcon_fpb_decontam_seed0_predictions.csv (n=560)
+
+=== Model: FinGPT-Falcon-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_falcon / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_falcon_fiqa_seed0_predictions.csv (n=235)
+
+=== Model: FinGPT-Falcon-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_falcon / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_falcon_tfns_seed0_predictions.csv (n=2373)
+
+=== Model: FinGPT-Falcon-7B-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_bloom / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+  [resume] reusing existing fingpt_bloom_fpb_decontam_seed0_predictions.csv (n=560)
+
+=== Model: FinGPT-Bloom-7B1-LoRA -- all seeds already on disk, skipped ===
+
+=== Aggregated (mean +/- std across seeds) ===
+  [fiqa        ] Finistral-7B-LoRA                acc=0.8766+/-0.0000  wF1=0.8833+/-0.0000  macroF1=0.6999+/-0.0000
+  [fiqa        ] FinGPT-Falcon-7B-LoRA            acc=0.8553+/-0.0000  wF1=0.8594+/-0.0000  macroF1=0.7226+/-0.0000
+  [fiqa        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.8085+/-0.0000  wF1=0.8301+/-0.0000  macroF1=0.6743+/-0.0000
+  [fiqa        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.7745+/-0.0000  wF1=0.8209+/-0.0000  macroF1=0.6525+/-0.0000
+  [fiqa        ] FinGPT-Llama-3-8B-LoRA           acc=0.6213+/-0.0000  wF1=0.7219+/-0.0000  macroF1=0.5795+/-0.0000
+  [fiqa        ] Mistral-7B-v0.1-Base             acc=0.0128+/-0.0000  wF1=0.0252+/-0.0000  macroF1=0.0176+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA                acc=0.9893+/-0.0000  wF1=0.9893+/-0.0000  macroF1=0.9853+/-0.0000
+  [fpb_decontam] FinGPT-mt-Llama2-7B-LoRA         acc=0.9857+/-0.0000  wF1=0.9857+/-0.0000  macroF1=0.9798+/-0.0000
+  [fpb_decontam] Finistral-7B-LoRA (Alpaca prompt) acc=0.9804+/-0.0000  wF1=0.9804+/-0.0000  macroF1=0.9755+/-0.0000
+  [fpb_decontam] FinGPT-Falcon-7B-LoRA            acc=0.9696+/-0.0000  wF1=0.9697+/-0.0000  macroF1=0.9633+/-0.0000
+  [fpb_decontam] FinGPT-Llama-3-8B-LoRA           acc=0.9339+/-0.0000  wF1=0.9410+/-0.0000  macroF1=0.9265+/-0.0000
+  [fpb_decontam] FinGPT-Bloom-7B1-LoRA            acc=0.8946+/-0.0000  wF1=0.8934+/-0.0000  macroF1=0.8517+/-0.0000
+  [fpb_decontam] Mistral-7B-v0.1-Base             acc=0.0036+/-0.0000  wF1=0.0070+/-0.0000  macroF1=0.0135+/-0.0000
+  [tfns        ] Finistral-7B-LoRA (Alpaca prompt) acc=0.8786+/-0.0000  wF1=0.8811+/-0.0000  macroF1=0.8598+/-0.0000
+  [tfns        ] FinGPT-Llama-3-8B-LoRA           acc=0.7804+/-0.0000  wF1=0.8211+/-0.0000  macroF1=0.7906+/-0.0000
+  [tfns        ] Finistral-7B-LoRA                acc=0.7893+/-0.0000  wF1=0.7959+/-0.0000  macroF1=0.7776+/-0.0000
+  [tfns        ] FinGPT-mt-Llama2-7B-LoRA         acc=0.7644+/-0.0000  wF1=0.7713+/-0.0000  macroF1=0.7527+/-0.0000
+  [tfns        ] FinGPT-Falcon-7B-LoRA            acc=0.7307+/-0.0000  wF1=0.7377+/-0.0000  macroF1=0.7223+/-0.0000
+  [tfns        ] Mistral-7B-v0.1-Base             acc=0.0013+/-0.0000  wF1=0.0025+/-0.0000  macroF1=0.0047+/-0.0000
+
+Done. Per-model predictions, confusion matrices, per-class tables, and summaries written to: /N/scratch/ayshaikh/FinistralAI_code/results_fixed
+########## fingpt_bloom / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+
+=== Model: FinGPT-Bloom-7B1-LoRA  (base=bigscience/bloom-7b1, peft=FinGPT/fingpt-mt_bloom-7b1_lora, kind=causal) ===
+WARNING: fingpt_bloom/fiqa timed out or failed (exit 124) -- will retry on next resubmit.
+########## fingpt_bloom / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+
+=== Model: FinGPT-Bloom-7B1-LoRA  (base=bigscience/bloom-7b1, peft=FinGPT/fingpt-mt_bloom-7b1_lora, kind=causal) ===
+WARNING: fingpt_bloom/tfns timed out or failed (exit 124) -- will retry on next resubmit.
+########## finbert / fpb_decontam ##########
+[data] Loaded 560 examples from data_eval/fpb_decontam.csv.
+[data] Evaluating on 560 'fpb_decontam' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+
+=== Model: FinBERT (ProsusAI)  (base=ProsusAI/finbert, peft=None, kind=seq_cls) ===
+WARNING: finbert/fpb_decontam timed out or failed (exit 1) -- will retry on next resubmit.
+########## finbert / fiqa ##########
+[data] Loaded 235 examples from data_eval/fiqa.csv.
+[data] Evaluating on 235 'fiqa' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+
+=== Model: FinBERT (ProsusAI)  (base=ProsusAI/finbert, peft=None, kind=seq_cls) ===
+WARNING: finbert/fiqa timed out or failed (exit 1) -- will retry on next resubmit.
+########## finbert / tfns ##########
+[data] Loaded 2373 examples from data_eval/tfns.csv.
+[data] Evaluating on 2373 'tfns' examples.
+[config] quant=none  seeds=[0]  batch_size=8  max_new_tokens=8
+
+=== Model: FinBERT (ProsusAI)  (base=ProsusAI/finbert, peft=None, kind=seq_cls) ===
+WARNING: finbert/tfns timed out or failed (exit 1) -- will retry on next resubmit.
+{'gpu': 'NVIDIA H100 80GB HBM3', 'dtype': 'bfloat16', 'batch_size': 1, 'max_new_tokens': 8, 'decoding': 'greedy', 'n': 50, 'median_ms': 65.5, 'p95_ms': 67.4}
+Done. From the Mac:  bash revision/runbook/deploy_bigred200.sh fetch
