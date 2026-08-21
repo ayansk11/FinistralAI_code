@@ -137,14 +137,14 @@ We present Finistral-7B-LoRA, a parameter-efficient financial-sentiment classifi
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/image3.png}
+  \includegraphics[width=\textwidth]{figures/image3_corrected.png}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.48\textwidth}
   \centering
   \includegraphics[width=\textwidth]{figures/image5.png}
 \end{subfigure}
-\caption*{Left: Finistral-7B-LoRA vs Mistral-7B-Base on the Financial PhraseBank \emph{in-distribution} split. Right: confusion matrix on the same split. As Section~\ref{sec:contamination} shows, 75.2\,\% of this split overlaps the training corpus; these figures are reported as a contamination diagnostic, not as evidence of generalisation.}
+\caption*{Left: corrected, leakage-free comparison of Finistral-7B-LoRA (under both prompt templates) against the Mistral-7B-v0.1 zero-shot backbone on the decontaminated FPB-560, FiQA-SA, and TFNS evaluation sets. Right: the \emph{original} confusion matrix on the full contaminated split, retained solely as a contamination diagnostic (Section~\ref{sec:contamination}).}
 \end{figure}
 
 %%% ---- Novelty Statement ----
@@ -496,23 +496,30 @@ The large apparent margins reported in our original submission ($+69$ F1 over ze
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.65\textwidth]{figures/image3.png}
-\caption{Finistral-7B-LoRA vs Mistral-7B-Base on Financial PhraseBank (sentences\_allagree)}
+\includegraphics[width=0.85\textwidth]{figures/image3_corrected.png}
+\caption{Corrected, leakage-free comparison: Finistral-7B-LoRA (training template and Alpaca-template ablation) vs the Mistral-7B-v0.1 zero-shot backbone on the decontaminated FPB-560, FiQA-SA ($n{=}235$), and TFNS ($n{=}2{,}373$) sets.}
 \label{fig:bar-comparison}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.65\textwidth]{figures/image4.png}
-\caption{Finistral-7B-LoRA vs FinGPT Baseline LoRA on Financial PhraseBank}
+\includegraphics[width=0.85\textwidth]{figures/image4_corrected.png}
+\caption{Corrected, leakage-free comparison of Finistral-7B-LoRA against all FinGPT adapter baselines and FinBERT, per evaluation set. Missing bars indicate accuracy/F1 near zero (the unparseable-dominated zero-shot backbone is omitted; see Table~\ref{tab:corrected-results}).}
 \label{fig:fingpt-comparison}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{figures/image5.png}
-\caption{Confusion matrix -- Finistral-7B-LoRA}
+\caption{Confusion matrix of Finistral-7B-LoRA on the \emph{original, contaminated} full split --- retained solely as a contamination diagnostic (Section~\ref{sec:contamination}); the corrected per-model confusion matrices appear in Figure~\ref{fig:confusion-grid}.}
 \label{fig:confusion}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures_corrected/confusion_matrix_grid_normalized.png}
+\caption{Row-normalised confusion matrices for every evaluated model under the corrected, leakage-free protocol (all three evaluation sets pooled; per-dataset and raw-count variants are released with the code). The \emph{unparseable} column shows strict-parser failures, dominant only for the zero-shot backbone.}
+\label{fig:confusion-grid}
 \end{figure}
 
 \subsection{Training Dynamics Insight}
