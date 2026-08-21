@@ -64,32 +64,15 @@ mkdir -p logs/slurm
 
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
-# Stage ONLY the torch package to node-local /tmp before importing it.
-# Diagnosis: importing torch directly from the Lustre-backed venv can hang
-# indefinitely (observed wchan=cl_sync_io_wait, 0% CPU, uninterruptible) --
-# a plain read()-based `dd` of the SAME large .so file (861MB
-# libtorch_cuda.so) from the SAME node succeeds instantly, because dd
-# doesn't mmap; torch's import does. This isolates the fault to mmap()
-# going through Lustre's distributed lock manager under contention.
-# IMPORTANT: a full-venv `cp -r` (thousands of small site-packages files)
-# was tried first and is WORSE -- it hung for 20+ min before even the
-# python-free `nvidia-smi` line above could run, consistent with
-# Lustre's metadata server being the actual bottleneck for many-small-file
-# operations, not just large-file mmap. Staging only the torch/ directory
-# (a handful of large binaries, few files) avoids that trap. Both the
-# staging copy and the subsequent import are timeout-guarded so a bad
-# attempt fails fast (under 5 min total) instead of hanging silently.
-SITE_PACKAGES="$(python -c 'import site; print(site.getsitepackages()[0])')"
-STAGE_DIR="/tmp/pystage-${SLURM_JOB_ID:-$$}"
-if timeout 120 cp -r "$SITE_PACKAGES/torch" "$STAGE_DIR/torch" 2>/dev/null; then
-  echo "[torch] staged to node-local $STAGE_DIR ($(du -sh "$STAGE_DIR" 2>/dev/null | cut -f1))"
-  export PYTHONPATH="$STAGE_DIR:${PYTHONPATH:-}"
-  trap 'rm -rf "$STAGE_DIR"' EXIT
-else
-  echo "[torch] local staging timed out/failed; falling back to network venv torch"
-  rm -rf "$STAGE_DIR" 2>/dev/null
-fi
-
+# NOTE: node-local staging (whole venv, then torch-only) was tried and
+# REJECTED -- both hung on `cp -r` itself, worse than the original problem
+# (Lustre's metadata server appears to be the real bottleneck for
+# many-small-file trees; torch's own package has thousands of files
+# including bundled C++ headers, not just a few large binaries). Plain,
+# unmodified execution from the network venv has demonstrably worked
+# (every first attempt on both clusters succeeded and did real multi-model
+# inference), so we do that -- just fail fast if this attempt hits
+# unhealthy filesystem state, rather than hang silently for hours.
 timeout 180 python -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())" \
   || { echo "FATAL: torch import timed out/failed (possible stuck Lustre I/O on this node) -- resubmit."; exit 3; }
 
