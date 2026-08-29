@@ -36,8 +36,9 @@ and (ii) a contamination-and-evaluation case study. Specifically, we have:
 
 1. Added a **Data Contamination Analysis** section reporting the overlap statistics,
    the train/test split mechanics, and a documented decontamination procedure.
-2. **Re-evaluated** on a decontaminated, leakage-free subset of Financial PhraseBank
-   (560 unseen sentences) and on two external datasets decontaminated row-by-row
+2. **Re-evaluated** on an exact-match-decontaminated subset of Financial PhraseBank
+   (560 sentences, with a released near-duplicate audit bounding residual overlap)
+   and on two external datasets decontaminated row-by-row
    against the training corpus — FiQA-SA (n = 235) and Twitter Financial News
    Sentiment (n = 2,373) — with full dataset provenance released.
 3. **Rebuilt the evaluation harness** (left-padding for decoder-only models,
