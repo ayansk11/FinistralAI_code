@@ -1,0 +1,258 @@
+{
+  "fpb_decontam": {
+    "n": 560,
+    "counts": {
+      "0.7": 22,
+      "0.8": 10,
+      "0.9": 3
+    },
+    "pct": {
+      "0.7": 3.93,
+      "0.8": 1.79,
+      "0.9": 0.54
+    },
+    "mean_max_jaccard": 0.3109,
+    "offenders": [
+      {
+        "sentence": "Ahlstrom 's 5,700 employees serve customers via sales offices and production facilities in more than 20 countries on six continents .",
+        "max_jaccard": 0.909
+      },
+      {
+        "sentence": "These include software development for internet and mobile telephone content , communications , value-added software , financial services , ",
+        "max_jaccard": 0.909
+      },
+      {
+        "sentence": "The contract also includes cutting and edging wagon parts at Ruukki 's steel service centres in Seinajoki and Raahe , both in southwestern F",
+        "max_jaccard": 0.906
+      },
+      {
+        "sentence": "The floor area of the Yliopistonrinne project will be 7,900 sq m 85,030 sq ft and the building 's gross area will total 12,800 sq m. A total",
+        "max_jaccard": 0.897
+      },
+      {
+        "sentence": "Cohen & Steers , Inc. : 5 534 626 shares representing 4.985 % of the share capital and voting rights .",
+        "max_jaccard": 0.889
+      },
+      {
+        "sentence": "Pharmaceutical market in Belgium Global Research & Data Services published recently a market analysis about the pharmaceutical markets in Be",
+        "max_jaccard": 0.875
+      },
+      {
+        "sentence": "The closing of such transaction took place today .",
+        "max_jaccard": 0.875
+      },
+      {
+        "sentence": "schwalm ( at ) outotec.com Eila Paatela , Vice President - Corporate Communications tel. +358 20 529 2004 , mobile +358 400 817198 e-mail ei",
+        "max_jaccard": 0.857
+      },
+      {
+        "sentence": "Raute is listed on the Nordic exchange in Helsinki .",
+        "max_jaccard": 0.8
+      },
+      {
+        "sentence": "The company is listed on the Nordic Exchange in Helsinki .",
+        "max_jaccard": 0.8
+      },
+      {
+        "sentence": "However , the company saw its net profit for the third quarter down to EUR 1.4 million from EUR 1.5 million for the corresponding period of ",
+        "max_jaccard": 0.792
+      },
+      {
+        "sentence": "Thus the group 's balance sheet will have about EUR25 .8 m in goodwill for 2010 , the company added .",
+        "max_jaccard": 0.789
+      },
+      {
+        "sentence": "Both operating profit and net sales for the 12-month period increased , respectively from EUR10 .5 m and EUR28 .8 m , as compared to the fin",
+        "max_jaccard": 0.786
+      },
+      {
+        "sentence": "Both operating profit and turnover for the three-month period increased , respectively from EUR0 .9 m and EUR8 .3 m , as compared to the cor",
+        "max_jaccard": 0.778
+      },
+      {
+        "sentence": "The company 's board of directors would propose a dividend of EUR1 .00 per share for 2005 .",
+        "max_jaccard": 0.778
+      },
+      {
+        "sentence": "Last July , the group said it intended to relocate warehouse and office space in Loudeac and Saint Marcel to Morvillars , in the east of Fra",
+        "max_jaccard": 0.774
+      },
+      {
+        "sentence": "Both operating profit and net sales for the six-month period increased , respectively from EUR0 .4 m and EUR3 .2 m , as compared to the corr",
+        "max_jaccard": 0.75
+      },
+      {
+        "sentence": "CapMan has four investment areas ( CapMan Buyout , CapMan Technology , CapMan Life Science and CapMan Real Estate ) , and each of them has a",
+        "max_jaccard": 0.739
+      },
+      {
+        "sentence": "In the third quarter of 2007 , net sales totaled EUR 25.95 mn , and operating profit EUR 3.88 mn .",
+        "max_jaccard": 0.714
+      },
+      {
+        "sentence": "No financial details were disclosed .",
+        "max_jaccard": 0.714
+      },
+      {
+        "sentence": "The value of the order is EUR 2.5 mn .",
+        "max_jaccard": 0.7
+      },
+      {
+        "sentence": "For 2009 , net profit was EUR 3 million and the company paid a dividend of EUR 1.30 apiece .",
+        "max_jaccard": 0.7
+      }
+    ]
+  },
+  "fiqa": {
+    "n": 235,
+    "counts": {
+      "0.7": 5,
+      "0.8": 4,
+      "0.9": 0
+    },
+    "pct": {
+      "0.7": 2.13,
+      "0.8": 1.7,
+      "0.9": 0.0
+    },
+    "mean_max_jaccard": 0.2178,
+    "offenders": [
+      {
+        "sentence": "Starbucks' Digital Strategy To Drive Significant Growth With Customer Loyalty $SBUX https://t.co/Xk6lZ3UI3K",
+        "max_jaccard": 0.875
+      },
+      {
+        "sentence": "Juniper tumbles on Q1 warning; Cisco also lower https://t.co/N8X8BpLJ1E $JNPR $CSCO",
+        "max_jaccard": 0.867
+      },
+      {
+        "sentence": "Costco: A Premier Retail Dividend Play https://t.co/J3UhTs022M $COST",
+        "max_jaccard": 0.833
+      },
+      {
+        "sentence": "UPDATE 1-EU regulator backs approval for GSK injectable asthma drug",
+        "max_jaccard": 0.818
+      },
+      {
+        "sentence": "Isolationism? Another Sell Rating, Sell Ratings On SPY, QQQ, IWM And Several Companies https://t.co/j35FNnx744 $AAPL #APPLE $AXP $BAC",
+        "max_jaccard": 0.783
+      }
+    ]
+  },
+  "tfns": {
+    "n": 2373,
+    "counts": {
+      "0.7": 119,
+      "0.8": 48,
+      "0.9": 15
+    },
+    "pct": {
+      "0.7": 5.01,
+      "0.8": 2.02,
+      "0.9": 0.63
+    },
+    "mean_max_jaccard": 0.3249,
+    "offenders": [
+      {
+        "sentence": "Carl Icahn plans to nominate a slate of 10 directors in an attempt to seize control of the board of U.S. oil and ga\u2026 https://t.co/JepE5qxI6U",
+        "max_jaccard": 0.926
+      },
+      {
+        "sentence": "Fed Chairman Jerome Powell puts lawmakers on notice that fiscal policy may need to play a bigger role countering do\u2026 https://t.co/URFHNRkmfh",
+        "max_jaccard": 0.92
+      },
+      {
+        "sentence": "Exxon is cutting billions of dollars in investments to keep its financial footing during the worst oil-price rout i\u2026 https://t.co/MI5vCEkhlm",
+        "max_jaccard": 0.92
+      },
+      {
+        "sentence": "Oil workers from the United States are leaving Iraq after Iranian military leader Qasem Soleimani was killed in a U\u2026 https://t.co/MFcBJAERvs",
+        "max_jaccard": 0.92
+      },
+      {
+        "sentence": "Two key regulators are holding off on easing Wall Street debt limits, leaving billions of dollars locked up that co\u2026 https://t.co/YvDDlEcmh2",
+        "max_jaccard": 0.917
+      },
+      {
+        "sentence": "Exclusive: Daimler seeks majority control of its main China joint venture - sources",
+        "max_jaccard": 0.917
+      },
+      {
+        "sentence": "U.S. economy is in a contraction, says Larry Kudlow, adding that it could reopen in four to eight weeks https://t.co/tgwRWgau7k",
+        "max_jaccard": 0.917
+      },
+      {
+        "sentence": "The job loss reflected in Friday's report is a shock that is unprecedented, as is the uncertainty surrounding it-\u009dwh\u2026 https://t.co/zqYuNg31K",
+        "max_jaccard": 0.913
+      },
+      {
+        "sentence": "Greenhouse gas emissions in the U.S. are forecast to decline by a whopping 7.5% this year https://t.co/MjBXKkouHy",
+        "max_jaccard": 0.913
+      },
+      {
+        "sentence": "3M is exploring a sale of its drug delivery systems unit, which could fetch about $1 billion https://t.co/ISlbwO3FCd",
+        "max_jaccard": 0.909
+      },
+      {
+        "sentence": "Sanofi eyes more EPS growth this year as it narrows focus",
+        "max_jaccard": 0.909
+      },
+      {
+        "sentence": "The number of new coronavirus cases in Indonesia surges by more than 200 for second consecutive day https://t.co/bdhN2NroqM",
+        "max_jaccard": 0.909
+      },
+      {
+        "sentence": "JUST RELEASED: Oil Price Dynamics Report Oil prices rose over the past week owing to decreased supply.\u2026 https://t.co/GDfcDZqNZ0",
+        "max_jaccard": 0.905
+      },
+      {
+        "sentence": "OPEC+ will adjust its output target and redistribute production cuts between its members under pressure from Saudi\u2026 https://t.co/9LLzyIDWqG",
+        "max_jaccard": 0.905
+      },
+      {
+        "sentence": "While market strain triggered by the coronavirus pandemic has eased since the Federal Reserve's historic interventi\u2026 https://t.co/ZFb0jzOH7h",
+        "max_jaccard": 0.905
+      },
+      {
+        "sentence": "Stock Market Update: Asia closes mixed, Asia trades lower",
+        "max_jaccard": 0.889
+      },
+      {
+        "sentence": "Edited Transcript of DZSI earnings conference call or presentation 12-Nov-19 10:00pm GMT",
+        "max_jaccard": 0.875
+      },
+      {
+        "sentence": "Edited Transcript of SMCI earnings conference call or presentation 6-Feb-20 10:00pm GMT",
+        "max_jaccard": 0.875
+      },
+      {
+        "sentence": "Make the Most of Your Retirement with These Top-Ranked Mutual Funds - February 06, 2020",
+        "max_jaccard": 0.875
+      },
+      {
+        "sentence": "News Highlights : Top Global Markets News of the Day #NewsHighlights #economy #MarketScreener\u2026 https://t.co/70WlBhNOkd",
+        "max_jaccard": 0.875
+      },
+      {
+        "sentence": "In case you need another reason to delete your Facebook: https://t.co/SGVxYSwjo0",
+        "max_jaccard": 0.867
+      },
+      {
+        "sentence": "Mass layoffs push Canada consumer confidence to all-time low https://t.co/GVK9N8RK22",
+        "max_jaccard": 0.867
+      },
+      {
+        "sentence": "Gasoline futures tumbled 17%to touch 50 cents a gallon for the first time since 2001 https://t.co/IEY9r0mWBR https://t.co/VDR92rHToO",
+        "max_jaccard": 0.864
+      },
+      {
+        "sentence": "Here's What Analysts Are Forecasting For Cummins Inc. After Its Annual Results",
+        "max_jaccard": 0.857
+      },
+      {
+        "sentence": "Mortgage forbearance requests jump nearly 2,000% as borrowers seek relief during coronavirus outbreak https://t.co/MJ1exQ1C7K",
+        "max_jaccard": 0.85
+      }
+    ]
+  }
+}

@@ -16,15 +16,15 @@ We have also confirmed, by reproducing the harness and inspecting the committed 
 The revised manuscript is no longer a SOTA-accuracy paper. It is reframed honestly as **an efficient, fully reproducible LoRA recipe and an evaluation-and-contamination case study** for financial sentiment analysis. The major changes are:
 
 1. **New Section on Data Contamination** (Reviewer 1.3, Reviewer 2.1): reports the 75.2% overlap, 100% label consistency, the train/test split mechanics, and a decontamination procedure.
-2. **Decontaminated re-evaluation**: accuracy and weighted-F1 reported on the disjoint 560-sentence remainder *and* on external, leakage-free datasets.
-3. **Fixed evaluation harness** (Reviewer 1.2, Reviewer 2.2/2.3/2.4): `padding_side='left'`, `max_new_tokens`, per-model native prompts, consistent `Mistral-7B-v0.1` backbone, corrected quantization; per-baseline confusion matrices added.
-4. **Multi-seed evaluation** with mean ± std and significance testing (Reviewer 1.5, Reviewer 2.5).
-5. **Ablation study** over LoRA rank, alpha, target modules, prompt template, and epochs (Reviewer 1.6).
+2. **Decontaminated re-evaluation**: accuracy, weighted-F1, and macro-F1 reported on the exact-match-decontaminated 560-sentence remainder *and* on two external datasets decontaminated row-wise against the training corpus (FiQA-SA, n = 235; TFNS, n = 2,373), plus a released near-duplicate (token-set Jaccard) audit of all three sets.
+3. **Fixed evaluation harness** (Reviewer 1.2, Reviewer 2.2/2.3/2.4): `padding_side='left'`, `max_new_tokens`, per-model native prompts, consistent `Mistral-7B-v0.1` backbone, corrected quantization; per-baseline confusion matrices added (Fig. 7).
+4. **Per-example statistical validation** for every comparison — McNemar tests and paired-bootstrap 95% confidence intervals (new Appendix A) (Reviewer 1.5, Reviewer 2.5). Evaluation is deterministic by construction (greedy decoding), so evaluation-seed variance is exactly zero; *training*-seed replication is honestly deferred, with the runnable protocol released (`ablation_and_seeds.py`).
+5. **Prompt-template ablation** — the delivered ablation axis: the identical adapter under its training template vs the original mismatched Alpaca template on all three evaluation sets, with significance tests (Sec. 6.4) (Reviewer 1.6). The training-time grid (rank/alpha/target modules/epochs) is released as runnable code and honestly flagged as deferred, not claimed as done.
 6. **Expanded error analysis** with misclassified examples and per-category breakdown (Reviewer 1.7).
-7. **New quantitative figures** (learning curves, PR/ROC, ablation curves) replacing the GUI screenshots (Reviewer 1.10).
-8. **Corrected text-vs-code mismatches** throughout (Unsloth, "8-bit NF4", LoRA targets, dropout, param count, adapter sizes, prompt template, val loss).
+7. **New quantitative figures from the corrected evaluation** — per-model confusion-matrix grid (Fig. 7) and corrected comparison charts (Figs. 4–5) replace the contaminated figure sources; per-class P/R/F1, ROC, and PR curves are released with the repository; learning curves could not be faithfully regenerated (original `trainer_state` not retained — the recorded validation-loss table stands in, and we say so) (Reviewer 1.10).
+8. **Corrected text-vs-code-vs-artifact mismatches** throughout, consolidated in the new Appendix B (Unsloth, "8-bit NF4", LoRA targets verified against the published adapter's own files, dropout, param count, adapter sizes, prompt template, val loss).
 9. **Expanded 2024–2026 literature** (Reviewer 1.12) and a **truthful AI-assistance disclosure**.
-10. **Released scripts**: `eval_harness_fixed.py`, `leakage_analysis.py`, `ablation_and_seeds.py`, `analysis_and_figures.py` (Reviewer 1.13).
+10. **Released artifacts**: `eval_harness_fixed.py`, `leakage_analysis.py`, `near_duplicate_audit.py`, `stats_report.py`, `ablation_and_seeds.py`, `analysis_and_figures.py`, frozen evaluation sets with provenance (Reviewer 1.13).
 
 We recognize that these corrections substantially lower our headline numbers. We believe the honest, decontaminated result and the contamination case study are a more useful contribution than the original inflated figure, and we are grateful to the reviewers for steering us there.
 
@@ -46,7 +46,7 @@ We recognize that these corrections substantially lower our headline numbers. We
 | C10 | "Sentences wrapped exactly as in the training script" (Instruction/Input/Answer) | **Corrected** | Training used `[INST]{input}\n{instruction} [/INST] {output}`; the train/eval template mismatch is disclosed and the eval re-run under the `[INST]` template. |
 | C11 | "Best val loss 0.1008" vs Table 6 "0.1009" | **Corrected** | Single value from training logs used consistently. |
 | C12 | "All baselines evaluated with identical truncation + greedy decoding" | **Corrected** | Harness was broken (right-padding, `max_length` collision, neutral-default parser); fixed and re-run; honest protocol described. |
-| C13 | "Mistral-7B-Base" baseline = Finistral's backbone | **Corrected** | Base baseline re-run on identical `mistralai/Mistral-7B-v0.1` (was `unsloth/mistral-7b-v0.2`). |
+| C13 | "Mistral-7B-Base" baseline = Finistral's backbone | **Corrected** | Base baseline re-run on identical `mistralai/Mistral-7B-v0.1` (was `unsloth/mistral-7b-v0.2`); the original-backbone disclosure now also appears in the manuscript itself (Appendix B). |
 | C14 | "No AI-assisted technology used in writing" | **Corrected** | Truthful disclosure consistent with `generate_docx.py` and drafting tools used. |
 
 ---
@@ -73,9 +73,9 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R1.3 — Possible data leakage; duplicate/near-duplicate analysis
 
-**Confirmed — this is the central finding.** `FinGPT/fingpt-sentiment-train` aggregates four sources, one of which is Financial PhraseBank itself; the FinGPT replication notes explicitly state that for FPB "all data in the train part were used in finetuning." Our normalized exact-match and fuzzy (Jaccard ≥ 0.9) analysis quantifies it: 1,699 verbatim of 2,259 unique (75.2%), 100% label-consistent, uniform across classes (pos 77.2% / neu 74.6% / neg 74.6%); 560 sentences remain genuinely unseen.
+**Confirmed — this is the central finding.** `FinGPT/fingpt-sentiment-train` aggregates four sources, one of which is Financial PhraseBank itself; the FinGPT replication notes explicitly state that for FPB "all data in the train part were used in finetuning." Our exact and normalized matching quantifies it: 1,699 verbatim of 2,259 unique (75.2%), 100% label-consistent, uniform across classes (pos 77.2% / neu 74.6% / neg 74.6%); 560 sentences remain after removal.
 
-**Action:** we added the full overlap analysis (exact + normalized + MinHash/LSH), report accuracy/F1 on the decontaminated disjoint remainder, and validate on truly held-out external sets (R1.8/R2.5). `leakage_analysis.py` is released.
+**Action:** the manuscript reports the exact + normalized overlap analysis (Sec. 5.5, Table 9) **and — addressing the near-duplicate half of this question directly — a token-set Jaccard near-duplicate audit of every retained evaluation sentence against all 30,209 unique training inputs** (new "Near-duplicate audit" paragraph, Sec. 5.5): on FPB-560, 22 sentences (3.9%) reach J ≥ 0.7 and only 3 (0.5%) J ≥ 0.9; FiQA 5/235 at J ≥ 0.7; TFNS 119/2,373. Even worst-case treating every J ≥ 0.7 sentence as memorized bounds the FPB-560 accuracy change at 3.9 points, so near-duplicate leakage cannot account for the corrected results. We accordingly describe the sets as *exact-match-decontaminated* rather than "leakage-free" throughout. `leakage_analysis.py` (which additionally implements a MinHash/LSH fuzzy tier) and `near_duplicate_audit.py` are both released.
 
 ## R1.4 — Limited novelty (LoRA on existing backbone)
 
@@ -103,7 +103,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R1.10 — Replace GUI screenshots with learning/PR/ROC/ablation curves
 
-**Acknowledged.** **Delivered:** per-baseline confusion matrices, per-class precision/recall/F1 charts, one-vs-rest ROC and PR curves (from first-token class log-probabilities captured during the corrected evaluation), an error-category breakdown table, and comparison bar charts regenerated from the corrected leakage-free numbers (replacing the old contaminated-figure sources of Figs. 3–4), all via the released `analysis_and_figures.py` / `stats_report.py` / `make_comparison_charts.py`. **One honest substitution:** training/validation *learning curves* cannot be faithfully regenerated — the original run's `trainer_state.json` was not retained, and re-plotting would require retraining; the manuscript's validation-loss trajectory table (recorded at training time) stands in for them, and we say so rather than fabricating a curve. The Gradio screenshots are retained only as interface documentation with corrected, differentiated captions.
+**Acknowledged.** **Delivered in the manuscript:** the per-baseline confusion-matrix grid (Fig. 7), corrected comparison charts replacing the contaminated figure sources (Figs. 4–5), and the error-analysis section (Sec. 6.5). **Delivered in the released repository** (referenced from the paper): per-class precision/recall/F1 charts and one-vs-rest ROC and PR curves (from first-token class log-probabilities captured during the corrected evaluation), via `analysis_and_figures.py` / `stats_report.py` / `make_comparison_charts.py`. **One honest substitution:** training/validation *learning curves* cannot be faithfully regenerated — the original run's `trainer_state.json` was not retained, and re-plotting would require retraining; the manuscript's validation-loss trajectory table (recorded at training time) stands in for them, and we say so rather than fabricating a curve. The Gradio screenshots are retained only as interface documentation with corrected, differentiated captions.
 
 ## R1.11 — Deeper discussion of *why* it outperforms
 
@@ -135,7 +135,7 @@ The 99.56% is therefore not validated as a generalization result; it is invalida
 
 ## R2.4 — Provide confusion matrices for all baselines
 
-**Acknowledged.** **Action:** `analysis_and_figures.py` outputs per-baseline confusion matrices (and PR/ROC) under the corrected harness; these are included for every model in Table 5, not only for Finistral.
+**Acknowledged.** **Action:** the manuscript now includes a row-normalised confusion-matrix grid for **every** evaluated model under the corrected harness (Fig. 7), with per-dataset and raw-count variants (plus PR/ROC) released via `analysis_and_figures.py` — no longer only Finistral's.
 
 ## R2.5 — Replicate across seeds + test on external datasets
 
