@@ -55,7 +55,7 @@ Errors made by the AI assistant during this collaboration, in the open:
 1. **The wrong correction (June):** "corrected" the LoRA target-module claim to q/v-only based on the repository's training script, without checking the published adapter — propagating a new error into the abstract, contributions, and hyperparameter table for two months. Lesson: released artifacts outrank source trees.
 2. **Overstated response letter (June draft):** preamble bullets claimed multi-seed evaluation, a full ablation grid, and figures before they existed. Caught only at the Stage-3 rebuttal audit. Lesson: letters must be written from delivered state, not planned state.
 3. **Self-ingestion bug:** the statistics script globbed its own output file as input, double-counting rows; caught because an n of 1,120 looked wrong. Lesson: output artifacts must not match input patterns.
-4. **A wrong significance sentence:** "all p < 1e-8" written where one baseline's p was 2.1×10⁻³ — introduced during results-filling, caught by four of five panel reviewers.
+4. **A wrong significance sentence:** "all p < 1e-8" written where one baseline's p was 2.1×1e-3 — introduced during results-filling, caught by four of five panel reviewers.
 5. **Infrastructure over-engineering:** two node-local staging strategies (full venv, torch-only) both hung on the copy step itself before the correct single-tarball pattern; roughly six hours and several cluster jobs were spent learning what an HPC veteran might have tried first.
 6. **Monitor blind spot:** a stall detector treated a queued (PENDING) job as a hung one, producing a false alarm.
 
