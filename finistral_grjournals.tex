@@ -4,16 +4,16 @@
 
 \documentclass[a4paper]{article}
 
-%%% ---- Page Layout ----
+%%% ==== Page Layout ====
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 
-%%% ---- Fonts (pdfLaTeX) ----
+%%% ==== Fonts (pdfLaTeX) ====
 \usepackage[T1]{fontenc}
 \usepackage{newtxtext,newtxmath}   % Times New Roman clone
 \usepackage{carlito}               % Carlito = metric-compatible Calibri substitute
 \newcommand{\calibrifont}{\fontfamily{Crlt-LF}\selectfont}
 
-%%% ---- Packages ----
+%%% ==== Packages ====
 \usepackage{setspace}
 \usepackage{titlesec}
 \usepackage{booktabs}
@@ -26,14 +26,14 @@
 \usepackage{xcolor}
 \usepackage{subcaption}
 
-%%% ---- Revision placeholder for numbers awaiting decontaminated re-run ----
+%%% ==== Revision placeholder for numbers awaiting decontaminated re-run ====
 
-%%% ---- Body text: TNR 10.5pt, single spacing, justified ----
+%%% ==== Body text: TNR 10.5pt, single spacing, justified ====
 \renewcommand{\normalsize}{\fontsize{10.5}{12.6}\selectfont}
 \normalsize
 \singlespacing
 
-%%% ---- Section Formatting (TNR 10.5pt Bold, numbered) ----
+%%% ==== Section Formatting (TNR 10.5pt Bold, numbered) ====
 \titleformat{\section}
   {\fontsize{10.5}{12.6}\selectfont\bfseries}
   {\thesection.}{0.5em}{}
@@ -49,7 +49,7 @@
   {\thesubsubsection}{0.5em}{}
 \titlespacing*{\subsubsection}{0pt}{8pt}{4pt}
 
-%%% ---- Custom Commands for GR Journals ----
+%%% ==== Custom Commands for GR Journals ====
 % Title: Calibri 20pt, Bold, left-aligned
 \newcommand{\grtitle}[1]{%
   {\calibrifont\fontsize{20}{24}\selectfont\bfseries\raggedright #1\par}%
@@ -89,7 +89,7 @@
   \vspace{12pt}%
 }
 
-%%% ---- Hyperref Setup ----
+%%% ==== Hyperref Setup ====
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
@@ -100,7 +100,7 @@
   pdftitle={Finistral AI: An Efficient Financial-Sentiment LoRA Adapter and a Train/Test Contamination Case Study}
 }
 
-%%% ---- Caption Setup ----
+%%% ==== Caption Setup ====
 \captionsetup{font=small, labelfont=bf}
 \captionsetup[figure]{name={Fig.}}
 
@@ -109,7 +109,7 @@
 %%% ================================================================
 \begin{document}
 
-%%% ---- Title Block ----
+%%% ==== Title Block ====
 \grtitle{Finistral AI: An Efficient Financial-Sentiment LoRA Adapter and a Train/Test Contamination Case Study}
 
 \grauthor{Zainab Mirza\textsuperscript{1}, Ayan Javeed Shaikh\textsuperscript{2,*}, Fazal Jalil Parkar\textsuperscript{3}}
@@ -122,24 +122,24 @@
 \vspace{2pt}
 \gremail{\textsuperscript{*}Email: ayshaikh@iu.edu}
 
-%%% ---- Abstract ----
+%%% ==== Abstract ====
 \grabstractheading
 \begin{grabstract}
-We present Finistral-7B-LoRA, a parameter-efficient financial-sentiment classifier produced by applying Low-Rank Adaptation (LoRA) to the 7-billion-parameter Mistral-7B-v0.1 language model. The adapter is trained on the open-source FinGPT/fingpt-sentiment-train corpus of approximately 77,000 labelled sentences, updating $\approx$\,0.58\,\% of the model parameters ($\approx$\,41.9\,M trainable, matching the released adapter's configuration), on two NVIDIA A100 (40\,GB) GPUs of Indiana University's Big Red 200 supercomputer. On the full Financial PhraseBank \texttt{sentences\_allagree} split the adapter shows an apparent 99.56\,\% accuracy --- but our own data-overlap audit reveals that 75.2\,\% of those evaluation sentences appear \emph{verbatim}, with identical gold labels, inside the training corpus, so that figure reflects memorisation rather than generalisation and is retained only as a contamination diagnostic. The paper's primary evidence is instead a corrected, exact-match-decontaminated evaluation: on the 560-sentence decontaminated Financial PhraseBank remainder Finistral attains 98.9\,\% accuracy, on FiQA-SA 87.7\,\% accuracy / 0.883 weighted F1, and on Twitter Financial News Sentiment 78.9\,\% accuracy / 0.796 weighted F1 --- statistically indistinguishable from the strongest FinGPT-class adapter on each dataset and significantly ahead of FinBERT off-distribution, with all comparisons carrying per-example significance tests. Our main contributions are (i) an efficient, fully reproducible single-node LoRA recipe for financial sentiment whose adapter runs inference on a single GPU, and (ii) a cautionary evaluation/contamination case study quantifying how corpus overlap and evaluation-harness defects can simultaneously inflate a model and deflate its baselines in the financial-NLP literature. The released adapter (Ayansk11/Finistral-7B\_lora on Hugging Face), decontamination and evaluation scripts, and frozen evaluation sets make every reported evaluation number independently reproducible.
+We present Finistral-7B-LoRA, a parameter-efficient financial-sentiment classifier produced by applying Low-Rank Adaptation (LoRA) to the 7-billion-parameter Mistral-7B-v0.1 language model. The adapter is trained on the open-source FinGPT/fingpt-sentiment-train corpus of approximately 77,000 labelled sentences, updating $\approx$\,0.58\,\% of the model parameters ($\approx$\,41.9\,M trainable, matching the released adapter's configuration), on two NVIDIA A100 (40\,GB) GPUs of Indiana University's Big Red 200 supercomputer. On the full Financial PhraseBank \texttt{sentences\_allagree} split the adapter shows an apparent 99.56\,\% accuracy, but our own data-overlap audit reveals that 75.2\,\% of those evaluation sentences appear \emph{verbatim}, with identical gold labels, inside the training corpus, so that figure reflects memorisation rather than generalisation and is retained only as a contamination diagnostic. The paper's primary evidence is instead a corrected, exact-match-decontaminated evaluation: on the 560-sentence decontaminated Financial PhraseBank remainder Finistral attains 98.9\,\% accuracy, on FiQA-SA 87.7\,\% accuracy / 0.883 weighted F1, and on Twitter Financial News Sentiment 78.9\,\% accuracy / 0.796 weighted F1. These figures are statistically indistinguishable from the strongest FinGPT-class adapter on each dataset and significantly ahead of FinBERT off-distribution, with all comparisons carrying per-example significance tests. Our main contributions are (i) an efficient, fully reproducible single-node LoRA recipe for financial sentiment whose adapter runs inference on a single GPU, and (ii) a cautionary evaluation/contamination case study quantifying how corpus overlap and evaluation-harness defects can simultaneously inflate a model and deflate its baselines in the financial-NLP literature. The released adapter (Ayansk11/Finistral-7B\_lora on Hugging Face), decontamination and evaluation scripts, and frozen evaluation sets make every reported evaluation number independently reproducible.
 \end{grabstract}
 
 \grkeywords{financial sentiment analysis, Low-Rank Adaptation (LoRA), parameter-efficient fine-tuning (PEFT), Mistral-7B, large language models, FinGPT, Financial PhraseBank}
 
-%%% ---- Graphical Abstract ----
+%%% ==== Graphical Abstract ====
 \noindent{\calibrifont\fontsize{12}{14.4}\selectfont\bfseries Graphical Abstract}\par
 \vspace{6pt}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{figures/graphical_abstract.png}
-\caption*{Left: 75.2\,\% of the Financial PhraseBank evaluation set appears verbatim, with identical gold labels, in the fine-tuning corpus --- the originally claimed 99.56\,\% accuracy reflects memorisation. Right: the corrected evaluation on the exact-match-decontaminated remainder and two external datasets, with per-example significance tests (Section~\ref{sec:contamination}).}
+\caption*{Left: 75.2\,\% of the Financial PhraseBank evaluation set appears verbatim, with identical gold labels, in the fine-tuning corpus, so the originally claimed 99.56\,\% accuracy reflects memorisation. Right: the corrected evaluation on the exact-match-decontaminated remainder and two external datasets, with per-example significance tests (Section~\ref{sec:contamination}).}
 \end{figure}
 
-%%% ---- Novelty Statement ----
+%%% ==== Novelty Statement ====
 \noindent{\fontsize{9}{11}\selectfont\itshape Novelty Statement:
 This work contributes (i) an efficient, fully reproducible LoRA recipe for adapting the compute-efficient Mistral-7B backbone to financial sentiment classification, updating only $\approx$\,0.58\,\% of the model parameters, and (ii) a contamination-and-evaluation case study: we show that the widely used FinGPT sentiment corpus overlaps the Financial PhraseBank benchmark by 75.2\,\% at the sentence level (identical labels), and that common evaluation-harness defects can drive instruction-tuned baselines below their majority-class floor. We release the adapter, decontamination scripts, and a corrected evaluation harness to enable low-cost, leakage-aware FinNLP research.\par}
 
@@ -192,13 +192,13 @@ Early attempts at financial sentiment analysis relied on domain-specific lexicon
 
 The advent of pre-trained language models (PLMs) led to a sharp performance jump. BERT \cite{devlin2019} introduced deep bidirectional pre-training for language understanding, and FinBERT \cite{araci2019} further pre-trains BERT on a financial news corpus (a filtered subset of Reuters TRC2) and fine-tunes it for financial sentiment analysis, outperforming both feature-engineering and neural baselines on the Financial PhraseBank and FiQA sentiment datasets. FinBERT, however, requires updating the full 110\,M parameters and thus incurs substantial GPU cost for domain shifts.
 
-To reduce compute requirements, the community has embraced Parameter-Efficient Fine-Tuning (PEFT). LoRA \cite{hu2022} freezes backbone weights and injects small rank-decomposition matrices, cutting trainable parameters by orders of magnitude while matching full fine-tuning quality. QLoRA \cite{dettmers2023} extends this with 4-bit quantisation, enabling fine-tuning of 65B-parameter models on a single 48\,GB GPU. Surveys \cite{peftsurvey2024} catalogue dozens of PEFT variants including adapters, prefix-tuning and highlight their importance for resource-constrained practitioners, and FinLoRA \cite{wang2025finlora} benchmarks LoRA variants specifically on financial datasets, demonstrating that low-rank adaptation yields substantial gains over base models at modest fine-tuning cost --- well suited to domain-adapting financial LLMs on academic budgets. Zhang et al.\ \cite{zhang2023instruct} demonstrate that instruction tuning general-purpose LLMs on financial sentiment data yields strong performance, particularly where numerical understanding and contextual comprehension are vital.
+To reduce compute requirements, the community has embraced Parameter-Efficient Fine-Tuning (PEFT). LoRA \cite{hu2022} freezes backbone weights and injects small rank-decomposition matrices, cutting trainable parameters by orders of magnitude while matching full fine-tuning quality. QLoRA \cite{dettmers2023} extends this with 4-bit quantisation, enabling fine-tuning of 65B-parameter models on a single 48\,GB GPU. Surveys \cite{peftsurvey2024} catalogue dozens of PEFT variants including adapters, prefix-tuning and highlight their importance for resource-constrained practitioners, and FinLoRA \cite{wang2025finlora} benchmarks LoRA variants specifically on financial datasets, demonstrating that low-rank adaptation yields substantial gains over base models at modest fine-tuning cost, which suits domain-adapting financial LLMs on academic budgets. Zhang et al.\ \cite{zhang2023instruct} demonstrate that instruction tuning general-purpose LLMs on financial sentiment data yields strong performance, particularly where numerical understanding and contextual comprehension are vital.
 
-Within finance, the open-source FinGPT project \cite{yang2023}\footnote{Models and datasets available at \url{https://huggingface.co/FinGPT}} provides data-centric pipelines and a zoo of LoRA adapters for Llama-, Falcon- and Bloom-based models. Community benchmarking of financial NLP systems is organised through the annual FinNLP workshop series \cite{finnlp2023}, whose shared tasks span multilingual financial-text analysis. Under correctly matched inference procedures, the FinGPT adapters are competitive with --- and can exceed --- specialised encoders like FinBERT on Financial PhraseBank, a picture our corrected evaluation confirms (Table~\ref{tab:corrected-results}). More recent work (2024--2026) has broadened both evaluation and methodology: holistic financial benchmarks such as FinBen \cite{xie2024finben} stress-test LLMs across dozens of financial tasks, and reasoning-oriented financial LLMs such as Fin-R1 \cite{liu2025finr1} apply reinforcement learning to elicit step-by-step financial reasoning. These efforts make contamination-aware, multi-dataset evaluation --- the focus of our revised protocol --- increasingly central to credible financial-LLM research.
+Within finance, the open-source FinGPT project \cite{yang2023}\footnote{Models and datasets available at \url{https://huggingface.co/FinGPT}} provides data-centric pipelines and a zoo of LoRA adapters for Llama-, Falcon- and Bloom-based models. Community benchmarking of financial NLP systems is organised through the annual FinNLP workshop series \cite{finnlp2023}, whose shared tasks span multilingual financial-text analysis. Under correctly matched inference procedures, the FinGPT adapters are competitive with, and can exceed, specialised encoders like FinBERT on Financial PhraseBank, a picture our corrected evaluation confirms (Table~\ref{tab:corrected-results}). More recent work (2024--2026) has broadened both evaluation and methodology: holistic financial benchmarks such as FinBen \cite{xie2024finben} stress-test LLMs across dozens of financial tasks, and reasoning-oriented financial LLMs such as Fin-R1 \cite{liu2025finr1} apply reinforcement learning to elicit step-by-step financial reasoning. These efforts make contamination-aware, multi-dataset evaluation, the focus of our revised protocol, increasingly central to credible financial-LLM research.
 
 Parallel to algorithmic advances, model architectures have evolved toward compute efficiency. The recently released Mistral-7B \cite{mistral2023} employs sliding-window attention and grouped-query attention (GQA) to reduce inference cost and memory while outperforming Llama~2~13B across all benchmarks evaluated in its report. Combining Mistral's lean decoder with LoRA thus promises a sweet-spot of speed and accuracy that prior financial studies have not fully explored.
 
-Our work situates itself at this intersection: we leverage the Mistral-7B backbone and the FinGPT sentiment corpus and apply LoRA for parameter-efficient adaptation. Crucially, we also draw on the emerging literature on benchmark data contamination \cite{oren2023contamination, xu2024leakage, roberts2023timelens}, which warns that overlap between large training corpora and public test sets can inflate reported scores. Because Financial PhraseBank is a constituent source of the FinGPT corpus, we treat such overlap as a first-class measurement rather than an afterthought, and report results both on the standard (contaminated) split and on decontaminated and external evaluations.
+Our work sits at this intersection: we take the Mistral-7B backbone and the FinGPT sentiment corpus and apply LoRA for parameter-efficient adaptation. We also draw on the emerging literature on benchmark data contamination \cite{oren2023contamination, xu2024leakage, roberts2023timelens}, which warns that overlap between large training corpora and public test sets can inflate reported scores. Because Financial PhraseBank is a constituent source of the FinGPT corpus, we treat such overlap as a first-class measurement rather than an afterthought, and report results both on the standard (contaminated) split and on decontaminated and external evaluations.
 
 
 \section{Problem Definition and Dataset}
@@ -215,7 +215,7 @@ Using \texttt{train\_test\_split(test\_size=0.05, seed=42)} we obtain:
 
 \begin{table}[htbp]
 \centering
-\caption{Train--Test Split}
+\caption{Training and validation split}
 \label{tab:train-test-split}
 \begin{tabular}{lcc}
 \toprule
@@ -231,7 +231,7 @@ Negative (\%)    & 24.5   & 24.9  \\
 
 \subsection{Preprocessing}
 
-\textbf{Pipeline Cleaning} -- Unicode-normalise, remove HTML artefacts, collapse whitespace.
+\textbf{Pipeline Cleaning}: Unicode-normalise, remove HTML artefacts, collapse whitespace.
 
 \textbf{Tokenisation:} Use the native \textit{Mistral-7B-v0.1} 32\,k BPE tokeniser.
 
@@ -277,7 +277,7 @@ This section explains how we adapt the 7-billion-parameter \textit{Mistral-7B-v0
 
 \subsection{LoRA Adaptation}
 
-We employed \textbf{Low-Rank Adaptation (LoRA)} \cite{hu2022} to inject trainable rank-decomposition matrices into \emph{all seven} linear projections of every transformer block --- the four attention projections (\texttt{q\_proj}, \texttt{k\_proj}, \texttt{v\_proj}, \texttt{o\_proj}) and the three feed-forward projections (\texttt{gate\_proj}, \texttt{up\_proj}, \texttt{down\_proj}) --- while leaving all backbone weights frozen. This is the configuration recorded in the released adapter's \texttt{adapter\_config.json} on the Hugging Face Hub, which we treat as the authoritative description of the published artifact; the file sizes of the released weights independently confirm it (derivation below).\footnote{The original submission's parameter count was incorrect; the full correction history is consolidated in Appendix~B.}
+We employed \textbf{Low-Rank Adaptation (LoRA)} \cite{hu2022} to inject trainable rank-decomposition matrices into \emph{all seven} linear projections of every transformer block: the four attention projections (\texttt{q\_proj}, \texttt{k\_proj}, \texttt{v\_proj}, \texttt{o\_proj}) and the three feed-forward projections (\texttt{gate\_proj}, \texttt{up\_proj}, \texttt{down\_proj}), while leaving all backbone weights frozen. This is the configuration recorded in the released adapter's \texttt{adapter\_config.json} on the Hugging Face Hub, which we treat as the authoritative description of the published artifact; the file sizes of the released weights independently confirm it (derivation below).\footnote{The original submission's parameter count was incorrect; the full correction history is consolidated in Appendix~B.}
 
 \begin{table}[htbp]
 \centering
@@ -297,7 +297,7 @@ Adapter size         & 83.9\,MB fp16 ($41.94\,\mathrm{M}\times2$\,B); 167.8\,MB 
 \end{tabular}
 \end{table}
 
-With $r=16$, each LoRA pair adds $r\,(d_{\mathrm{in}}{+}d_{\mathrm{out}})$ parameters. Per layer: \texttt{q\_proj} and \texttt{o\_proj} ($4096{\times}4096$) contribute $131{,}072$ each; \texttt{k\_proj} and \texttt{v\_proj} ($4096{\to}1024$, grouped-query attention) $81{,}920$ each; \texttt{gate\_proj} and \texttt{up\_proj} ($4096{\to}14336$) $294{,}912$ each; and \texttt{down\_proj} ($14336{\to}4096$) $294{,}912$ --- a total of $1{,}310{,}720$ per layer, $\times\,32$ layers $= 41{,}943{,}040 \approx 41.94$\,M parameters, i.e.\ $\approx$\,0.58\,\% of the 7.24\,B backbone. Two independent artifact measurements confirm this count exactly: the published fp16 \texttt{adapter\_model.safetensors} is $41{,}943{,}040 \times 2$\,B $= 83.9$\,MB, and the fp32 GGML export is $41{,}943{,}040 \times 4$\,B $= 167.8$\,MB. (The original submission's ``9\,M (0.2\,\%)'' figure was arithmetic error; a 9\,M-parameter fp16 adapter would occupy only ${\sim}$18\,MB, inconsistent with the file it shipped alongside.)
+With $r=16$, each LoRA pair adds $r\,(d_{\mathrm{in}}{+}d_{\mathrm{out}})$ parameters. Per layer: \texttt{q\_proj} and \texttt{o\_proj} ($4096{\times}4096$) contribute $131{,}072$ each; \texttt{k\_proj} and \texttt{v\_proj} ($4096{\to}1024$, grouped-query attention) $81{,}920$ each; \texttt{gate\_proj} and \texttt{up\_proj} ($4096{\to}14336$) $294{,}912$ each; and \texttt{down\_proj} ($14336{\to}4096$) $294{,}912$, for a total of $1{,}310{,}720$ per layer, $\times\,32$ layers $= 41{,}943{,}040 \approx 41.94$\,M parameters, i.e.\ $\approx$\,0.58\,\% of the 7.24\,B backbone. Two independent artifact measurements confirm this count exactly: the published fp16 \texttt{adapter\_model.safetensors} is $41{,}943{,}040 \times 2$\,B $= 83.9$\,MB, and the fp32 GGML export is $41{,}943{,}040 \times 4$\,B $= 167.8$\,MB. (The original submission's ``9\,M (0.2\,\%)'' figure was arithmetic error; a 9\,M-parameter fp16 adapter would occupy only ${\sim}$18\,MB, inconsistent with the file it shipped alongside.)
 
 \subsection{Training Procedure}
 
@@ -331,7 +331,7 @@ Training on two \textbf{A100 40\,GB GPUs} of Indiana University's \textbf{Big Re
 
 \begin{table}[htbp]
 \centering
-\caption{Training Result -- Validation-loss Trajectory (best at epoch 2)}
+\caption{Training result: validation-loss trajectory (best at epoch 2)}
 \label{tab:loss-trajectory}
 \begin{tabular}{cccc}
 \toprule
@@ -372,7 +372,7 @@ This section describes the evaluation protocol, baselines, metrics, and implemen
 
 \subsection{Baselines}
 
-In the revised evaluation, each baseline is run under its own native inference procedure (its published prompt template and the correct backbone), with left-padding for decoder-only generation, \texttt{max\_new\_tokens}-bounded greedy decoding, and a strict (non-defaulting) label parser. This corrects the original protocol, in which a \emph{single} shared Alpaca prompt, right-padding, a \texttt{max\_length}/\texttt{padding} collision, and a neutral-defaulting parser were applied uniformly to every model --- defects that drove several baselines below their majority-class floor (Section~\ref{sec:contamination}).
+In the revised evaluation, each baseline is run under its own native inference procedure (its published prompt template and the correct backbone), with left-padding for decoder-only generation, \texttt{max\_new\_tokens}-bounded greedy decoding, and a strict (non-defaulting) label parser. This corrects the original protocol, in which a \emph{single} shared Alpaca prompt, right-padding, a \texttt{max\_length}/\texttt{padding} collision, and a neutral-defaulting parser were applied uniformly to every model. These defects drove several baselines below their majority-class floor (Section~\ref{sec:contamination}).
 
 \begin{table}[htbp]
 \centering
@@ -382,7 +382,7 @@ In the revised evaluation, each baseline is run under its own native inference p
 \toprule
 \textbf{ID} & \textbf{Model} & \textbf{Adapter params (config)} & \textbf{Fine-tuned?} \\
 \midrule
-B\textsubscript{1} & Mistral-7B-v0.1 (zero-shot)  & ---, base 7.24\,B & $\times$ \\
+B\textsubscript{1} & Mistral-7B-v0.1 (zero-shot)  & n/a (base 7.24\,B) & $\times$ \\
 B\textsubscript{2} & FinGPT-mt-Llama2-7B-LoRA  & 6.29\,M ($r{=}8$, q/k/v) & $\checkmark$ \\
 B\textsubscript{3} & FinGPT-Llama-3-8B-LoRA    & 3.41\,M ($r{=}8$, q/v) & $\checkmark$ \\
 B\textsubscript{4} & FinGPT-Falcon-7B-LoRA     & 2.36\,M ($r{=}8$, fused QKV) & $\checkmark$ \\
@@ -404,7 +404,7 @@ B\textsubscript{6} & FinBERT (ProsusAI)        & 110\,M (full fine-tune) & $\che
 
 \subsection{Main Result}
 
-We report two distinct quantities and are careful not to conflate them. Table~\ref{tab:test-results} reproduces the \emph{original, contaminated} in-distribution numbers (full \texttt{sentences\_allagree} split, original harness); these are retained only as a contamination diagnostic. Table~\ref{tab:corrected-results} reports the \emph{corrected} numbers --- Finistral evaluated on the 560-sentence decontaminated remainder and on external datasets, with all baselines re-run under their native inference procedures. The original ``+78 F1 over the strongest FinGPT baseline'' claim conflated a contamination-inflated model with harness-deflated baselines and is withdrawn.
+We report two distinct quantities and are careful not to conflate them. Table~\ref{tab:test-results} reproduces the \emph{original, contaminated} in-distribution numbers (full \texttt{sentences\_allagree} split, original harness); these are retained only as a contamination diagnostic. Table~\ref{tab:corrected-results} reports the \emph{corrected} numbers: Finistral evaluated on the 560-sentence decontaminated remainder and on external datasets, with all baselines re-run under their native inference procedures. The original ``+78 F1 over the strongest FinGPT baseline'' claim conflated a contamination-inflated model with harness-deflated baselines and is withdrawn.
 
 \begin{table}[htbp]
 \centering
@@ -426,7 +426,7 @@ FinGPT-Bloom-7B1-LoRA \emph{(broken harness)}             & 0.1312          & 0.
 
 \begin{table}[htbp]
 \centering
-\caption{Corrected results on the exact-match-decontaminated evaluation sets under the fixed harness (\texttt{eval\_harness\_fixed.py} + \texttt{stats\_report.py}): the decontaminated 560-sentence FPB remainder, FiQA-SA (all splits pooled then row-wise decontaminated against the FinGPT corpus, $n{=}235$), and Twitter Financial News Sentiment (validation split, row-wise decontaminated, $n{=}2{,}373$). Decoding is greedy and deterministic (single pass; identical outputs across seeds by construction). \textbf{Bold} marks the best value per column. Complete statistics --- macro F1, unparseable rates, McNemar $p$-values, and bootstrap confidence intervals for every comparison --- are in Appendix~A; all comparisons are conditional on each model's native prompt template (Section~\ref{sec:contamination} and the ablation show template choice alone can shift accuracy by 9--10 points).}
+\caption{Corrected results on the exact-match-decontaminated evaluation sets under the fixed harness (\texttt{eval\_harness\_fixed.py} + \texttt{stats\_report.py}): the decontaminated 560-sentence FPB remainder, FiQA-SA (all splits pooled then row-wise decontaminated against the FinGPT corpus, $n{=}235$), and Twitter Financial News Sentiment (validation split, row-wise decontaminated, $n{=}2{,}373$). Decoding is greedy and deterministic (single pass; identical outputs across seeds by construction). \textbf{Bold} marks the best value per column. Complete statistics (macro F1, unparseable rates, McNemar $p$-values, and bootstrap confidence intervals for every comparison) are in Appendix~A; all comparisons are conditional on each model's native prompt template (Section~\ref{sec:contamination} and the ablation show template choice alone can shift accuracy by 9--10 points).}
 \label{tab:corrected-results}
 \begin{tabular}{lcccccc}
 \toprule
@@ -445,7 +445,7 @@ FinBERT (ProsusAI)                & 0.9643 & 0.9648 & 0.5149 & 0.6147 & 0.7252 &
 \end{tabular}
 \end{table}
 
-On the contaminated split only ten of 2,264 samples are misclassified --- a direct consequence of the model having seen three-quarters of the split during training. The genuine error profile is characterised on the decontaminated and external sets in Section~\ref{sec:contamination}.
+On the contaminated split only ten of 2,264 samples are misclassified, a direct consequence of the model having seen three-quarters of the split during training. The genuine error profile is characterised on the decontaminated and external sets in Section~\ref{sec:contamination}.
 
 \subsection{Hardware \& Software}
 
@@ -458,7 +458,7 @@ On the contaminated split only ten of 2,264 samples are misclassified --- a dire
 
 We audited the overlap between our training corpus, \texttt{FinGPT/fingpt-sentiment-train} (76{,}772 sentences), and our evaluation set, Financial PhraseBank \texttt{sentences\_allagree} (2{,}264 lines; 2{,}259 unique). Financial PhraseBank is one of the four constituent sources aggregated into the FinGPT sentiment corpus (alongside FiQA-SA, Twitter Financial News Sentiment, and News-With-GPT-Instructions), so overlap is expected by construction. We measured it directly.
 
-\textbf{Procedure.} We normalise both corpora (lowercasing, Unicode NFKC folding, punctuation stripping, whitespace collapse --- essential because Financial PhraseBank uses spaced punctuation such as ``\texttt{USD 2.3 mn .}'') and test each evaluation sentence for (a) exact and (b) normalised membership in the training inputs, recording the training-side gold label for every match. The full script is released as \texttt{leakage\_analysis.py} / \texttt{measure\_leakage\_local.py}.
+\textbf{Procedure.} We normalise both corpora (lowercasing, Unicode NFKC folding, punctuation stripping, whitespace collapse, which is essential because Financial PhraseBank uses spaced punctuation such as ``\texttt{USD 2.3 mn .}'') and test each evaluation sentence for (a) exact and (b) normalised membership in the training inputs, recording the training-side gold label for every match. The full script is released as \texttt{leakage\_analysis.py} / \texttt{measure\_leakage\_local.py}.
 
 \textbf{Findings.} The overlap is severe and is summarised in Table~\ref{tab:contamination}: \textbf{1{,}699 of the 2{,}259 unique evaluation sentences (75.2\,\%) appear verbatim in the training inputs, and in 100\,\% of those matches the training-side gold label is identical to the Financial PhraseBank label}, uniformly across classes. Reproducing the training script's own \texttt{train\_test\_split(test\_size=0.05, seed=42)}, $\approx$\,1{,}614 of these leaked sentences fall in the 95\,\% fine-tuning partition. The model was therefore scored on the exact (sentence, label) pairs it was trained on, which fully accounts for the 99.56\,\% headline accuracy.
 
@@ -479,7 +479,7 @@ Decontaminated remainder (unseen)      & 560 (24.8\,\%) \\
 \end{tabular}
 \end{table}
 
-\textbf{Near-duplicate audit.} Exact and normalised matching cannot catch paraphrases or lightly edited variants, so we additionally computed, for every retained evaluation sentence, its maximum token-set Jaccard similarity against all 30{,}209 unique normalised training inputs (inverted-index blocked; released as \texttt{near\_duplicate\_audit.py}). The near-duplicate tail is small but nonzero: on FPB-560, 22 sentences (3.9\,\%) have $J \ge 0.7$, 10 (1.8\,\%) $J \ge 0.8$, and 3 (0.5\,\%) $J \ge 0.9$; on FiQA-SA, 5 (2.1\,\%) reach $J \ge 0.7$ and none $J \ge 0.9$; on TFNS, 119 (5.0\,\%) reach $J \ge 0.7$ and 15 (0.6\,\%) $J \ge 0.9$. Even under the worst-case assumption that every $J \ge 0.7$ sentence is answered by memorisation, Finistral's FPB-560 accuracy changes by at most 3.9 points --- near-duplicate leakage cannot account for the corrected results. We accordingly describe our sets as \emph{exact-match-decontaminated} rather than leakage-free, and release the audit alongside the data.
+\textbf{Near-duplicate audit.} Exact and normalised matching cannot catch paraphrases or lightly edited variants, so we additionally computed, for every retained evaluation sentence, its maximum token-set Jaccard similarity against all 30{,}209 unique normalised training inputs (inverted-index blocked; released as \texttt{near\_duplicate\_audit.py}). The near-duplicate tail is small but nonzero: on FPB-560, 22 sentences (3.9\,\%) have $J \ge 0.7$, 10 (1.8\,\%) $J \ge 0.8$, and 3 (0.5\,\%) $J \ge 0.9$; on FiQA-SA, 5 (2.1\,\%) reach $J \ge 0.7$ and none $J \ge 0.9$; on TFNS, 119 (5.0\,\%) reach $J \ge 0.7$ and 15 (0.6\,\%) $J \ge 0.9$. Even under the worst-case assumption that every $J \ge 0.7$ sentence is answered by memorisation, Finistral's FPB-560 accuracy changes by at most 3.9 points, so near-duplicate leakage cannot account for the corrected results. We accordingly describe our sets as \emph{exact-match-decontaminated} rather than leakage-free, and release the audit alongside the data.
 
 \textbf{Decontamination and corrected evaluation.} We remove every leaked sentence and retain the \textbf{560-sentence disjoint remainder} (neutral 353, positive 130, negative 77) as an exact-match-decontaminated Financial PhraseBank test set (released as \texttt{fpb\_decontaminated.csv}). Because even this remainder shares Financial PhraseBank's stylistic distribution, we additionally evaluate on external sets, decontaminated \emph{row-wise} against the FinGPT training inputs under the same normalisation: \textbf{FiQA-SA} (all splits pooled, then leaked rows removed, $n{=}235$; pooling is necessary because FiQA is itself a FinGPT constituent and its test split alone is 78\,\% contaminated) and the \textbf{Twitter Financial News Sentiment} validation split ($n{=}2{,}373$ after removing 15 leaked/duplicate rows). Dataset provenance, label mappings, and dropped-row counts are released in \texttt{data\_eval/PROVENANCE.md}. Corrected numbers, with per-example McNemar tests and paired-bootstrap 95\,\% confidence intervals against every baseline, are reported in Table~\ref{tab:corrected-results}.
 
@@ -489,7 +489,7 @@ Decontaminated remainder (unseen)      & 560 (24.8\,\%) \\
 
 \subsection{Quantitative Gains}
 
-The large apparent margins reported in our original submission ($+69$ F1 over zero-shot Mistral-7B; $+78$--$96$ F1 over the FinGPT LoRA baselines; $+3$--$6$ accuracy points over FinBERT) do not survive scrutiny and are withdrawn. As Section~\ref{sec:contamination} establishes, the Finistral side of every such comparison was inflated by 75.2\,\% train/test overlap, while the FinGPT baselines were deflated below their majority-class floor by harness defects. The near-perfect per-class F1 on the contaminated split (Negative 98.7\,\%, Neutral 99.4\,\%, Positive 99.3\,\%) and the reduction of errors to ``10 of 2{,}264'' are likewise consequences of memorisation, not generalisation, and the confusion matrix in Figure~\ref{fig:confusion} should be read as a diagnostic of contamination rather than of model quality. The honest performance picture is given by the decontaminated and external evaluations in Table~\ref{tab:corrected-results}. On the decontaminated FPB remainder, Finistral attains 98.93\,\% accuracy with per-class F1 of 0.974 (negative), 0.993 (neutral), and 0.989 (positive) --- but this is \emph{not} a statistically significant advantage over the strongest baseline (FinGPT-mt-Llama2, 98.57\,\%; McNemar $p = 0.77$), and both models plausibly benefit from FPB's narrow stylistic distribution even after sentence-level decontamination. The external sets are more informative. On FiQA-SA, Finistral leads on accuracy and weighted F1 (87.66\,\% / 0.8833), significantly above FinGPT-mt-Llama2 ($p = 0.012$, unadjusted), FinGPT-Llama-3 ($p = 7.2\times10^{-11}$), and FinBERT ($p = 3.1\times10^{-17}$), though not above FinGPT-Falcon (85.53\,\%, $p = 0.42$); on macro F1, however, Finistral (0.700) \emph{trails} FinGPT-Falcon (0.723), reflecting weakness on FiQA's tiny neutral class (F1 0.276 on 12 examples) --- Appendix~A reports macro F1 for every comparison. On TFNS, Finistral (78.93\,\%) is statistically tied with the strongest baseline, FinGPT-Llama-3 (78.04\,\%, $p = 0.41$), and significantly above the remaining adapters and FinBERT (mt-Llama2 $p = 2.1\times10^{-3}$; Falcon, Bloom, and FinBERT all $p < 10^{-8}$). The zero-shot Mistral-7B backbone emits almost no parseable label under strict parsing (99\,\% unparseable outputs): fine-tuning confers, at minimum, output-format compliance --- and, given the fine-tuned models' accuracy, task competence with it. All $p$-values are unadjusted across the 21 pairwise tests (Appendix~A states which conclusions survive a Holm--Bonferroni correction); notably, \emph{no comparison against the strongest per-dataset baseline reaches significance} (FPB-560 $p=0.77$; FiQA-SA vs Falcon $p=0.42$; TFNS vs Llama-3 $p=0.41$). In sum: the corrected evaluation shows Finistral statistically indistinguishable from the best FinGPT-class adapter on each dataset, significantly better than several others, and clearly ahead of FinBERT off-distribution --- not the categorical superiority the original submission asserted.
+The large apparent margins reported in our original submission ($+69$ F1 over zero-shot Mistral-7B; $+78$--$96$ F1 over the FinGPT LoRA baselines; $+3$--$6$ accuracy points over FinBERT) do not survive scrutiny and are withdrawn. As Section~\ref{sec:contamination} establishes, the Finistral side of every such comparison was inflated by 75.2\,\% train/test overlap, while the FinGPT baselines were deflated below their majority-class floor by harness defects. The near-perfect per-class F1 on the contaminated split (Negative 98.7\,\%, Neutral 99.4\,\%, Positive 99.3\,\%) and the reduction of errors to ``10 of 2{,}264'' are likewise consequences of memorisation, not generalisation, and the confusion matrix in Figure~\ref{fig:confusion} should be read as a diagnostic of contamination rather than of model quality. The honest performance picture is given by the decontaminated and external evaluations in Table~\ref{tab:corrected-results}. On the decontaminated FPB remainder, Finistral attains 98.93\,\% accuracy with per-class F1 of 0.974 (negative), 0.993 (neutral), and 0.989 (positive), but this is \emph{not} a statistically significant advantage over the strongest baseline (FinGPT-mt-Llama2, 98.57\,\%; McNemar $p = 0.77$), and both models plausibly benefit from FPB's narrow stylistic distribution even after sentence-level decontamination. The external sets are more informative. On FiQA-SA, Finistral leads on accuracy and weighted F1 (87.66\,\% / 0.8833), significantly above FinGPT-mt-Llama2 ($p = 0.012$, unadjusted), FinGPT-Llama-3 ($p = 7.2\times10^{-11}$), and FinBERT ($p = 3.1\times10^{-17}$), though not above FinGPT-Falcon (85.53\,\%, $p = 0.42$); on macro F1, however, Finistral (0.700) \emph{trails} FinGPT-Falcon (0.723), reflecting weakness on FiQA's tiny neutral class (F1 0.276 on 12 examples). Appendix~A reports macro F1 for every comparison. On TFNS, Finistral (78.93\,\%) is statistically tied with the strongest baseline, FinGPT-Llama-3 (78.04\,\%, $p = 0.41$), and significantly above the remaining adapters and FinBERT (mt-Llama2 $p = 2.1\times10^{-3}$; Falcon, Bloom, and FinBERT all $p < 10^{-8}$). The zero-shot Mistral-7B backbone emits almost no parseable label under strict parsing (99\,\% unparseable outputs): fine-tuning confers, at minimum, output-format compliance and, given the fine-tuned models' accuracy, task competence with it. All $p$-values are unadjusted across the 21 pairwise tests (Appendix~A states which conclusions survive a Holm--Bonferroni correction); notably, \emph{no comparison against the strongest per-dataset baseline reaches significance} (FPB-560 $p=0.77$; FiQA-SA vs Falcon $p=0.42$; TFNS vs Llama-3 $p=0.41$). In sum: the corrected evaluation shows Finistral statistically indistinguishable from the best FinGPT-class adapter on each dataset, significantly better than several others, and clearly ahead of FinBERT off-distribution, not the categorical superiority the original submission asserted.
 
 \begin{figure}[htbp]
 \centering
@@ -501,14 +501,14 @@ The large apparent margins reported in our original submission ($+69$ F1 over ze
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/dotplot_comparison.png}
-\caption{Corrected accuracy (filled circles, with 95\,\% Wilson confidence intervals) and weighted F1 (open diamonds) for Finistral-7B-LoRA against all FinGPT adapter baselines and FinBERT on the exact-match-decontaminated sets; numeric labels give accuracy\,/\,weighted F1. Axes are zoomed per panel to resolve small differences; because value is encoded by position rather than bar length, the non-zero origin introduces no visual exaggeration. Overlapping accuracy intervals indicate differences that are not statistically distinguishable --- note the overlap with FinGPT-mt-Llama2 on FPB-560, FinGPT-Falcon on FiQA-SA, and FinGPT-Llama-3 on TFNS, matching the McNemar results in Appendix~A. The two metrics do not always agree: on TFNS, FinGPT-Llama-3 attains a higher weighted F1 (0.821) than Finistral (0.796) despite lower accuracy, and on FiQA-SA FinGPT-Falcon leads on macro F1 (Appendix~A). The unparseable-dominated zero-shot backbone is omitted here and shown in Figure~\ref{fig:bar-comparison}.}
+\caption{Corrected accuracy (filled circles, with 95\,\% Wilson confidence intervals) and weighted F1 (open diamonds) for Finistral-7B-LoRA against all FinGPT adapter baselines and FinBERT on the exact-match-decontaminated sets; numeric labels give accuracy\,/\,weighted F1. Axes are zoomed per panel to resolve small differences; because value is encoded by position rather than bar length, the non-zero origin introduces no visual exaggeration. Overlapping accuracy intervals indicate differences that are not statistically distinguishable. Note the overlap with FinGPT-mt-Llama2 on FPB-560, FinGPT-Falcon on FiQA-SA, and FinGPT-Llama-3 on TFNS, matching the McNemar results in Appendix~A. The two metrics do not always agree: on TFNS, FinGPT-Llama-3 attains a higher weighted F1 (0.821) than Finistral (0.796) despite lower accuracy, and on FiQA-SA FinGPT-Falcon leads on macro F1 (Appendix~A). The unparseable-dominated zero-shot backbone is omitted here and shown in Figure~\ref{fig:bar-comparison}.}
 \label{fig:fingpt-comparison}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.52\textwidth]{figures/image5.png}
-\caption{Confusion matrix of Finistral-7B-LoRA on the \emph{original, contaminated} full split --- retained solely as a contamination diagnostic (Section~\ref{sec:contamination}); the corrected per-model confusion matrices appear in Figure~\ref{fig:confusion-grid}.}
+\caption{Confusion matrix of Finistral-7B-LoRA on the \emph{original, contaminated} full split, retained solely as a contamination diagnostic (Section~\ref{sec:contamination}); the corrected per-model confusion matrices appear in Figure~\ref{fig:confusion-grid}.}
 \label{fig:confusion}
 \end{figure}
 
@@ -543,19 +543,19 @@ Weighted F1 (FPB-560 / FiQA / TFNS) & 0.989 / 0.883 / 0.796 & 0.986 / 0.859 / 0.
 {\footnotesize $^{\dagger}$Best FinGPT adapter \emph{per dataset}: FinGPT-mt-Llama2 on FPB-560, FinGPT-Falcon on FiQA-SA, FinGPT-Llama-3 on TFNS.}
 \end{table}
 
-The original version of this table juxtaposed Finistral's contaminated 0.996 F1 against a FinGPT baseline's harness-broken 0.211 F1; both numbers were invalid for comparison and have been replaced with corrected figures from the exact-match-decontaminated evaluation. Two honest observations follow. First, the efficiency columns (parameter count, adapter size, train time) are unaffected by contamination and are absolute virtues of the recipe: a competitive financial-sentiment adapter for well under one GPU-day, on academic infrastructure, end-to-end reproducible. Second, however, Finistral is \emph{not} the most parameter-efficient model in its own comparison: FinGPT-mt-Llama2 trains $6.7\times$ fewer parameters (6.29\,M vs 41.94\,M) yet is statistically indistinguishable from Finistral on FPB-560 ($p=0.77$) and competitive on TFNS, with Finistral's clearest win confined to FiQA-SA. The defensible claim is therefore accessibility and reproducibility of the full recipe--evaluation stack, not parameter-count superiority --- and identifying the minimal adapter capacity at which this performance saturates is exactly what the deferred rank/target-module ablation (released as \texttt{ablation\_and\_seeds.py}) would settle.
+The original version of this table juxtaposed Finistral's contaminated 0.996 F1 against a FinGPT baseline's harness-broken 0.211 F1; both numbers were invalid for comparison and have been replaced with corrected figures from the exact-match-decontaminated evaluation. Two honest observations follow. First, the efficiency columns (parameter count, adapter size, train time) are unaffected by contamination and are absolute virtues of the recipe: a competitive financial-sentiment adapter for well under one GPU-day, on academic infrastructure, end-to-end reproducible. Second, however, Finistral is \emph{not} the most parameter-efficient model in its own comparison: FinGPT-mt-Llama2 trains $6.7\times$ fewer parameters (6.29\,M vs 41.94\,M) yet is statistically indistinguishable from Finistral on FPB-560 ($p=0.77$) and competitive on TFNS, with Finistral's clearest win confined to FiQA-SA. The defensible claim is therefore accessibility and reproducibility of the full recipe and evaluation stack, not parameter-count superiority. Identifying the minimal adapter capacity at which this performance saturates is exactly what the deferred rank/target-module ablation (released as \texttt{ablation\_and\_seeds.py}) would settle.
 
 \subsection{Prompt-Template Ablation}
 
-Because the original evaluation applied a single Alpaca-style prompt to every model --- mismatched to Finistral's own \texttt{[INST]} training template (Section~3.3) --- we quantify the template effect directly: the identical released adapter evaluated under both templates on all three exact-match-decontaminated datasets. The effect is material but \emph{dataset-dependent}: on FPB-560 the training-matched template is slightly but not significantly better ($98.93\,\%$ vs $98.04\,\%$; McNemar $p = 0.18$); on FiQA-SA it is decisively better ($87.66\,\%$ vs $77.45\,\%$, $+10.2$ points, $p = 1.9\times10^{-4}$); yet on TFNS the \emph{mismatched} Alpaca template wins ($87.86\,\%$ vs $78.93\,\%$, $p < 10^{-32}$), plausibly because TFNS's informal tweet register sits closer to the generic instruction framing than to the financial-news style dominant in the fine-tuning corpus. Two conclusions follow, and we state both: evaluation protocols must \emph{control and disclose} the prompt template, since a 9--10-point swing dwarfs most model-to-model differences in Table~\ref{tab:corrected-results}; and a training-matched template is a sensible default but not a universally optimal one. We report Finistral's headline numbers under its training template throughout, which on TFNS is the \emph{conservative} choice.
+Because the original evaluation applied a single Alpaca-style prompt to every model, mismatched to Finistral's own \texttt{[INST]} training template (Section~3.3), we quantify the template effect directly: the identical released adapter evaluated under both templates on all three exact-match-decontaminated datasets. The effect is material but \emph{dataset-dependent}: on FPB-560 the training-matched template is slightly but not significantly better ($98.93\,\%$ vs $98.04\,\%$; McNemar $p = 0.18$); on FiQA-SA it is decisively better ($87.66\,\%$ vs $77.45\,\%$, $+10.2$ points, $p = 1.9\times10^{-4}$); yet on TFNS the \emph{mismatched} Alpaca template wins ($87.86\,\%$ vs $78.93\,\%$, $p < 10^{-32}$), plausibly because TFNS's informal tweet register sits closer to the generic instruction framing than to the financial-news style dominant in the fine-tuning corpus. Two conclusions follow, and we state both: evaluation protocols must \emph{control and disclose} the prompt template, since a 9--10-point swing dwarfs most model-to-model differences in Table~\ref{tab:corrected-results}; and a training-matched template is a sensible default but not a universally optimal one. We report Finistral's headline numbers under its training template throughout, which on TFNS is the \emph{conservative} choice.
 
 \subsection{Error Analysis}
 
-Across the three exact-match-decontaminated evaluations, Finistral misclassifies 535 sentences (6 on FPB-560, 29 on FiQA-SA, 500 on TFNS); we tag each with rule-based failure-mode categories (released with the per-example predictions). The distribution: numeric/guidance constructions 187, negation 48, sarcasm or irony 32, conditional or hedged statements 21, entity confusion 14, mixed sentiment 2, and 231 uncategorised. Three recurring patterns dominate. \emph{Cost framings of positive events}: ``RBS Pays \$1.7 Billion to Scrap U.K. Treasury's Dividend Rights'' (gold neutral, predicted negative) --- a large outflow number pulls the prediction negative even when the event is strategically neutral. \emph{Negated or self-correcting market language}: ``Barclays Bonds Rise as Lender Cuts Dividends to Shore Up Capital'' (gold positive, predicted negative) --- the model anchors on ``cuts dividends'' and misses that the sentence reports the market's positive reaction. \emph{Hedged speculation}: ``Italy may be willing to compromise\ldots'' (gold neutral, predicted positive) --- modal constructions are read as realised outcomes. TFNS contributes most errors both because it is the largest set and because its informal, elliptical tweet register (tickers, retweet fragments, truncated URLs) is furthest from the fine-tuning corpus's newswire style --- consistent with the per-class pattern that Finistral over-predicts the polar classes on TFNS (negative recall 0.93 but precision 0.68; positive recall 0.96 but precision 0.59), trading neutral precision for polar recall.
+Across the three exact-match-decontaminated evaluations, Finistral misclassifies 535 sentences (6 on FPB-560, 29 on FiQA-SA, 500 on TFNS); we tag each with rule-based failure-mode categories (released with the per-example predictions). The distribution: numeric/guidance constructions 187, negation 48, sarcasm or irony 32, conditional or hedged statements 21, entity confusion 14, mixed sentiment 2, and 231 uncategorised. Three recurring patterns dominate. \emph{Cost framings of positive events}: ``RBS Pays \$1.7 Billion to Scrap U.K. Treasury's Dividend Rights'' (gold neutral, predicted negative): a large outflow number pulls the prediction negative even when the event is strategically neutral. \emph{Negated or self-correcting market language}: ``Barclays Bonds Rise as Lender Cuts Dividends to Shore Up Capital'' (gold positive, predicted negative): the model anchors on ``cuts dividends'' and misses that the sentence reports the market's positive reaction. \emph{Hedged speculation}: ``Italy may be willing to compromise\ldots'' (gold neutral, predicted positive): modal constructions are read as realised outcomes. TFNS contributes most errors both because it is the largest set and because its informal, elliptical tweet register (tickers, retweet fragments, truncated URLs) is furthest from the fine-tuning corpus's newswire style, consistent with the per-class pattern that Finistral over-predicts the polar classes on TFNS (negative recall 0.93 but precision 0.68; positive recall 0.96 but precision 0.59), trading neutral precision for polar recall.
 
 \subsection{Deployment Footprint}
 
-\textbf{GPU inference} -- measured single-sentence latency (batch size 1, greedy decoding, \texttt{max\_new\_tokens}=8, \texttt{bfloat16}, 50 timed generations after 5 warm-ups) is \textbf{65.5\,ms median / 67.4\,ms p95} on an NVIDIA H100; comparable A100-class hardware sits well within real-time budgets for news monitoring.
+\textbf{GPU inference}: measured single-sentence latency (batch size 1, greedy decoding, \texttt{max\_new\_tokens}=8, \texttt{bfloat16}, 50 timed generations after 5 warm-ups) is \textbf{65.5\,ms median / 67.4\,ms p95} on an NVIDIA H100; comparable A100-class hardware sits well within real-time budgets for news monitoring.
 
 The CPU / 4-bit-GGML latency figure (``78\,ms, M1 Pro'') from the original submission is withdrawn as implausible for a 7B-scale model and is not re-asserted without measurement (Section~``Inference \& Deployment'').
 
@@ -586,7 +586,7 @@ Training beyond the validation-loss trough yields no benefit and can harm genera
 
 \section{Conclusion}
 
-Finistral-7B-LoRA demonstrates that a financial-sentiment adapter over the compute-efficient Mistral-7B backbone can be trained with only $\approx$\,0.58\,\% trainable parameters ($\approx$\,41.94\,M), one node of GPU time, and an 84\,MB adapter file, entirely within academic compute budgets on Indiana University's Big Red 200 supercomputer. Equally important, this paper documents a cautionary result: the 99.56\,\% accuracy reported in our original submission was a data-contamination artifact, with 75.2\,\% of the Financial PhraseBank evaluation set --- and its labels --- present in the FinGPT training corpus, while the seemingly weak baselines were products of a broken evaluation harness. After decontaminating the test set, correcting the harness, and validating on external datasets, we present an honest, contamination-audited assessment of the recipe (Table~\ref{tab:corrected-results}). We therefore offer two contributions of lasting value: an efficient, fully reproducible PEFT recipe for financial sentiment, and concrete evidence --- with released tooling --- that contamination auditing and harness hygiene are prerequisites for credible evaluation of LLMs trained on aggregated financial corpora.
+Finistral-7B-LoRA demonstrates that a financial-sentiment adapter over the compute-efficient Mistral-7B backbone can be trained with only $\approx$\,0.58\,\% trainable parameters ($\approx$\,41.94\,M), one node of GPU time, and an 84\,MB adapter file, entirely within academic compute budgets on Indiana University's Big Red 200 supercomputer. Equally important, this paper documents a cautionary result: the 99.56\,\% accuracy reported in our original submission was a data-contamination artifact, with 75.2\,\% of the Financial PhraseBank evaluation set (and its labels) present in the FinGPT training corpus, while the seemingly weak baselines were products of a broken evaluation harness. After decontaminating the test set, correcting the harness, and validating on external datasets, we present an honest, contamination-audited assessment of the recipe (Table~\ref{tab:corrected-results}). We therefore offer two contributions of lasting value: an efficient, fully reproducible PEFT recipe for financial sentiment, and concrete evidence, with released tooling, that contamination auditing and harness hygiene are prerequisites for credible evaluation of LLMs trained on aggregated financial corpora.
 
 
 \section{Future Work}
@@ -653,7 +653,7 @@ Table~\ref{tab:full-stats} reproduces the complete statistical record behind Tab
 \toprule
 \textbf{Dataset} & \textbf{Model} & \textbf{Acc} & \textbf{wF1} & \textbf{mF1} & \textbf{Unpars.} & \textbf{McNemar $p$} & \textbf{$\Delta$Acc 95\,\% CI} \\
 \midrule
-FPB-560 & Finistral-7B-LoRA & 0.9893 & 0.9893 & 0.9853 & 0.000 & --- & --- \\
+FPB-560 & Finistral-7B-LoRA & 0.9893 & 0.9893 & 0.9853 & 0.000 & n/a & n/a \\
 FPB-560 & FinGPT-mt-Llama2-7B-LoRA & 0.9857 & 0.9857 & 0.9798 & 0.000 & 0.774 & [$-$0.009, $+$0.016] \\
 FPB-560 & Finistral (Alpaca prompt) & 0.9804 & 0.9804 & 0.9755 & 0.000 & 0.18 & [$-$0.002, $+$0.020] \\
 FPB-560 & FinGPT-Falcon-7B-LoRA & 0.9696 & 0.9697 & 0.9633 & 0.000 & 0.007 & [$+$0.007, $+$0.034] \\
@@ -662,7 +662,7 @@ FPB-560 & FinGPT-Llama-3-8B-LoRA & 0.9339 & 0.9410 & 0.9265 & 0.018 & $8.1\times
 FPB-560 & FinGPT-Bloom-7B1-LoRA & 0.8946 & 0.8934 & 0.8517 & 0.000 & $5.7\times10^{-11}$ & [$+$0.068, $+$0.121] \\
 FPB-560 & Mistral-7B-v0.1 (zero-shot) & 0.0036 & 0.0070 & 0.0135 & 0.995 & $1.3\times10^{-121}$ & [$+$0.975, $+$0.995] \\
 \midrule
-FiQA-SA & Finistral-7B-LoRA & 0.8766 & 0.8833 & 0.6999 & 0.000 & --- & --- \\
+FiQA-SA & Finistral-7B-LoRA & 0.8766 & 0.8833 & 0.6999 & 0.000 & n/a & n/a \\
 FiQA-SA & FinGPT-Falcon-7B-LoRA & 0.8553 & 0.8594 & 0.7226 & 0.000 & 0.424 & [$-$0.021, $+$0.064] \\
 FiQA-SA & FinGPT-mt-Llama2-7B-LoRA & 0.8085 & 0.8301 & 0.6743 & 0.000 & 0.012 & [$+$0.021, $+$0.119] \\
 FiQA-SA & Finistral (Alpaca prompt) & 0.7745 & 0.8209 & 0.6525 & 0.000 & $1.9\times10^{-4}$ & [$+$0.055, $+$0.153] \\
@@ -673,7 +673,7 @@ FiQA-SA & Mistral-7B-v0.1 (zero-shot) & 0.0128 & 0.0252 & 0.0176 & 0.987 & $1.3\
 \midrule
 TFNS & Finistral (Alpaca prompt) & 0.8786 & 0.8811 & 0.8598 & 0.000 & $1.7\times10^{-33}$ & [$-$0.104, $-$0.075] \\
 TFNS & FinGPT-Llama-3-8B-LoRA & 0.7804 & 0.8211 & 0.7906 & 0.093 & 0.407 & [$-$0.011, $+$0.029] \\
-TFNS & Finistral-7B-LoRA & 0.7893 & 0.7959 & 0.7776 & 0.000 & --- & --- \\
+TFNS & Finistral-7B-LoRA & 0.7893 & 0.7959 & 0.7776 & 0.000 & n/a & n/a \\
 TFNS & FinGPT-mt-Llama2-7B-LoRA & 0.7644 & 0.7713 & 0.7527 & 0.000 & 0.002 & [$+$0.010, $+$0.040] \\
 TFNS & FinGPT-Falcon-7B-LoRA & 0.7307 & 0.7377 & 0.7223 & 0.000 & $2.4\times10^{-11}$ & [$+$0.042, $+$0.075] \\
 TFNS & FinBERT (ProsusAI) & 0.7252 & 0.7329 & 0.6679 & 0.000 & $9.5\times10^{-9}$ & [$+$0.043, $+$0.086] \\
@@ -774,7 +774,7 @@ Wang, D., Patel, J., Zha, D., Yang, S. Y., Liu, X.-Y., FinLoRA: Benchmarking LoR
 
 \end{thebibliography}
 
-%%% ---- Publisher Note & Open Access (per GR Journals template) ----
+%%% ==== Publisher Note & Open Access (per GR Journals template) ====
 \vspace{12pt}
 \noindent\textbf{Publisher Note:} The views, statements, and data in all publications solely belong to the authors and contributors. GR Scholastic is not responsible for any injury resulting from the ideas, methods, or products mentioned. GR Scholastic remains neutral regarding jurisdictional claims in published maps and institutional affiliations.
 
