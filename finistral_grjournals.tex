@@ -135,15 +135,8 @@ We present Finistral-7B-LoRA, a parameter-efficient financial-sentiment classifi
 \vspace{6pt}
 \begin{figure}[h!]
 \centering
-\begin{subfigure}[b]{\textwidth}
-  \centering
-  \includegraphics[width=0.96\textwidth]{figures/image3_corrected.png}
-\end{subfigure}\par\medskip
-\begin{subfigure}[b]{\textwidth}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figures_corrected/confusion_matrix_grid_normalized.png}
-\end{subfigure}
-\caption*{Top: corrected, exact-match-decontaminated comparison of Finistral-7B-LoRA (under both prompt templates) against the Mistral-7B-v0.1 zero-shot backbone on the decontaminated FPB-560, FiQA-SA, and TFNS evaluation sets. Bottom: row-normalised confusion matrices for all evaluated models under the corrected protocol (Section~\ref{sec:contamination}).}
+\includegraphics[width=\textwidth]{figures/graphical_abstract.png}
+\caption*{Left: 75.2\,\% of the Financial PhraseBank evaluation set appears verbatim, with identical gold labels, in the fine-tuning corpus --- the originally claimed 99.56\,\% accuracy reflects memorisation. Right: the corrected evaluation on the exact-match-decontaminated remainder and two external datasets, with per-example significance tests (Section~\ref{sec:contamination}).}
 \end{figure}
 
 %%% ---- Novelty Statement ----
