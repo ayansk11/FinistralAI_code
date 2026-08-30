@@ -500,8 +500,8 @@ The large apparent margins reported in our original submission ($+69$ F1 over ze
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{figures/image4_corrected.png}
-\caption{Corrected comparison (exact-match-decontaminated sets) of Finistral-7B-LoRA against all FinGPT adapter baselines and FinBERT, per evaluation set. Missing bars indicate accuracy/F1 near zero (the unparseable-dominated zero-shot backbone is omitted; see Table~\ref{tab:corrected-results}).}
+\includegraphics[width=\textwidth]{figures/dotplot_comparison.png}
+\caption{Corrected accuracy of Finistral-7B-LoRA against all FinGPT adapter baselines and FinBERT on the exact-match-decontaminated sets, with 95\,\% Wilson confidence intervals. Axes are zoomed per panel to resolve small differences; because value is encoded by position rather than bar length, the non-zero origin introduces no visual exaggeration. Overlapping intervals indicate differences that are not statistically distinguishable --- note the overlap with FinGPT-mt-Llama2 on FPB-560, FinGPT-Falcon on FiQA-SA, and FinGPT-Llama-3 on TFNS, matching the McNemar results in Appendix~A. Weighted and macro F1 for every model are given in Table~\ref{tab:corrected-results} and Appendix~A; the unparseable-dominated zero-shot backbone is omitted here and shown in Figure~\ref{fig:bar-comparison}.}
 \label{fig:fingpt-comparison}
 \end{figure}
 
