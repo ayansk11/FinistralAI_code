@@ -977,7 +977,7 @@ def plot_confusion_grid(
     n = len(models)
     ncols = min(3, n)
     nrows = int(np.ceil(n / ncols))
-    fig = plt.figure(figsize=(4.2 * ncols, 3.8 * nrows))
+    fig = plt.figure(figsize=(5.2 * ncols, 4.7 * nrows))
     gs = GridSpec(nrows, ncols, figure=fig)
 
     for idx, model in enumerate(models):
@@ -993,12 +993,12 @@ def plot_confusion_grid(
 
         ax.imshow(disp, cmap="Blues", vmin=0,
                   vmax=1 if normalize else (disp.max() if disp.max() > 0 else 1))
-        ax.set_title(model, fontsize=10, fontweight="bold")
+        ax.set_title(model, fontsize=13, fontweight="bold")
         ax.set_xticks(range(3)); ax.set_xticklabels(CLASSES, rotation=45, ha="right",
-                                                    fontsize=8)
-        ax.set_yticks(range(3)); ax.set_yticklabels(CLASSES, fontsize=8)
-        ax.set_xlabel("Predicted", fontsize=8)
-        ax.set_ylabel("True", fontsize=8)
+                                                    fontsize=11)
+        ax.set_yticks(range(3)); ax.set_yticklabels(CLASSES, fontsize=11)
+        ax.set_xlabel("Predicted", fontsize=11)
+        ax.set_ylabel("True", fontsize=11)
 
         # Cell annotations: counts (or fractions). Auto-contrast the text colour.
         thresh = disp.max() / 2.0 if disp.max() > 0 else 0.5
@@ -1006,7 +1006,7 @@ def plot_confusion_grid(
             for j in range(3):
                 txt = (f"{disp[i, j]:.2f}" if normalize
                        else f"{int(cm[i, j])}")
-                ax.text(j, i, txt, ha="center", va="center", fontsize=8,
+                ax.text(j, i, txt, ha="center", va="center", fontsize=12,
                         color="white" if disp[i, j] > thresh else "black")
 
     for j in range(n, nrows * ncols):
