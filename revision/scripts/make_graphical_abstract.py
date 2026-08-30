@@ -34,7 +34,7 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 7.6),
 ax1.barh([1], [1699], color=RED, alpha=0.85, height=0.45)
 ax1.barh([1], [560], left=[1699], color=GREEN, alpha=0.9, height=0.45)
 ax1.set_xlim(0, 2259)
-ax1.set_ylim(0.45, 1.9)
+ax1.set_ylim(0.24, 1.92)
 ax1.set_yticks([])
 ax1.set_xlabel("Financial PhraseBank evaluation sentences (2,259 unique)",
                fontsize=13)
@@ -45,7 +45,8 @@ ax1.text(1699 + 280, 1, "560\nclean", ha="center", va="center",
 ax1.text(1130, 1.63, 'claimed 99.56% "accuracy"  =  memorisation',
          ha="center", fontsize=15, fontweight="bold", color=RED)
 ax1.annotate("evaluate here instead\n(+ external datasets)",
-             xy=(1990, 0.79), xytext=(1180, 0.60),
+             xy=(1979, 0.775), xytext=(1330, 0.66),
+             ha="center", va="top",
              fontsize=12.5, fontweight="bold", color=GREEN,
              arrowprops=dict(arrowstyle="->", color=GREEN, lw=2))
 ax1.set_title("Finding: 75.2% train/test contamination", fontsize=16,
@@ -70,10 +71,12 @@ for bars in (b1, b2, b3):
                  f"{r.get_height():.3f}", ha="center", fontsize=11)
 ax2.set_xticks(x)
 ax2.set_xticklabels(datasets, fontsize=13)
-ax2.set_ylim(0, 1.12)
+ax2.set_ylim(0, 1.30)
 ax2.set_ylabel("Weighted F1", fontsize=13)
+ax2.set_yticks(np.arange(0, 1.01, 0.2))
 ax2.tick_params(axis="y", labelsize=11)
-ax2.legend(fontsize=11.5, loc="upper right", frameon=False)
+ax2.legend(fontsize=11.5, loc="upper center", ncol=3, frameon=False,
+           bbox_to_anchor=(0.5, 1.0), columnspacing=2.0)
 ax2.set_title("Corrected evaluation: honest, statistically tested results",
               fontsize=16, fontweight="bold", pad=12)
 ax2.grid(axis="y", alpha=0.3)

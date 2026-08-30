@@ -91,9 +91,16 @@ def main() -> int:
         vals = [float(sub.loc[m, "accuracy"]) for m in models]
         pad = max(0.04, (max(vals) - min(vals)) * 0.28)
         allv = vals + [float(sub.loc[m, "weighted_f1"]) for m in models]
-        ax.set_xlim(min(allv) - pad, min(1.02, max(allv) + pad * 2.6))
+        lo = min(allv) - pad
+        hi = min(1.0, max(allv) + pad * 0.6)
+        # Ticks span the DATA range only (never past 1.0); the axis then
+        # extends further right purely to hold the value labels, so they
+        # cannot spill into the neighbouring panel.
         from matplotlib.ticker import MaxNLocator
-        ax.xaxis.set_major_locator(MaxNLocator(nbins=4, prune=None))
+        ticks = [t for t in MaxNLocator(nbins=4).tick_values(lo, hi)
+                 if lo <= t <= min(hi, 1.0)]
+        ax.set_xticks(ticks)
+        ax.set_xlim(lo, hi + (hi - lo) * 0.55)
         ax.grid(axis="x", alpha=0.35)
         ax.tick_params(axis="x", labelsize=11)
         for s in ("top", "right", "left"):
