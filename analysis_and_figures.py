@@ -963,6 +963,8 @@ def plot_confusion_grid(
     outdir: str,
     filename: str = "confusion_matrix_grid",
     normalize: bool = False,
+    ncols: int = None,
+    row_height: float = 4.7,
 ) -> Tuple[str, str]:
     """
     A grid of confusion matrices -- one per model -- using a SHARED class order
@@ -975,9 +977,9 @@ def plot_confusion_grid(
     """
     models = sorted(df["model"].unique())
     n = len(models)
-    ncols = min(3, n)
+    ncols = ncols or min(3, n)
     nrows = int(np.ceil(n / ncols))
-    fig = plt.figure(figsize=(5.2 * ncols, 4.7 * nrows))
+    fig = plt.figure(figsize=(5.2 * ncols, row_height * nrows))
     gs = GridSpec(nrows, ncols, figure=fig)
 
     for idx, model in enumerate(models):
@@ -1079,6 +1081,11 @@ def run_all(
     # (5) Confusion-matrix grid: both raw-count and row-normalised variants.
     plot_confusion_grid(df, outdir, filename="confusion_matrix_grid_counts",
                         normalize=False)
+    # Page-filling variant: 2 columns x 4 rows at an aspect ratio matching the
+    # manuscript's text block, so the figure fills a full page.
+    plot_confusion_grid(df, outdir, ncols=2, row_height=3.3,
+                        filename="confusion_matrix_grid_normalized_page",
+                        normalize=True)
     plot_confusion_grid(df, outdir, filename="confusion_matrix_grid_normalized",
                         normalize=True)
 
