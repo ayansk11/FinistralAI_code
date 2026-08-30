@@ -92,6 +92,7 @@ def chart(df: pd.DataFrame, models: list, out_base: str, title: str):
                            fontsize=12.5)
         ax.set_title(DATASET_TITLES[ds], fontsize=15, fontweight="bold")
         ax.set_ylim(0, 1.14)
+        ax.set_yticks(np.arange(0, 1.01, 0.1))
         ax.set_ylabel("Score", fontsize=13)
         ax.tick_params(axis="y", labelsize=11)
         ax.grid(axis="y", alpha=0.3)

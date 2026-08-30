@@ -26,9 +26,9 @@ import pandas as pd
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT = os.path.join(REPO, "figures", "dotplot_comparison")
 
-DATASET_TITLES = {"fpb_decontam": "FPB decontaminated (n=560)",
-                  "fiqa": "FiQA-SA (decontaminated, n=235)",
-                  "tfns": "TFNS (decontaminated, n=2,373)"}
+DATASET_TITLES = {"fpb_decontam": "FPB-560 (decontaminated)",
+                  "fiqa": "FiQA-SA (n=235)",
+                  "tfns": "TFNS (n=2,373)"}
 SHORT = {
     "Finistral-7B-LoRA": "Finistral (ours)",
     "Finistral-7B-LoRA (Alpaca prompt)": "Finistral (Alpaca prompt)",
@@ -55,7 +55,7 @@ def wilson(p: float, n: int, z: float = 1.96):
 def main() -> int:
     df = pd.read_csv(os.path.join(REPO, "results_fixed", "stats_summary.csv"))
     datasets = [d for d in DATASET_TITLES if d in set(df["dataset"])]
-    fig, axes = plt.subplots(1, len(datasets), figsize=(14.5, 5.0), sharey=True)
+    fig, axes = plt.subplots(1, len(datasets), figsize=(12.0, 8.6), sharey=True)
     if len(datasets) == 1:
         axes = [axes]
 
@@ -69,27 +69,29 @@ def main() -> int:
             is_ours = m == "Finistral-7B-LoRA"
             c = BLUE if is_ours else GREY
             ax.plot([lo, hi], [y, y], color=c, lw=2.4, alpha=0.85, zorder=2)
-            ax.plot([acc], [y], "o", color=c, markersize=11 if is_ours else 8,
+            ax.plot([acc], [y], "o", color=c, markersize=13 if is_ours else 9.5,
                     zorder=3)
-            ax.text(hi + 0.008, y, f"{acc:.3f}", va="center", fontsize=10.5,
+            ax.text(hi + 0.008, y, f"{acc:.3f}", va="center", fontsize=11.5,
                     color=c, fontweight="bold" if is_ours else "normal")
         ax.set_yticks(ys)
-        ax.set_yticklabels([SHORT[m] for m in models], fontsize=12)
-        ax.set_title(DATASET_TITLES[ds], fontsize=13.5, fontweight="bold")
+        ax.set_yticklabels([SHORT[m] for m in models], fontsize=13)
+        ax.set_title(DATASET_TITLES[ds], fontsize=14, fontweight="bold", pad=10)
         ax.set_xlabel("Accuracy (95% Wilson CI)", fontsize=12)
         # Zoomed, per-panel range -- legitimate because position, not bar
         # length, encodes the value here.
         vals = [float(sub.loc[m, "accuracy"]) for m in models]
         pad = max(0.04, (max(vals) - min(vals)) * 0.28)
         ax.set_xlim(min(vals) - pad, min(1.005, max(vals) + pad * 1.5))
+        from matplotlib.ticker import MaxNLocator
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=4, prune=None))
         ax.grid(axis="x", alpha=0.35)
-        ax.tick_params(axis="x", labelsize=10.5)
+        ax.tick_params(axis="x", labelsize=11)
         for s in ("top", "right", "left"):
             ax.spines[s].set_visible(False)
 
-    fig.suptitle("Corrected accuracy with 95% confidence intervals "
-                 "(zoomed per panel; overlapping intervals = not distinguishable)",
-                 fontsize=14, fontweight="bold")
+    fig.suptitle("Corrected accuracy with 95% confidence intervals\n"
+                 "(axes zoomed per panel; overlapping intervals = not distinguishable)",
+                 fontsize=14.5, fontweight="bold")
     fig.tight_layout(rect=[0, 0, 1, 0.93])
     for ext in ("png", "pdf"):
         fig.savefig(f"{OUT}.{ext}", dpi=300, bbox_inches="tight")
