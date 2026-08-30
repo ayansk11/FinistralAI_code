@@ -27,30 +27,27 @@ OUT = os.path.join(REPO, "figures", "graphical_abstract")
 
 BLUE, ORANGE, GREY, GREEN, RED = "#0072B2", "#E69F00", "#999999", "#009E73", "#D55E00"
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5.2),
-                               gridspec_kw={"width_ratios": [1.05, 1.35]})
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 7.6),
+                               gridspec_kw={"height_ratios": [0.72, 1.28]})
 
 # ---------------- Panel A: the contamination finding ----------------
-ax1.barh([1], [1699], color=RED, alpha=0.85, height=0.45,
-         label="Leaked: verbatim in training data")
-ax1.barh([1], [560], left=[1699], color=GREEN, alpha=0.9, height=0.45,
-         label="Clean: never seen in training")
+ax1.barh([1], [1699], color=RED, alpha=0.85, height=0.45)
+ax1.barh([1], [560], left=[1699], color=GREEN, alpha=0.9, height=0.45)
 ax1.set_xlim(0, 2259)
-ax1.set_ylim(0.3, 2.2)
+ax1.set_ylim(0.45, 1.9)
 ax1.set_yticks([])
 ax1.set_xlabel("Financial PhraseBank evaluation sentences (2,259 unique)",
                fontsize=13)
-ax1.text(1699 / 2, 1, "1,699 leaked  (75.2%)\n100% identical labels",
+ax1.text(1699 / 2, 1, "1,699 leaked verbatim  (75.2%)\n100% identical gold labels",
          ha="center", va="center", fontsize=14, fontweight="bold", color="white")
 ax1.text(1699 + 280, 1, "560\nclean", ha="center", va="center",
          fontsize=13, fontweight="bold", color="white")
-ax1.text(1130, 1.78, 'claimed 99.56% "accuracy"  =  memorisation',
+ax1.text(1130, 1.63, 'claimed 99.56% "accuracy"  =  memorisation',
          ha="center", fontsize=15, fontweight="bold", color=RED)
 ax1.annotate("evaluate here instead\n(+ external datasets)",
-             xy=(1979, 0.76), xytext=(1330, 0.44),
+             xy=(1990, 0.79), xytext=(1180, 0.60),
              fontsize=12.5, fontweight="bold", color=GREEN,
              arrowprops=dict(arrowstyle="->", color=GREEN, lw=2))
-ax1.legend(loc="lower left", fontsize=11, frameon=False)
 ax1.set_title("Finding: 75.2% train/test contamination", fontsize=16,
               fontweight="bold", pad=12)
 for s in ("top", "right", "left"):
@@ -83,7 +80,7 @@ ax2.grid(axis="y", alpha=0.3)
 for s in ("top", "right"):
     ax2.spines[s].set_visible(False)
 
-fig.tight_layout(w_pad=3)
+fig.tight_layout(h_pad=3.2)
 for ext in ("png", "pdf"):
     fig.savefig(f"{OUT}.{ext}", dpi=300, bbox_inches="tight")
 print(f"wrote {OUT}.png/.pdf")
